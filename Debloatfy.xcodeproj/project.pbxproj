@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1FDCD5C32D5CCA930036B15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FDCD5A92D5CCA920036B15F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FDCD5B02D5CCA920036B15F;
+			remoteInfo = Debloatfy;
+		};
+		1FDCD5CD2D5CCA930036B15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FDCD5A92D5CCA920036B15F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FDCD5B02D5CCA920036B15F;
+			remoteInfo = Debloatfy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FDCD5B12D5CCA920036B15F /* Debloatfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debloatfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebloatfyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebloatfyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1FDCD5B32D5CCA920036B15F /* Debloatfy */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Debloatfy;
+			sourceTree = "<group>";
+		};
+		1FDCD5C52D5CCA930036B15F /* DebloatfyTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DebloatfyTests;
+			sourceTree = "<group>";
+		};
+		1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DebloatfyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FDCD5AE2D5CCA920036B15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5BF2D5CCA930036B15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5C92D5CCA930036B15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FDCD5A82D5CCA920036B15F = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5B32D5CCA920036B15F /* Debloatfy */,
+				1FDCD5C52D5CCA930036B15F /* DebloatfyTests */,
+				1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */,
+				1FDCD5B22D5CCA920036B15F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FDCD5B22D5CCA920036B15F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5B12D5CCA920036B15F /* Debloatfy.app */,
+				1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */,
+				1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FDCD5B02D5CCA920036B15F /* Debloatfy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDCD5D62D5CCA930036B15F /* Build configuration list for PBXNativeTarget "Debloatfy" */;
+			buildPhases = (
+				1FDCD5AD2D5CCA920036B15F /* Sources */,
+				1FDCD5AE2D5CCA920036B15F /* Frameworks */,
+				1FDCD5AF2D5CCA920036B15F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1FDCD5B32D5CCA920036B15F /* Debloatfy */,
+			);
+			name = Debloatfy;
+			packageProductDependencies = (
+			);
+			productName = Debloatfy;
+			productReference = 1FDCD5B12D5CCA920036B15F /* Debloatfy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FDCD5C12D5CCA930036B15F /* DebloatfyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyTests" */;
+			buildPhases = (
+				1FDCD5BE2D5CCA930036B15F /* Sources */,
+				1FDCD5BF2D5CCA930036B15F /* Frameworks */,
+				1FDCD5C02D5CCA930036B15F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FDCD5C42D5CCA930036B15F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1FDCD5C52D5CCA930036B15F /* DebloatfyTests */,
+			);
+			name = DebloatfyTests;
+			packageProductDependencies = (
+			);
+			productName = DebloatfyTests;
+			productReference = 1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1FDCD5CB2D5CCA930036B15F /* DebloatfyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDCD5DC2D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyUITests" */;
+			buildPhases = (
+				1FDCD5C82D5CCA930036B15F /* Sources */,
+				1FDCD5C92D5CCA930036B15F /* Frameworks */,
+				1FDCD5CA2D5CCA930036B15F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FDCD5CE2D5CCA930036B15F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */,
+			);
+			name = DebloatfyUITests;
+			packageProductDependencies = (
+			);
+			productName = DebloatfyUITests;
+			productReference = 1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FDCD5A92D5CCA920036B15F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					1FDCD5B02D5CCA920036B15F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					1FDCD5C12D5CCA930036B15F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1FDCD5B02D5CCA920036B15F;
+					};
+					1FDCD5CB2D5CCA930036B15F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1FDCD5B02D5CCA920036B15F;
+					};
+				};
+			};
+			buildConfigurationList = 1FDCD5AC2D5CCA920036B15F /* Build configuration list for PBXProject "Debloatfy" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FDCD5A82D5CCA920036B15F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1FDCD5B22D5CCA920036B15F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FDCD5B02D5CCA920036B15F /* Debloatfy */,
+				1FDCD5C12D5CCA930036B15F /* DebloatfyTests */,
+				1FDCD5CB2D5CCA930036B15F /* DebloatfyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FDCD5AF2D5CCA920036B15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5C02D5CCA930036B15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5CA2D5CCA930036B15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FDCD5AD2D5CCA920036B15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5BE2D5CCA930036B15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDCD5C82D5CCA930036B15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FDCD5C42D5CCA930036B15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FDCD5B02D5CCA920036B15F /* Debloatfy */;
+			targetProxy = 1FDCD5C32D5CCA930036B15F /* PBXContainerItemProxy */;
+		};
+		1FDCD5CE2D5CCA930036B15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FDCD5B02D5CCA920036B15F /* Debloatfy */;
+			targetProxy = 1FDCD5CD2D5CCA930036B15F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FDCD5D42D5CCA930036B15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1FDCD5D52D5CCA930036B15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1FDCD5D72D5CCA930036B15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Debloatfy/Debloatfy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Debloatfy/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.Debloatfy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1FDCD5D82D5CCA930036B15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Debloatfy/Debloatfy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Debloatfy/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.Debloatfy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1FDCD5DA2D5CCA930036B15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Debloatfy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Debloatfy";
+			};
+			name = Debug;
+		};
+		1FDCD5DB2D5CCA930036B15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Debloatfy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Debloatfy";
+			};
+			name = Release;
+		};
+		1FDCD5DD2D5CCA930036B15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Debloatfy;
+			};
+			name = Debug;
+		};
+		1FDCD5DE2D5CCA930036B15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Debloatfy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FDCD5AC2D5CCA920036B15F /* Build configuration list for PBXProject "Debloatfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDCD5D42D5CCA930036B15F /* Debug */,
+				1FDCD5D52D5CCA930036B15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDCD5D62D5CCA930036B15F /* Build configuration list for PBXNativeTarget "Debloatfy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDCD5D72D5CCA930036B15F /* Debug */,
+				1FDCD5D82D5CCA930036B15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDCD5DA2D5CCA930036B15F /* Debug */,
+				1FDCD5DB2D5CCA930036B15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDCD5DC2D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDCD5DD2D5CCA930036B15F /* Debug */,
+				1FDCD5DE2D5CCA930036B15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FDCD5A92D5CCA920036B15F /* Project object */;
+}
