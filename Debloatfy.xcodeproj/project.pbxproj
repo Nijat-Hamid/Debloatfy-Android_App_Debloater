@@ -6,15 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */; };
+		1FDCD5E92D5DFE740036B15F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E52D5DFE740036B15F /* ContentView.swift */; };
+		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
+		1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */; };
+		1FDCD5EC2D5DFE740036B15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E42D5DFE740036B15F /* Assets.xcassets */; };
+		1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */; };
+		1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5F92D5E04140036B15F /* RequestMethod.swift */; };
+		1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */; };
+		1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5FD2D5E04460036B15F /* Networkable.swift */; };
+		1FDCD6032D5E04F40036B15F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD6022D5E04F10036B15F /* Constans.swift */; };
+		1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
+		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1FDCD5C32D5CCA930036B15F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FDCD5A92D5CCA920036B15F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FDCD5B02D5CCA920036B15F;
-			remoteInfo = Debloatfy;
-		};
-		1FDCD5CD2D5CCA930036B15F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1FDCD5A92D5CCA920036B15F /* Project object */;
 			proxyType = 1;
@@ -24,28 +32,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1FDCD5B12D5CCA920036B15F /* Debloatfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debloatfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebloatfyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebloatfyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyTests.swift; sourceTree = "<group>"; };
+		1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FDCD5E42D5DFE740036B15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FDCD5E52D5DFE740036B15F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debloatfy.entitlements; sourceTree = "<group>"; };
+		1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyApp.swift; sourceTree = "<group>"; };
+		1FDCD5F12D5E01730036B15F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1FDCD5F22D5E02240036B15F /* Debloatfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debloatfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		1FDCD5F92D5E04140036B15F /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		1FDCD5FD2D5E04460036B15F /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
+		1FDCD6022D5E04F10036B15F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
+		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		1FDCD5B32D5CCA920036B15F /* Debloatfy */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Debloatfy;
-			sourceTree = "<group>";
-		};
-		1FDCD5C52D5CCA930036B15F /* DebloatfyTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DebloatfyTests;
-			sourceTree = "<group>";
-		};
-		1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DebloatfyUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1FDCD5AE2D5CCA920036B15F /* Frameworks */ = {
@@ -62,34 +65,141 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FDCD5C92D5CCA930036B15F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1FDCD5A82D5CCA920036B15F = {
 			isa = PBXGroup;
 			children = (
-				1FDCD5B32D5CCA920036B15F /* Debloatfy */,
-				1FDCD5C52D5CCA930036B15F /* DebloatfyTests */,
-				1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */,
-				1FDCD5B22D5CCA920036B15F /* Products */,
+				1FDCD5F12D5E01730036B15F /* .gitignore */,
+				1FDCD5F22D5E02240036B15F /* Debloatfy.app */,
+				1FDCD5E82D5DFE740036B15F /* Sources */,
+				1FDCD5E02D5DFDA00036B15F /* Tests */,
+				1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
-		1FDCD5B22D5CCA920036B15F /* Products */ = {
+		1FDCD5E02D5DFDA00036B15F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FDCD5B12D5CCA920036B15F /* Debloatfy.app */,
-				1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */,
-				1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */,
+				1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */,
 			);
-			name = Products;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		1FDCD5E32D5DFE740036B15F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FDCD5E82D5DFE740036B15F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5EF2D5DFFC90036B15F /* Application */,
+				1FDCD5E52D5DFE740036B15F /* ContentView.swift */,
+				1FDCD5EE2D5DFFC40036B15F /* Core */,
+				1FDCD5F02D5E003F0036B15F /* Resources */,
+				1FDCD5ED2D5DFFB50036B15F /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1FDCD5ED2D5DFFB50036B15F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1FDCD5EE2D5DFFC40036B15F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD6012D5E04EB0036B15F /* Constans */,
+				1FDCD6002D5E04C70036B15F /* Extensions */,
+				1FDCD5FF2D5E04B40036B15F /* Helpers */,
+				1FDCD5F32D5E03BE0036B15F /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1FDCD5EF2D5DFFC90036B15F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */,
+				1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1FDCD5F02D5E003F0036B15F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5E42D5DFE740036B15F /* Assets.xcassets */,
+				1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */,
+				1FDCD6042D5E098D0036B15F /* Fonts */,
+				1FDCD5E32D5DFE740036B15F /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1FDCD5F32D5E03BE0036B15F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5F52D5E03D40036B15F /* Base */,
+				1FDCD5F42D5E03C90036B15F /* Endpoints */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1FDCD5F42D5E03C90036B15F /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		1FDCD5F52D5E03D40036B15F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD5FD2D5E04460036B15F /* Networkable.swift */,
+				1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */,
+				1FDCD5F92D5E04140036B15F /* RequestMethod.swift */,
+				1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1FDCD5FF2D5E04B40036B15F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1FDCD6002D5E04C70036B15F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1FDCD6012D5E04EB0036B15F /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD6022D5E04F10036B15F /* Constans.swift */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		1FDCD6042D5E098D0036B15F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,19 +217,16 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				1FDCD5B32D5CCA920036B15F /* Debloatfy */,
-			);
 			name = Debloatfy;
 			packageProductDependencies = (
 			);
 			productName = Debloatfy;
-			productReference = 1FDCD5B12D5CCA920036B15F /* Debloatfy.app */;
+			productReference = 1FDCD5F22D5E02240036B15F /* Debloatfy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FDCD5C12D5CCA930036B15F /* DebloatfyTests */ = {
+		1FDCD5C12D5CCA930036B15F /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyTests" */;
+			buildConfigurationList = 1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				1FDCD5BE2D5CCA930036B15F /* Sources */,
 				1FDCD5BF2D5CCA930036B15F /* Frameworks */,
@@ -130,38 +237,12 @@
 			dependencies = (
 				1FDCD5C42D5CCA930036B15F /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				1FDCD5C52D5CCA930036B15F /* DebloatfyTests */,
-			);
-			name = DebloatfyTests;
+			name = Tests;
 			packageProductDependencies = (
 			);
 			productName = DebloatfyTests;
-			productReference = 1FDCD5C22D5CCA930036B15F /* DebloatfyTests.xctest */;
+			productReference = 1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1FDCD5CB2D5CCA930036B15F /* DebloatfyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1FDCD5DC2D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyUITests" */;
-			buildPhases = (
-				1FDCD5C82D5CCA930036B15F /* Sources */,
-				1FDCD5C92D5CCA930036B15F /* Frameworks */,
-				1FDCD5CA2D5CCA930036B15F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1FDCD5CE2D5CCA930036B15F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1FDCD5CF2D5CCA930036B15F /* DebloatfyUITests */,
-			);
-			name = DebloatfyUITests;
-			packageProductDependencies = (
-			);
-			productName = DebloatfyUITests;
-			productReference = 1FDCD5CC2D5CCA930036B15F /* DebloatfyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -180,10 +261,6 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 1FDCD5B02D5CCA920036B15F;
 					};
-					1FDCD5CB2D5CCA930036B15F = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 1FDCD5B02D5CCA920036B15F;
-					};
 				};
 			};
 			buildConfigurationList = 1FDCD5AC2D5CCA920036B15F /* Build configuration list for PBXProject "Debloatfy" */;
@@ -196,13 +273,12 @@
 			mainGroup = 1FDCD5A82D5CCA920036B15F;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1FDCD5B22D5CCA920036B15F /* Products */;
+			productRefGroup = 1FDCD5A82D5CCA920036B15F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1FDCD5B02D5CCA920036B15F /* Debloatfy */,
-				1FDCD5C12D5CCA930036B15F /* DebloatfyTests */,
-				1FDCD5CB2D5CCA930036B15F /* DebloatfyUITests */,
+				1FDCD5C12D5CCA930036B15F /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */,
+				1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */,
+				1FDCD5EC2D5DFE740036B15F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,13 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FDCD5CA2D5CCA930036B15F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
+				1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */,
+				1FDCD5E92D5DFE740036B15F /* ContentView.swift in Sources */,
+				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
+				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
+				1FDCD6032D5E04F40036B15F /* Constans.swift in Sources */,
+				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,13 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FDCD5C82D5CCA930036B15F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +334,6 @@
 			isa = PBXTargetDependency;
 			target = 1FDCD5B02D5CCA920036B15F /* Debloatfy */;
 			targetProxy = 1FDCD5C32D5CCA930036B15F /* PBXContainerItemProxy */;
-		};
-		1FDCD5CE2D5CCA930036B15F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FDCD5B02D5CCA920036B15F /* Debloatfy */;
-			targetProxy = 1FDCD5CD2D5CCA930036B15F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -392,14 +461,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Debloatfy/Debloatfy.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Sources/Application/Debloatfy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Debloatfy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "Sources/Resources/Debloatfy-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Nijat Hamid. Debloatfy™. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -417,14 +488,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Debloatfy/Debloatfy.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Sources/Application/Debloatfy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Debloatfy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "Sources/Resources/Debloatfy-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Nijat Hamid. Debloatfy™. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -471,36 +544,6 @@
 			};
 			name = Release;
 		};
-		1FDCD5DD2D5CCA930036B15F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Debloatfy;
-			};
-			name = Debug;
-		};
-		1FDCD5DE2D5CCA930036B15F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.DebloatfyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Debloatfy;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,20 +565,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyTests" */ = {
+		1FDCD5D92D5CCA930036B15F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FDCD5DA2D5CCA930036B15F /* Debug */,
 				1FDCD5DB2D5CCA930036B15F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1FDCD5DC2D5CCA930036B15F /* Build configuration list for PBXNativeTarget "DebloatfyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FDCD5DD2D5CCA930036B15F /* Debug */,
-				1FDCD5DE2D5CCA930036B15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
