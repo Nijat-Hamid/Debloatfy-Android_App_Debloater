@@ -16,7 +16,35 @@ extension Font {
             return cachedFont
         }
         
-        let font = Font.custom(type.rawValue, size: 16,relativeTo: style)
+        let size:CGFloat
+        switch style {
+        case .largeTitle:
+            size = 26
+        case .title:
+            size = 22
+        case .title2:
+            size = 17
+        case .title3:
+            size = 15
+        case .headline:
+            size = 13
+        case .subheadline:
+            size = 11
+        case .body:
+            size = 13
+        case .callout:
+            size = 12
+        case .footnote:
+            size = 10
+        case .caption:
+            size = 10
+        case .caption2:
+            size = 10
+        default:
+            size = 14
+        }
+        
+        let font = Font.custom(type.rawValue, size: size ,relativeTo: style)
             .weight(weight.fontWeight)
         fontCache[key] = font
         return font
