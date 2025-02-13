@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */; };
 		1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */; };
 		1FDCD5E92D5DFE740036B15F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E52D5DFE740036B15F /* ContentView.swift */; };
 		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyTests.swift; sourceTree = "<group>"; };
 		1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FDCD5E42D5DFE740036B15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		1FDCD6002D5E04C70036B15F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildConfigurationList = 1FDCD5D62D5CCA930036B15F /* Build configuration list for PBXNativeTarget "Debloatfy" */;
 			buildPhases = (
 				1FDCD5AD2D5CCA920036B15F /* Sources */,
+				1F1C94002D5E63AB008B6E19 /* Automatically Terminate Old Instances */,
 				1FDCD5AE2D5CCA920036B15F /* Frameworks */,
 				1FDCD5AF2D5CCA920036B15F /* Resources */,
 			);
@@ -304,6 +308,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F1C94002D5E63AB008B6E19 /* Automatically Terminate Old Instances */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Automatically Terminate Old Instances";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nkillall \"$PRODUCT_NAME\" || true\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1FDCD5AD2D5CCA920036B15F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,6 +340,7 @@
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* Constans.swift in Sources */,
+				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
 				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

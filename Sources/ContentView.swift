@@ -14,9 +14,12 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Whereas recognition of the inherent dignity")
-                .fontWeight(.bold)
+                .font(.appTitle)
         }
         .padding()
+        .onAppear {
+            print(NSFont.systemFontSize)
+        }
     }
 }
 

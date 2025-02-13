@@ -12,7 +12,7 @@ struct DebloatfyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.font, .custom("Nunito", size: 16, relativeTo: .body))
+                .environment(\.font, .appBody)
         }
     }
 }
