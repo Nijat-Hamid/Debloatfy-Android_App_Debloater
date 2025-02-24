@@ -708,6 +708,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1F1C94002D5E63AB008B6E19 /* Automatically Terminate Old Instances */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
