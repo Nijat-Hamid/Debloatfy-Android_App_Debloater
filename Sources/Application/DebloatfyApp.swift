@@ -14,6 +14,7 @@ struct DebloatfyApp: App {
             LayoutView()
                 .modifier(AppMod())
                 .modifier(AppEnviromentMod())
+                .modifier(ColorSchemeTransition())
         }
         .windowStyle(.hiddenTitleBar)
     }

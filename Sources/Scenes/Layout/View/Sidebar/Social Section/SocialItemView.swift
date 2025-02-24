@@ -23,7 +23,7 @@ struct SocialItemView: View {
             HStack(spacing:4) {
                 Image(socialItem.icon)
                     .resizable()
-                    .foregroundStyle(isHoveredItem ? .brand : .primary)
+                    .foregroundStyle(isHoveredItem ? .brand : .foregroundPrimary)
                     .frame(width: 22, height: 22)
                     
                     .animation(.snappy, value: isHoveredItem)

@@ -33,6 +33,7 @@
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
 		1F992E742D6BAE7100DCC645 /* AppEnvironmentMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E732D6BAE6800DCC645 /* AppEnvironmentMod.swift */; };
 		1F992E792D6BCCBF00DCC645 /* PageTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */; };
+		1F992E7B2D6BF04B00DCC645 /* ColorSchemeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */; };
 		1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */; };
 		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
 		1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F992E732D6BAE6800DCC645 /* AppEnvironmentMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentMod.swift; sourceTree = "<group>"; };
 		1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTransitionMod.swift; sourceTree = "<group>"; };
+		1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeTransition.swift; sourceTree = "<group>"; };
 		1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyTests.swift; sourceTree = "<group>"; };
 		1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FDCD5E42D5DFE740036B15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		1F1C94462D660BA9008B6E19 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */,
 				1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */,
 				1F992E732D6BAE6800DCC645 /* AppEnvironmentMod.swift */,
 				1F1C94512D66B98F008B6E19 /* AppMod.swift */,
@@ -738,6 +741,7 @@
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
 				1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */,
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
+				1F992E7B2D6BF04B00DCC645 /* ColorSchemeTransition.swift in Sources */,
 				1F1C94422D660AB2008B6E19 /* ADBView.swift in Sources */,
 				1F1C943C2D660A30008B6E19 /* DebloatView.swift in Sources */,
 				1F1C94112D5FEEB1008B6E19 /* NavigationItemView.swift in Sources */,
