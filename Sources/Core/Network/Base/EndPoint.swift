@@ -21,6 +21,6 @@ extension EndPoint {
         return "https"
     }
     var host: String {
-        return Constants.baseUrl
+        return ""
     }
 }

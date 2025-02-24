@@ -11,8 +11,10 @@ import SwiftUI
 struct DebloatfyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.font, .appBody)
+            LayoutView()
+                .modifier(AppMod())
+                .modifier(AppEnviromentMod())
         }
+        .windowStyle(.hiddenTitleBar)
     }
 }
