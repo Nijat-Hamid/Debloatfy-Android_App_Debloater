@@ -17,7 +17,7 @@ struct SidebarView: View {
                 SocialSectionView(socialData: vm.socialData)
                 OthersSectionView()
             }
-            .padding(.horizontal, 8)
+            .padding(.all, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background(Color.backgroundCard.ignoresSafeArea())
