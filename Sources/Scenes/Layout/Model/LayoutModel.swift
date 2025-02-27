@@ -17,6 +17,7 @@ struct Section<T: Identifiable & Equatable>: Identifiable, Equatable {
 struct NavigationItem: Identifiable,Equatable {
     let id = UUID()
     let type: Route
+    var isActive:Bool = true
     var title: String {
         type.title
     }

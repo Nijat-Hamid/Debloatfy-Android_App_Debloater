@@ -17,8 +17,8 @@ final class Router:Routable {
         switch route {
         case .overview: OverviewView()
         case .debloat: DebloatView()
-        case .backup: BackupView()
         case .restore: RestoreView()
+        case .transfer: TransferView()
         case .about: AboutView()
         case .adb: ADBView()
         case .debugging: DebuggingView()

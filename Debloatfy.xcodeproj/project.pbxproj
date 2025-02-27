@@ -262,14 +262,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1F1C942A2D660970008B6E19 /* Backup */ = {
+		1F1C942A2D660970008B6E19 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
 				1F1C942C2D66097F008B6E19 /* Model */,
 				1F1C942D2D66097F008B6E19 /* View */,
 				1F1C942E2D66097F008B6E19 /* ViewModel */,
 			);
-			path = Backup;
+			path = Transfer;
 			sourceTree = "<group>";
 		};
 		1F1C942B2D660976008B6E19 /* Restore */ = {
@@ -498,7 +498,7 @@
 				1F1C94332D6609C2008B6E19 /* Debugging */,
 				1F1C94322D660989008B6E19 /* ADB */,
 				1F1C942B2D660976008B6E19 /* Restore */,
-				1F1C942A2D660970008B6E19 /* Backup */,
+				1F1C942A2D660970008B6E19 /* Transfer */,
 				1F1C94262D660952008B6E19 /* Debloat */,
 				1F1C94202D660925008B6E19 /* Overview */,
 				1F1C94142D60D67F008B6E19 /* Layout */,

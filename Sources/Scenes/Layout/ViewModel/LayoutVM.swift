@@ -13,8 +13,8 @@ final class LayoutVM {
         Section(title: "DASHBOARD", items: [
             NavigationItem(type: .overview),
             NavigationItem(type: .debloat),
-            NavigationItem(type: .backup),
             NavigationItem(type: .restore),
+            NavigationItem(type: .transfer,isActive: false),
             NavigationItem(type: .about)
         ]),
     ]

@@ -22,18 +22,18 @@ protocol Routable {
 enum Route {
     case overview
     case debloat
-    case backup
     case restore
     case about
     case adb
+    case transfer
     case debugging
     
     var title:String {
         switch self {
         case .overview: "Overview"
         case .debloat: "Debloat"
-        case .backup: "Backup"
         case .restore: "Restore"
+        case .transfer: "Transfer"
         case .about: "About"
         default:""
         }
@@ -43,8 +43,8 @@ enum Route {
         switch self {
         case .overview: "bubbles.and.sparkles"
         case .debloat: "square.3.layers.3d"
-        case .backup: "document.on.clipboard"
         case .restore: "wrench.and.screwdriver"
+        case .transfer: "arrow.up.arrow.down"
         case .about: "exclamationmark.circle"
         default: "xmark.shield"
         }
