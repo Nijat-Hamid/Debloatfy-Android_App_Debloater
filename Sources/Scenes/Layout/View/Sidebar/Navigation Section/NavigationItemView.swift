@@ -30,7 +30,7 @@ struct NavigationItemView: View {
                     .resizable()
                     .foregroundStyle(.foregroundPrimary, .brand)
                     .frame(width: 16, height: 16)
-                    .scaleEffect(isHovered && !isActive ? 1.2 : 1.0)
+                    .scaleEffect(isHovered && !isActive && !navigationItem.isDisabled ? 1.2 : 1.0)
                 
                 Text(navigationItem.title)
                     .font(.appTitle3)
@@ -40,10 +40,11 @@ struct NavigationItemView: View {
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
             .fontWeight(.medium)
-            .background(isHovered || isActive  ? Color.hover : Color.clear)
+            .background((isHovered || isActive) && !navigationItem.isDisabled ? Color.hover : Color.clear)
             .clipShape(.rect(cornerRadius: 8))
             .animation(.snappy, value: isHovered)
         }
+        .disabled(navigationItem.isDisabled)
         .onHover{ hovering in
             isHovered = hovering
         }
@@ -53,6 +54,9 @@ struct NavigationItemView: View {
 }
 
 #Preview {
-    NavigationItemView(navigationItem: NavigationItem.mock)
-        .modifier(PreviewMod())
+    VStack {
+        NavigationItemView(navigationItem: NavigationItem.mock)
+        NavigationItemView(navigationItem: NavigationItem.mockFunc())
+    }
+    .modifier(PreviewMod())
 }

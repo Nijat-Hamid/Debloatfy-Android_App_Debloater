@@ -13,10 +13,16 @@ protocol Mockable {
     
     static var mockList: [MockType] { get }
     
+    static func mockFunc() -> MockType
+    
 }
 
 extension Mockable {
     static var mockList: [MockType] {
         get { [] }
+    }
+    
+    static func mockFunc() -> MockType {
+        return mock
     }
 }

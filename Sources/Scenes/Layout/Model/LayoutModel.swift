@@ -17,7 +17,7 @@ struct Section<T: Identifiable & Equatable>: Identifiable, Equatable {
 struct NavigationItem: Identifiable,Equatable {
     let id = UUID()
     let type: Route
-    var isActive:Bool = true
+    var isDisabled:Bool = false
     var title: String {
         type.title
     }
@@ -39,13 +39,18 @@ extension NavigationItem:Mockable {
     typealias MockType = NavigationItem
     
     static var mock: NavigationItem {
-        MockType(type: .overview, isActive: true)
+        MockType(type: .transfer)
+    }
+    
+    static func mockFunc() -> NavigationItem {
+        MockType(type: .transfer, isDisabled: true)
     }
     
     static var mockList: [NavigationItem] {
         [
             MockType(type: .overview),
             MockType(type: .debloat),
+            MockType(type: .transfer, isDisabled: true),
             MockType(type: .about)
         ]
     }
