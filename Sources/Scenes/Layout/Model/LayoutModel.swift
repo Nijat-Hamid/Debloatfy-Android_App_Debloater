@@ -27,7 +27,6 @@ struct NavigationItem: Identifiable,Equatable {
     }
 }
 
-
 struct SocialItem:Identifiable,Equatable {
     let id = UUID()
     let name: String
@@ -35,3 +34,35 @@ struct SocialItem:Identifiable,Equatable {
     let icon: String
 }
 
+
+extension NavigationItem:Mockable {
+    typealias MockType = NavigationItem
+    
+    static var mock: NavigationItem {
+        MockType(type: .overview, isActive: true)
+    }
+    
+    static var mockList: [NavigationItem] {
+        [
+            MockType(type: .overview),
+            MockType(type: .debloat),
+            MockType(type: .about)
+        ]
+    }
+    
+}
+
+extension SocialItem:Mockable {
+    typealias MockType = SocialItem
+    
+    static var mock: SocialItem {
+        MockType(name: "Linkedin", url: "https", icon: "linkedin")
+    }
+    
+    static var mockList: [SocialItem] {
+        [
+            MockType(name: "Github", url: "https", icon: "github"),
+            MockType(name: "Linkedin", url: "https", icon: "linkedin"),
+        ]
+    }
+}

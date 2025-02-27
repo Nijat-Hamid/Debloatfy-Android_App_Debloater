@@ -53,5 +53,6 @@ struct NavigationItemView: View {
 }
 
 #Preview {
-    NavigationItemView(navigationItem: .init(type: .overview))
+    NavigationItemView(navigationItem: NavigationItem.mock)
+        .modifier(PreviewMod())
 }

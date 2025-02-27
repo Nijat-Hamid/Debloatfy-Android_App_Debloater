@@ -45,6 +45,8 @@
 		1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */; };
 		1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
+		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
+		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
 		1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
+		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +397,7 @@
 		1F1C94462D660BA9008B6E19 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */,
 				1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */,
 				1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */,
 				1F992E732D6BAE6800DCC645 /* AppEnvironmentMod.swift */,
@@ -510,13 +515,13 @@
 		1FDCD5EE2D5DFFC40036B15F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1F992E632D6B92B600DCC645 /* Routing */,
 				1F1C945E2D680105008B6E19 /* Componets */,
-				1F1C94462D660BA9008B6E19 /* ViewModifiers */,
 				1FDCD6012D5E04EB0036B15F /* Constans */,
 				1FDCD6002D5E04C70036B15F /* Extensions */,
-				1FDCD5FF2D5E04B40036B15F /* Helpers */,
 				1FDCD5F32D5E03BE0036B15F /* Network */,
+				1FF986AA2D7045CA0008BDA3 /* Protocols */,
+				1F992E632D6B92B600DCC645 /* Routing */,
+				1F1C94462D660BA9008B6E19 /* ViewModifiers */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -568,13 +573,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		1FDCD5FF2D5E04B40036B15F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		1FDCD6002D5E04C70036B15F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +596,14 @@
 				1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1FF986AA2D7045CA0008BDA3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986AB2D7045F50008BDA3 /* Mockable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -748,6 +754,7 @@
 				1F1C94112D5FEEB1008B6E19 /* NavigationItemView.swift in Sources */,
 				1F992E742D6BAE7100DCC645 /* AppEnvironmentMod.swift in Sources */,
 				1F992E792D6BCCBF00DCC645 /* PageTransitionMod.swift in Sources */,
+				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
@@ -757,6 +764,7 @@
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,
+				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
 				1F0945542D69CEE5009DD0C5 /* ThemeIconView.swift in Sources */,
 				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,

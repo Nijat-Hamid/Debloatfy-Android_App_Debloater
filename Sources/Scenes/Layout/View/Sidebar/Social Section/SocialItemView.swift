@@ -50,5 +50,9 @@ struct SocialItemView: View {
 }
 
 #Preview {
-    SocialItemView(socialItem: .init(name: "Linkedin", url: "", icon: "linkedin"), isHoveredItem: true)
+    VStack {
+        SocialItemView(socialItem: SocialItem.mock,isHoveredItem: false)
+        SocialItemView(socialItem: SocialItem.mock,isHoveredItem: true)
+    }
+    .modifier(PreviewMod())
 }

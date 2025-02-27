@@ -28,4 +28,5 @@ struct SidebarView: View {
 
 #Preview {
     SidebarView()
+        .modifier(PreviewMod(padding: 0))
 }

@@ -24,4 +24,5 @@ struct OthersSectionView: View {
 
 #Preview {
     OthersSectionView()
+        .modifier(PreviewMod())
 }

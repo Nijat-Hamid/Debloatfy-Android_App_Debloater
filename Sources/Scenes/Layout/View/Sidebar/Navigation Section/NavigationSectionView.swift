@@ -31,5 +31,6 @@ struct NavigationSectionView: View {
 
 
 #Preview {
-    NavigationSectionView(navigationData: [])
+    NavigationSectionView(navigationData: [.init(title: "Navigation", items: NavigationItem.mockList)])
+        .modifier(PreviewMod())
 }
