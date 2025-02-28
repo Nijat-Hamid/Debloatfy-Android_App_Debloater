@@ -56,7 +56,7 @@ struct NavigationItemView: View {
 #Preview {
     VStack {
         NavigationItemView(navigationItem: NavigationItem.mock)
-        NavigationItemView(navigationItem: NavigationItem.mockFunc())
+        NavigationItemView(navigationItem: NavigationItem.mockFunc(isDisabled: true))
     }
     .modifier(PreviewMod())
 }

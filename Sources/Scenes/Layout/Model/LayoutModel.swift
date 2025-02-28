@@ -42,8 +42,8 @@ extension NavigationItem:Mockable {
         MockType(type: .transfer)
     }
     
-    static func mockFunc() -> NavigationItem {
-        MockType(type: .transfer, isDisabled: true)
+    static func mockFunc(isDisabled:Bool) -> NavigationItem {
+        MockType(type: .transfer, isDisabled: isDisabled)
     }
     
     static var mockList: [NavigationItem] {
