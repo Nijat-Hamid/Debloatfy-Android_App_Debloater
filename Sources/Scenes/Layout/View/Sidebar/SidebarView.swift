@@ -21,7 +21,7 @@ struct SidebarView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background(Color.backgroundCard.ignoresSafeArea())
-        .navigationSplitViewColumnWidth(min: 150, ideal: 150, max: 150)
+        .navigationSplitViewColumnWidth(150)
         .modifier(ColorSchemeTransition())
     }
 }
