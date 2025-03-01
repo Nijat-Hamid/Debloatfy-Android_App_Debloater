@@ -13,6 +13,7 @@ struct AppMod:ViewModifier {
         content
             .background(Color.backgroundPrimary.ignoresSafeArea())
             .foregroundStyle(Color.primary)
+            .frame(minWidth:900,maxWidth: 900,minHeight: 500,maxHeight: 500)
     }
     
 }

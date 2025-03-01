@@ -49,8 +49,6 @@
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoView.swift */; };
 		1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */; };
-		1FF986B62D7195D30008BDA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B52D7195D30008BDA3 /* AppDelegate.swift */; };
-		1FF986B92D7198AC0008BDA3 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B82D7198A20008BDA3 /* System.swift */; };
 		1FF986BC2D71AE750008BDA3 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */; };
 		1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */; };
 /* End PBXBuildFile section */
@@ -112,8 +110,6 @@
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
-		1FF986B52D7195D30008BDA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FF986B82D7198A20008BDA3 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewMod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -531,7 +527,6 @@
 			children = (
 				1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */,
 				1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */,
-				1FF986B52D7195D30008BDA3 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -626,7 +621,6 @@
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1FF986B82D7198A20008BDA3 /* System.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -767,7 +761,6 @@
 			files = (
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
-				1FF986B62D7195D30008BDA3 /* AppDelegate.swift in Sources */,
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
 				1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */,
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
@@ -794,7 +787,6 @@
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
-				1FF986B92D7198AC0008BDA3 /* System.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
