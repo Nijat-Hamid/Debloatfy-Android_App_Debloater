@@ -9,12 +9,16 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        VStack {
-            Text("About Page")
+        ScrollView {
+            VStack(alignment: .center, spacing: 12) {
+                InfoView()
+                ChangelogView()
+            }
         }
     }
 }
 
 #Preview {
     AboutView()
+        .modifier(PreviewMod())
 }

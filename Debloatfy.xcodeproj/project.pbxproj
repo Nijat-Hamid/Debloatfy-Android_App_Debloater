@@ -47,6 +47,12 @@
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
+		1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoView.swift */; };
+		1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */; };
+		1FF986B62D7195D30008BDA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B52D7195D30008BDA3 /* AppDelegate.swift */; };
+		1FF986B92D7198AC0008BDA3 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B82D7198A20008BDA3 /* System.swift */; };
+		1FF986BC2D71AE750008BDA3 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */; };
+		1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,11 @@
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
+		1FF986B12D7191AC0008BDA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
+		1FF986B52D7195D30008BDA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1FF986B82D7198A20008BDA3 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewMod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF986BC2D71AE750008BDA3 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,33 +139,19 @@
 		1F1C94012D5FB7E3008B6E19 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				1F1C94022D5FB7E8008B6E19 /* Model */,
 				1F1C94032D5FB7F0008B6E19 /* View */,
-				1F1C94042D5FB7FB008B6E19 /* ViewModel */,
 			);
 			path = About;
-			sourceTree = "<group>";
-		};
-		1F1C94022D5FB7E8008B6E19 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1F1C94032D5FB7F0008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986B02D7191970008BDA3 /* Changelog Section */,
+				1FF986AF2D7191780008BDA3 /* Info Section */,
 				1F1C941E2D6608EC008B6E19 /* AboutView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1F1C94042D5FB7FB008B6E19 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1F1C94052D5FC81E008B6E19 /* Sidebar */ = {
@@ -397,6 +395,7 @@
 		1F1C94462D660BA9008B6E19 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */,
 				1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */,
 				1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */,
 				1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */,
@@ -518,6 +517,7 @@
 				1F1C945E2D680105008B6E19 /* Componets */,
 				1FDCD6012D5E04EB0036B15F /* Constans */,
 				1FDCD6002D5E04C70036B15F /* Extensions */,
+				1FF986B72D7198770008BDA3 /* Helpers */,
 				1FDCD5F32D5E03BE0036B15F /* Network */,
 				1FF986AA2D7045CA0008BDA3 /* Protocols */,
 				1F992E632D6B92B600DCC645 /* Routing */,
@@ -531,6 +531,7 @@
 			children = (
 				1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */,
 				1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */,
+				1FF986B52D7195D30008BDA3 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -606,6 +607,30 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		1FF986AF2D7191780008BDA3 /* Info Section */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986B12D7191AC0008BDA3 /* InfoView.swift */,
+			);
+			path = "Info Section";
+			sourceTree = "<group>";
+		};
+		1FF986B02D7191970008BDA3 /* Changelog Section */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */,
+			);
+			path = "Changelog Section";
+			sourceTree = "<group>";
+		};
+		1FF986B72D7198770008BDA3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986B82D7198A20008BDA3 /* System.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -624,6 +649,7 @@
 			);
 			name = Debloatfy;
 			packageProductDependencies = (
+				1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */,
 			);
 			productName = Debloatfy;
 			productReference = 1FDCD5F22D5E02240036B15F /* Debloatfy.app */;
@@ -678,6 +704,7 @@
 			mainGroup = 1FDCD5A82D5CCA920036B15F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1FDCD5A82D5CCA920036B15F;
@@ -740,9 +767,12 @@
 			files = (
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
+				1FF986B62D7195D30008BDA3 /* AppDelegate.swift in Sources */,
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
+				1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */,
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
+				1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
@@ -754,6 +784,7 @@
 				1F1C94112D5FEEB1008B6E19 /* NavigationItemView.swift in Sources */,
 				1F992E742D6BAE7100DCC645 /* AppEnvironmentMod.swift in Sources */,
 				1F992E792D6BCCBF00DCC645 /* PageTransitionMod.swift in Sources */,
+				1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */,
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
@@ -763,6 +794,7 @@
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
+				1FF986B92D7198AC0008BDA3 /* System.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
@@ -1036,6 +1068,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FDCD5A92D5CCA920036B15F /* Project object */;
 }
