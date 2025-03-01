@@ -39,5 +39,5 @@ struct ThemeSwitcherView: View {
 
 #Preview {
     ThemeSwitcherView()
-        .frame(width: 200,height: 50)
+        .modifier(PreviewMod())
 }

@@ -61,7 +61,7 @@ extension SocialItem:Mockable {
     typealias MockType = SocialItem
     
     static var mock: SocialItem {
-        MockType(name: "Linkedin", url: "https", icon: "linkedin")
+        MockType(name: "Linkedin", url: "https", icon: "github")
     }
     
     static var mockList: [SocialItem] {

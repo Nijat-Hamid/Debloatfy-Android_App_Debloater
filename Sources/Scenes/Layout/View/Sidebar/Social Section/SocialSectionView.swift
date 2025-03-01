@@ -42,5 +42,5 @@ struct SocialSectionView: View {
 
 #Preview {
     SocialSectionView(socialData: [.init(title: "Social", items: SocialItem.mockList)])
-        .modifier(PreviewMod(width: 200, height: 80))
+        .modifier(PreviewMod(width: 180))
 }

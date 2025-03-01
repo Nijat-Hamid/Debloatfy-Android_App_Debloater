@@ -57,8 +57,8 @@ struct ThemeIconView: View {
                         .scaleEffect(showRays ? 1 : 0)
                         .opacity(showRays ? 1 : 0)
                         .animation(
-                            .spring(duration: 0.3)
-                            .delay(Double(index) * 0.05),
+                            .snappy
+                            .delay(Double(index) * 0.03),
                             value: showRays
                         )
                 }
@@ -98,6 +98,7 @@ struct ThemeIconView: View {
 #Preview {
     VStack(spacing: 20) {
         ThemeIconView(isDark: true)
-            .frame(width: 100, height: 100)
+        ThemeIconView(isDark: false)
     }
+    .modifier(PreviewMod())
 }

@@ -24,8 +24,9 @@ struct SocialItemView: View {
                 Image(socialItem.icon)
                     .resizable()
                     .foregroundStyle(isHoveredItem ? .brand : .foregroundPrimary)
-                    .frame(width: 22, height: 22)
-                    
+                    .clipShape(.rect(cornerRadius: 8))
+                    .frame(width: 20, height: 20)
+                   
                     .animation(.snappy, value: isHoveredItem)
                 ZStack {
                     if isHoveredItem {
@@ -37,14 +38,13 @@ struct SocialItemView: View {
                 .frame(width: isHoveredItem ? nil : 0, alignment: .leading)
                 
             }
-            .padding(.vertical, 2)
+            .padding(.vertical, 4)
             .padding(.horizontal, 6)
             .background(isHoveredItem ? Color.hover : Color.clear)
             .clipShape(.rect(cornerRadius: 8))
             .animation(.snappy, value: isHoveredItem)
         }
         .buttonStyle(.plain)
-        .animation(.snappy, value: isHoveredItem)
         
     }
 }
