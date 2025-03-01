@@ -20,8 +20,8 @@ struct SidebarView: View {
             .padding(.all, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .frame(minWidth:150, maxWidth: 150, maxHeight: .infinity)
         .background(Color.backgroundCard.ignoresSafeArea())
-        .navigationSplitViewColumnWidth(150)
         .modifier(ColorSchemeTransition())
     }
 }

@@ -49,8 +49,6 @@
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoView.swift */; };
 		1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */; };
-		1FF986BC2D71AE750008BDA3 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */; };
-		1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +108,6 @@
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
-		1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewMod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF986BC2D71AE750008BDA3 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +387,6 @@
 		1F1C94462D660BA9008B6E19 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				1FF986BD2D71B6B70008BDA3 /* SplitViewMod.swift */,
 				1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */,
 				1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */,
 				1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */,
@@ -643,7 +638,6 @@
 			);
 			name = Debloatfy;
 			packageProductDependencies = (
-				1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */,
 			);
 			productName = Debloatfy;
 			productReference = 1FDCD5F22D5E02240036B15F /* Debloatfy.app */;
@@ -698,7 +692,6 @@
 			mainGroup = 1FDCD5A82D5CCA920036B15F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1FDCD5A82D5CCA920036B15F;
@@ -762,7 +755,6 @@
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
-				1FF986BE2D71B6BC0008BDA3 /* SplitViewMod.swift in Sources */,
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
 				1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */,
@@ -1060,25 +1052,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1FF986BB2D71AE750008BDA3 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1FF986BA2D71AE750008BDA3 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FDCD5A92D5CCA920036B15F /* Project object */;
 }

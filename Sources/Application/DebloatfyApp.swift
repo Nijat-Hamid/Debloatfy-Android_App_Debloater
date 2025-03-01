@@ -15,7 +15,6 @@ struct DebloatfyApp: App {
                 .modifier(AppMod())
                 .modifier(AppEnviromentMod())
                 .modifier(ColorSchemeTransition())
-                .frame(minWidth:900,maxWidth: 900,minHeight: 500,maxHeight: 500)
         }
         .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 900, height: 500)

@@ -6,23 +6,20 @@
 //
 
 import SwiftUI
-import SwiftUIIntrospect
 
 struct LayoutView: View {
     @State private var vm = LayoutVM()
     @Environment(\.router) private var router
     
     var body: some View {
-        NavigationSplitView {
+        HSplitView {
             SidebarView()
-                .environment(\.layoutVM,vm)
-                .toolbar(.hidden)
-        } detail: {
-            router.makeView(for: router.currentPage)
-                .modifier(PageMod())
-                .modifier(PageTransitionMod())
+            ZStack {
+                router.makeView(for: router.currentPage)
+                    .modifier(PageMod())
+                    .modifier(PageTransitionMod())
+            }
         }
-        .modifier(SplitViewMod())
     }
 }
 
