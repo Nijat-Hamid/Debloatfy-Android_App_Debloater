@@ -11,7 +11,7 @@ struct ColorSchemeTransition:ViewModifier {
     @Environment(\.colorScheme) private var scheme
     func body(content: Content) -> some View {
         content
-            .animation(.smooth, value: scheme)
+            .animation(.snappy, value: scheme)
     }
     
 }

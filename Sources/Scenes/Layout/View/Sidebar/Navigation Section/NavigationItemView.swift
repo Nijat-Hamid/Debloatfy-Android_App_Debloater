@@ -35,8 +35,9 @@ struct NavigationItemView: View {
                 Text(navigationItem.title)
                     .font(.appTitle3)
                     .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
             }
+            .contentShape(Rectangle())
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
             .fontWeight(.medium)

@@ -20,8 +20,9 @@ struct ThemeSwitcherView: View {
                 Text(isDark ? "Dark Mode" :"Light Mode")
                     .font(.appTitle3)
                     .fontWeight(.semibold)
+                Spacer()
             }
-            Spacer()
+            .contentShape(Rectangle())
         }
         .onHover{ hovering in
             isHovered = hovering
