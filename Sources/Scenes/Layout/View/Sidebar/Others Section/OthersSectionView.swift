@@ -16,7 +16,7 @@ struct OthersSectionView: View {
                 .padding(.horizontal, 8)
             
             VStack(alignment: .leading, spacing: 6) {
-                ThemeSwitcherView()
+                ThemeButtonView()
             }
         }
     }

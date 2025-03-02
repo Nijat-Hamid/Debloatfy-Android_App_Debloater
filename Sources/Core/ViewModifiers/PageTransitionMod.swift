@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct PageTransitionMod:ViewModifier {
-    
+struct PageTransitionMod:ViewModifier {    
     private var animationDuration:Double
     private var transitionScale:Double
     

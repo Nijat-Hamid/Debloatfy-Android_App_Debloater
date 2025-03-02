@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct ColorSchemeTransition:ViewModifier {
-    @Environment(\.colorScheme) private var scheme
+    @Environment(\.colorScheme) private var colorScheme
+    @AppStorage("userTheme") private var userTheme:Theme = .dark
+    @State private var isInitialLoad = true
+  
     func body(content: Content) -> some View {
         content
-            .animation(.snappy, value: scheme)
+            .preferredColorScheme(userTheme.colorScheme)
+            .animation(isInitialLoad ? nil : .snappy, value: colorScheme)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    isInitialLoad = false
+                }
+            }
     }
     
 }
