@@ -20,9 +20,13 @@ struct DebuggingView: View {
             }
             DebugIndicatorView(isConnected: isConnected, isAuthorized: isAuthorized)
             Button {
-                print("Check")
+                withAnimation(.bouncy) {
+                    isConnected.toggle()
+                    isAuthorized.toggle()
+                }
             } label: {
                 Text(!isConnected || !isAuthorized ? "Check Status" : " Go to Dashboard" )
+                    .contentTransition(.numericText())
             }
             .buttonStyle(ButtonStyles(type: isConnected && isAuthorized ? .success : .danger))
 

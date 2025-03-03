@@ -1,0 +1,20 @@
+//
+//  TransferView.swift
+//  Debloatfy
+//
+//  Created by Nijat Hamid on 2/19/25.
+//
+
+import SwiftUI
+
+struct TransferView: View {
+    var body: some View {
+        VStack {
+            Text("Transfer Page")
+        }
+    }
+}
+
+#Preview {
+    TransferView()
+}
