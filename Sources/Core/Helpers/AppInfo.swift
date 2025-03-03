@@ -9,7 +9,7 @@ import Foundation
 
 struct AppInfo {
     
-    private static var bundle = Bundle.main
+    private static let bundle = Bundle.main
     private static let unknown = "N/A"
     
     static var bundleID: String {

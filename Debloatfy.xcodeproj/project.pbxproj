@@ -52,6 +52,11 @@
 		1FF986CE2D746C300008BDA3 /* ThemeIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986CD2D746C300008BDA3 /* ThemeIconView.swift */; };
 		1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986CF2D748B930008BDA3 /* AppInfo.swift */; };
 		1FF986D22D7592200008BDA3 /* InfoPurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */; };
+		1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D32D75ABB50008BDA3 /* ADB.swift */; };
+		1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D62D75CC460008BDA3 /* DebugImageView.swift */; };
+		1FF986D92D75CEF80008BDA3 /* DebugStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */; };
+		1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */; };
+		1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,11 @@
 		1FF986CD2D746C300008BDA3 /* ThemeIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIconView.swift; sourceTree = "<group>"; };
 		1FF986CF2D748B930008BDA3 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPurposeView.swift; sourceTree = "<group>"; };
+		1FF986D32D75ABB50008BDA3 /* ADB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADB.swift; sourceTree = "<group>"; };
+		1FF986D62D75CC460008BDA3 /* DebugImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugImageView.swift; sourceTree = "<group>"; };
+		1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStepsView.swift; sourceTree = "<group>"; };
+		1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
+		1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +387,7 @@
 		1F1C94392D660A04008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986D52D75CBFA0008BDA3 /* Debugging Section */,
 				1F1C94442D660ACE008B6E19 /* DebuggingView.swift */,
 			);
 			path = View;
@@ -511,6 +522,7 @@
 		1FDCD5EE2D5DFFC40036B15F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986DC2D75EC970008BDA3 /* Styles */,
 				1F1C945E2D680105008B6E19 /* Componets */,
 				1FDCD6012D5E04EB0036B15F /* Constans */,
 				1FDCD6002D5E04C70036B15F /* Extensions */,
@@ -616,9 +628,28 @@
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986D32D75ABB50008BDA3 /* ADB.swift */,
 				1FF986CF2D748B930008BDA3 /* AppInfo.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1FF986D52D75CBFA0008BDA3 /* Debugging Section */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986D62D75CC460008BDA3 /* DebugImageView.swift */,
+				1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */,
+				1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */,
+			);
+			path = "Debugging Section";
+			sourceTree = "<group>";
+		};
+		1FF986DC2D75EC970008BDA3 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -767,6 +798,7 @@
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
 				1FF986D22D7592200008BDA3 /* InfoPurposeView.swift in Sources */,
 				1F992E7B2D6BF04B00DCC645 /* ColorSchemeTransition.swift in Sources */,
+				1FF986D92D75CEF80008BDA3 /* DebugStepsView.swift in Sources */,
 				1F1C94422D660AB2008B6E19 /* ADBView.swift in Sources */,
 				1FF986CE2D746C300008BDA3 /* ThemeIconView.swift in Sources */,
 				1F1C943C2D660A30008B6E19 /* DebloatView.swift in Sources */,
@@ -779,9 +811,13 @@
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
+				1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */,
 				1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */,
+				1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */,
+				1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */,
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
+				1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,

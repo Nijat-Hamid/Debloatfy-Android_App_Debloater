@@ -11,9 +11,13 @@ import SwiftUI
 struct DebloatfyApp: App {
     var body: some Scene {
         WindowGroup {
-            LayoutView()
+            DebuggingView()
                 .modifier(AppMod())
                 .modifier(ColorSchemeTransition())
+            
+//            LayoutView()
+//                .modifier(AppMod())
+//                .modifier(ColorSchemeTransition())
         }
         .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 900, height: 500)

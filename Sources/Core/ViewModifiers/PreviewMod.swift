@@ -23,5 +23,6 @@ struct PreviewMod: ViewModifier {
         content
             .padding(.all, padding)
             .frame(width: width, height: height)
+            .background(Color.backgroundPrimary)
     }
 }
