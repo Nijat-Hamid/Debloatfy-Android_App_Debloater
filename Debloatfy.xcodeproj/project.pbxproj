@@ -46,7 +46,6 @@
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoView.swift */; };
-		1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */; };
 		1FF986C22D731A350008BDA3 /* SectionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C12D731A330008BDA3 /* SectionMod.swift */; };
 		1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */; };
 		1FF986C82D7329FC0008BDA3 /* ThemeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */; };
@@ -109,7 +108,6 @@
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
 		1FF986C12D731A330008BDA3 /* SectionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMod.swift; sourceTree = "<group>"; };
 		1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailView.swift; sourceTree = "<group>"; };
 		1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitchView.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 		1F1C94032D5FB7F0008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1FF986B02D7191970008BDA3 /* Changelog Section */,
 				1FF986AF2D7191780008BDA3 /* Info Section */,
 				1F1C941E2D6608EC008B6E19 /* AboutView.swift */,
 			);
@@ -616,14 +613,6 @@
 			path = "Info Section";
 			sourceTree = "<group>";
 		};
-		1FF986B02D7191970008BDA3 /* Changelog Section */ = {
-			isa = PBXGroup;
-			children = (
-				1FF986B32D7191BF0008BDA3 /* ChangelogView.swift */,
-			);
-			path = "Changelog Section";
-			sourceTree = "<group>";
-		};
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,7 +760,6 @@
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
-				1FF986B42D7191BF0008BDA3 /* ChangelogView.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
