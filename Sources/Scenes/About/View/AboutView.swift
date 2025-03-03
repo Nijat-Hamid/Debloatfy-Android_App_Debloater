@@ -9,11 +9,9 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center, spacing: 12) {
-                InfoView()
-                ChangelogView()
-            }
+        VStack(alignment: .leading) {
+            InfoView()
+            Spacer()
         }
     }
 }

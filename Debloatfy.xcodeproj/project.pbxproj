@@ -51,6 +51,8 @@
 		1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */; };
 		1FF986C82D7329FC0008BDA3 /* ThemeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */; };
 		1FF986CE2D746C300008BDA3 /* ThemeIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986CD2D746C300008BDA3 /* ThemeIconView.swift */; };
+		1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986CF2D748B930008BDA3 /* AppInfo.swift */; };
+		1FF986D22D7592200008BDA3 /* InfoPurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailView.swift; sourceTree = "<group>"; };
 		1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitchView.swift; sourceTree = "<group>"; };
 		1FF986CD2D746C300008BDA3 /* ThemeIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIconView.swift; sourceTree = "<group>"; };
+		1FF986CF2D748B930008BDA3 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPurposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,6 +611,7 @@
 			children = (
 				1FF986B12D7191AC0008BDA3 /* InfoView.swift */,
 				1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */,
+				1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */,
 			);
 			path = "Info Section";
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986CF2D748B930008BDA3 /* AppInfo.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -759,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */,
+				1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */,
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
@@ -770,6 +777,7 @@
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
 				1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */,
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
+				1FF986D22D7592200008BDA3 /* InfoPurposeView.swift in Sources */,
 				1F992E7B2D6BF04B00DCC645 /* ColorSchemeTransition.swift in Sources */,
 				1F1C94422D660AB2008B6E19 /* ADBView.swift in Sources */,
 				1FF986CE2D746C300008BDA3 /* ThemeIconView.swift in Sources */,
@@ -951,8 +959,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sources/Resources/Debloatfy-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Debloatfy - Android App Debloater";
+				INFOPLIST_KEY_CFBundleDisplayName = Debloatfy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Nijat Hamid. Debloatfy™. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -980,8 +989,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sources/Resources/Debloatfy-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Debloatfy - Android App Debloater";
+				INFOPLIST_KEY_CFBundleDisplayName = Debloatfy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Nijat Hamid. Debloatfy™. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
