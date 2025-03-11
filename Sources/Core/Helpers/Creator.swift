@@ -17,8 +17,7 @@ struct Creator {
         fontWeight:Font.Weight = .semibold,
         iconMode:SymbolRenderingMode = .palette,
         size:CGSize = .init(width: 18, height: 18),
-        font:Font = .appTitle3,
-        fontColor:Color = .foregroundPrimary
+        font:Font = .appTitle3
     ) -> some View {
         Label {
             HStack(spacing: spacing) {
@@ -32,10 +31,9 @@ struct Creator {
             Image(systemName: icon)
                 .resizable()
                 .symbolRenderingMode(iconMode)
-                .foregroundStyle(fontColor, .brand)
+                .foregroundStyle(Color.primary, .brand)
                 .frame(width: size.width,height: size.height)
         }
         .font(font)
-        .foregroundStyle(fontColor)
     }
 }
