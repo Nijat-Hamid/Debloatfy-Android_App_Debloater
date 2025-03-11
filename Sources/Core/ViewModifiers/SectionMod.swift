@@ -7,12 +7,24 @@
 
 import SwiftUI
 
+enum SectionType {
+    case automatic
+    case fullWidth
+}
+
 struct SectionMod:ViewModifier {
+
+    private let sectionType:SectionType
+    
+    init(sectionType: SectionType = .fullWidth) {
+        self.sectionType = sectionType
+    }
+    
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth:.infinity)
+            .frame(maxWidth: sectionType == .automatic ? nil : .infinity)
             .padding()
-            .background(VisualEffect(material: .titlebar ,alpha: 0.5))
+            .background(VisualEffect(.card))
             .clipShape(.rect(cornerRadius: 8))
             .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 0)
             .shadow(color: Color.black.opacity(0.2), radius: 12.5, x: 0, y: 0)

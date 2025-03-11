@@ -12,22 +12,14 @@ struct LayoutView: View {
     @Environment(\.router) private var router
     
     var body: some View {
-        NavigationSplitView {
+        HSplitView {
             SidebarView()
-        } detail: {
-            router.makeView(for: router.currentPage)
-                                .modifier(PageMod())
-                                .modifier(BlurryTransitionMod())
+            ZStack {
+                router.makeView(for: router.currentPage)
+                    .modifier(PageMod())
+                    .modifier(BlurryTransitionMod())
+            }
         }
-
-//        HSplitView {
-//            SidebarView()
-//            ZStack {
-//                router.makeView(for: router.currentPage)
-//                    .modifier(PageMod())
-//                    .modifier(BlurryTransitionMod())
-//            }
-//        }
     }
 }
 

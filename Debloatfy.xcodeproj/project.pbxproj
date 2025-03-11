@@ -46,7 +46,7 @@
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
-		1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoView.swift */; };
+		1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */; };
 		1FF986C22D731A350008BDA3 /* SectionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C12D731A330008BDA3 /* SectionMod.swift */; };
 		1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */; };
 		1FF986C82D7329FC0008BDA3 /* ThemeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */; };
@@ -121,7 +121,7 @@
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
-		1FF986B12D7191AC0008BDA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLogoView.swift; sourceTree = "<group>"; };
 		1FF986C12D731A330008BDA3 /* SectionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMod.swift; sourceTree = "<group>"; };
 		1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailView.swift; sourceTree = "<group>"; };
 		1FF986C72D7329FC0008BDA3 /* ThemeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitchView.swift; sourceTree = "<group>"; };
@@ -647,7 +647,7 @@
 		1FF986AF2D7191780008BDA3 /* Info Section */ = {
 			isa = PBXGroup;
 			children = (
-				1FF986B12D7191AC0008BDA3 /* InfoView.swift */,
+				1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */,
 				1FF986C52D731BB10008BDA3 /* InfoDetailView.swift */,
 				1FF986D12D7592200008BDA3 /* InfoPurposeView.swift */,
 			);
@@ -864,7 +864,7 @@
 				1FF986C82D7329FC0008BDA3 /* ThemeSwitchView.swift in Sources */,
 				1F992E792D6BCCBF00DCC645 /* BlurryTransitionMod.swift in Sources */,
 				1FF986EA2D774DE00008BDA3 /* Creator.swift in Sources */,
-				1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */,
+				1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */,
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
