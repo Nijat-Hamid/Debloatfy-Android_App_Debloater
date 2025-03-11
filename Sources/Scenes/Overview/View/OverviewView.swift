@@ -9,8 +9,16 @@ import SwiftUI
 
 struct OverviewView: View {
     var body: some View {
-        VStack {
-            Text("Overview Page")
+        VStack{
+            HStack(alignment: .center) {
+                DevinceInfoImage()
+                Spacer()
+                DeviceInfoParams()
+                Spacer()
+                DeviceAppChart()
+            }
+            .modifier(SectionMod())
+            Spacer()
         }
     }
 }

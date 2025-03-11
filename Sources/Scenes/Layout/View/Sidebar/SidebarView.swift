@@ -21,7 +21,7 @@ struct SidebarView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(minWidth:150, maxWidth: 150, maxHeight: .infinity)
-        .background(Color.backgroundCard.ignoresSafeArea())
+        .background(VisualEffect(material: .sidebar).ignoresSafeArea())
         .modifier(ColorSchemeTransition())
     }
 }

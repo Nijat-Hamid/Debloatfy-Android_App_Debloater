@@ -10,19 +10,7 @@ import SwiftUI
 struct InfoPurposeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label {
-                Text("Purpose:")
-                    .fontWeight(.semibold)
-                Spacer()
-            } icon: {
-                Image(systemName: "questionmark.app")
-                    .resizable()
-                    .symbolRenderingMode(.palette)
-                    .foregroundStyle(.foregroundPrimary, .brand)
-                    .frame(width: 18,height: 18)
-            }
-            .font(.appTitle3)
-            
+            Creator.infoRow(title: "Purpose:", value: "", icon: "questionmark.app")
             VStack(alignment: .leading, spacing: 6) {
                 Text("This app was developed to address the common frustration of bloatware on Android devices. Initially created for personal use, it provides a simple macOS interface to remove unwanted pre-installed applications from Android phones and tablets without requiring root access.")
                 

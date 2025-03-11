@@ -14,7 +14,9 @@ struct AppMod:ViewModifier {
         content
             .environment(\.font, .appBody)
             .environment(\.router, router)
-            .background(Color.backgroundPrimary.ignoresSafeArea())
+//            .toolbarBackground(Color.clear)
+//            .background(Color.backgroundPrimary.ignoresSafeArea())
+            .background(VisualEffect().ignoresSafeArea())
             .foregroundStyle(Color.primary)
             .frame(width: 900,height: 500)
     }

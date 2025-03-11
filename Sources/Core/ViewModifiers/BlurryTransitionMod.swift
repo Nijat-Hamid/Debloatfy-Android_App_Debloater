@@ -1,5 +1,5 @@
 //
-//  PageTransitionMod.swift
+//  BlurryTransitionMod.swift
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 2/24/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageTransitionMod:ViewModifier {    
+struct BlurryTransitionMod:ViewModifier {    
     private var animationDuration:Double
     private var transitionScale:Double
     

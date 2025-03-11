@@ -30,8 +30,9 @@
 		1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94602D680121008B6E19 /* ThemeButtonView.swift */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
-		1F992E792D6BCCBF00DCC645 /* PageTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */; };
+		1F992E792D6BCCBF00DCC645 /* BlurryTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* BlurryTransitionMod.swift */; };
 		1F992E7B2D6BF04B00DCC645 /* ColorSchemeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */; };
+		1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD384EA2D7B6865007FA48B /* VisualEffect.swift */; };
 		1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */; };
 		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
 		1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */; };
@@ -57,6 +58,13 @@
 		1FF986D92D75CEF80008BDA3 /* DebugStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */; };
 		1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */; };
 		1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */; };
+		1FF986E62D77459B0008BDA3 /* DevinceInfoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986E52D77459B0008BDA3 /* DevinceInfoImage.swift */; };
+		1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986E72D7746690008BDA3 /* DeviceInfoParams.swift */; };
+		1FF986EA2D774DE00008BDA3 /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986E92D774DDA0008BDA3 /* Creator.swift */; };
+		1FF986EE2D79A0B70008BDA3 /* DeviceAppChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986ED2D79A0B70008BDA3 /* DeviceAppChart.swift */; };
+		1FF986F12D7B02090008BDA3 /* SearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986F02D7B02090008BDA3 /* SearchInputView.swift */; };
+		1FF986F92D7B28D20008BDA3 /* RemoveFocusOnTapMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986F82D7B28CC0008BDA3 /* RemoveFocusOnTapMod.swift */; };
+		1FF986FC2D7B2BE70008BDA3 /* AppToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986FB2D7B2BE60008BDA3 /* AppToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +102,9 @@
 		1F1C94602D680121008B6E19 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTransitionMod.swift; sourceTree = "<group>"; };
+		1F992E782D6BCCB800DCC645 /* BlurryTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurryTransitionMod.swift; sourceTree = "<group>"; };
 		1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeTransition.swift; sourceTree = "<group>"; };
+		1FD384EA2D7B6865007FA48B /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyTests.swift; sourceTree = "<group>"; };
 		1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FDCD5E42D5DFE740036B15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +133,13 @@
 		1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStepsView.swift; sourceTree = "<group>"; };
 		1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
 		1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		1FF986E52D77459B0008BDA3 /* DevinceInfoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevinceInfoImage.swift; sourceTree = "<group>"; };
+		1FF986E72D7746690008BDA3 /* DeviceInfoParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParams.swift; sourceTree = "<group>"; };
+		1FF986E92D774DDA0008BDA3 /* Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
+		1FF986ED2D79A0B70008BDA3 /* DeviceAppChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAppChart.swift; sourceTree = "<group>"; };
+		1FF986F02D7B02090008BDA3 /* SearchInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputView.swift; sourceTree = "<group>"; };
+		1FF986F82D7B28CC0008BDA3 /* RemoveFocusOnTapMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFocusOnTapMod.swift; sourceTree = "<group>"; };
+		1FF986FB2D7B2BE60008BDA3 /* AppToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +243,7 @@
 		1F1C94222D660932008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986E12D7708AF0008BDA3 /* DeviceInfo */,
 				1F1C94242D660944008B6E19 /* OverviewView.swift */,
 			);
 			path = View;
@@ -403,10 +420,11 @@
 		1F1C94462D660BA9008B6E19 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986F82D7B28CC0008BDA3 /* RemoveFocusOnTapMod.swift */,
 				1FF986C12D731A330008BDA3 /* SectionMod.swift */,
 				1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */,
 				1F992E7A2D6BF04300DCC645 /* ColorSchemeTransition.swift */,
-				1F992E782D6BCCB800DCC645 /* PageTransitionMod.swift */,
+				1F992E782D6BCCB800DCC645 /* BlurryTransitionMod.swift */,
 				1F1C94512D66B98F008B6E19 /* AppMod.swift */,
 				1F1C94472D660BD4008B6E19 /* PageMod.swift */,
 			);
@@ -442,6 +460,9 @@
 		1F1C945E2D680105008B6E19 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				1FD384F22D7CA525007FA48B /* Visual Effect */,
+				1FF986FA2D7B2BD80008BDA3 /* App Toolbar */,
+				1FF986EF2D7B01F70008BDA3 /* Search Input */,
 				1F1C945F2D680110008B6E19 /* Theme Switch */,
 			);
 			path = Componets;
@@ -464,6 +485,14 @@
 				1F992E6F2D6B967400DCC645 /* Routable.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		1FD384F22D7CA525007FA48B /* Visual Effect */ = {
+			isa = PBXGroup;
+			children = (
+				1FD384EA2D7B6865007FA48B /* VisualEffect.swift */,
+			);
+			path = "Visual Effect";
 			sourceTree = "<group>";
 		};
 		1FDCD5A82D5CCA920036B15F = {
@@ -628,6 +657,7 @@
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986E92D774DDA0008BDA3 /* Creator.swift */,
 				1FF986D32D75ABB50008BDA3 /* ADB.swift */,
 				1FF986CF2D748B930008BDA3 /* AppInfo.swift */,
 			);
@@ -650,6 +680,32 @@
 				1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		1FF986E12D7708AF0008BDA3 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986ED2D79A0B70008BDA3 /* DeviceAppChart.swift */,
+				1FF986E52D77459B0008BDA3 /* DevinceInfoImage.swift */,
+				1FF986E72D7746690008BDA3 /* DeviceInfoParams.swift */,
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		1FF986EF2D7B01F70008BDA3 /* Search Input */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986F02D7B02090008BDA3 /* SearchInputView.swift */,
+			);
+			path = "Search Input";
+			sourceTree = "<group>";
+		};
+		1FF986FA2D7B2BD80008BDA3 /* App Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				1FF986FB2D7B2BE60008BDA3 /* AppToolbarView.swift */,
+			);
+			path = "App Toolbar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -784,6 +840,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */,
 				1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */,
 				1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */,
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
@@ -793,6 +850,7 @@
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
+				1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
 				1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */,
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
@@ -804,7 +862,8 @@
 				1F1C943C2D660A30008B6E19 /* DebloatView.swift in Sources */,
 				1F1C94112D5FEEB1008B6E19 /* NavigationItemView.swift in Sources */,
 				1FF986C82D7329FC0008BDA3 /* ThemeSwitchView.swift in Sources */,
-				1F992E792D6BCCBF00DCC645 /* PageTransitionMod.swift in Sources */,
+				1F992E792D6BCCBF00DCC645 /* BlurryTransitionMod.swift in Sources */,
+				1FF986EA2D774DE00008BDA3 /* Creator.swift in Sources */,
 				1FF986B22D7191AC0008BDA3 /* InfoView.swift in Sources */,
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
@@ -812,14 +871,18 @@
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
 				1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */,
+				1FF986EE2D79A0B70008BDA3 /* DeviceAppChart.swift in Sources */,
 				1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */,
 				1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */,
 				1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */,
+				1FF986F92D7B28D20008BDA3 /* RemoveFocusOnTapMod.swift in Sources */,
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
 				1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,
+				1FF986F12D7B02090008BDA3 /* SearchInputView.swift in Sources */,
+				1FF986FC2D7B2BE70008BDA3 /* AppToolbarView.swift in Sources */,
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
 				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
@@ -828,6 +891,7 @@
 				1F1C94252D660944008B6E19 /* OverviewView.swift in Sources */,
 				1F1C94572D67ECC0008B6E19 /* NavigationSectionView.swift in Sources */,
 				1FF986C22D731A350008BDA3 /* SectionMod.swift in Sources */,
+				1FF986E62D77459B0008BDA3 /* DevinceInfoImage.swift in Sources */,
 				1F1C94452D660ACE008B6E19 /* DebuggingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
