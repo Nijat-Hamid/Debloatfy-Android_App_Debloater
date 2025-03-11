@@ -25,14 +25,14 @@ struct PreviewMod: ViewModifier {
         self.previewType = type
     }
     
-    private var background:Color {
+    private var background: AnyView {
         switch previewType {
         case .background:
-            return Color.backgroundPrimary
+            return AnyView(VisualEffect(.background))
         case .card:
-            return Color.backgroundCard
+            return AnyView(VisualEffect(.card))
         case .none:
-            return Color.clear
+            return AnyView(Color.clear)
         }
     }
     
