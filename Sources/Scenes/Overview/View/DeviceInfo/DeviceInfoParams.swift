@@ -16,7 +16,9 @@ struct DeviceInfoParams: View {
                 Creator.infoRow(title: "Android:", value: "v15", icon: "gear.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "Security Update:", value: "2025-02-01", icon: "lock.circle",size: .init(width: 20, height: 20))
             }
+            Spacer()
         }
+        .modifier(SectionMod(sectionType: .fullWidth))
     }
 }
 

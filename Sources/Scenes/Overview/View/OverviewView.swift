@@ -9,17 +9,28 @@ import SwiftUI
 
 struct OverviewView: View {
     var body: some View {
-        VStack{
-            HStack(alignment: .center) {
+        VStack(alignment: .leading) {
+            HStack(spacing:12) {
                 DevinceInfoImage()
-                Spacer()
-                DeviceInfoParams()
-                Spacer()
-                DeviceAppChart()
+                VStack(alignment: .leading,spacing: 12) {
+                    DeviceInfoParams()
+                    DeviceAppChart()
+                }
             }
-            .modifier(SectionMod())
             Spacer()
         }
+        
+//        VStack{
+//            HStack(alignment: .center) {
+//                DevinceInfoImage()
+//                Spacer()
+//                DeviceInfoParams()
+//                Spacer()
+//                DeviceAppChart()
+//            }
+//            .modifier(SectionMod())
+//            Spacer()
+//        }
     }
 }
 

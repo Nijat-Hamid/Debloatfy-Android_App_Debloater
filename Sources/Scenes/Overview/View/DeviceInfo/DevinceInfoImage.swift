@@ -13,19 +13,20 @@ struct DevinceInfoImage: View {
             Image("smartphone")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 130)
+                .frame(maxHeight: .infinity)
             
             VStack(spacing:12) {
                 Image("androidLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80)
+                    .frame(width: 150)
                 
                 Text("android")
-                    .font(.appTitle2)
+                    .font(.appLargeTitle)
             }
             .foregroundStyle(.greenish.gradient)
         }
+        .modifier(SectionMod(sectionType: .automatic))
     }
 }
 

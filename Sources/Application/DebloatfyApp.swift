@@ -11,10 +11,6 @@ import SwiftUI
 struct DebloatfyApp: App {
     var body: some Scene {
         WindowGroup {
-//            DebuggingView()
-//                .modifier(AppMod())
-//                .modifier(ColorSchemeTransition())
-            
             LayoutView()
                 .modifier(AppMod())
                 .modifier(ColorSchemeTransition())

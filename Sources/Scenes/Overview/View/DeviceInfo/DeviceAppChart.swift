@@ -42,7 +42,8 @@ struct DeviceAppChart: View {
             }
         }
         .aspectRatio(contentMode: .fit)
-        .frame(width: 260)
+//        .frame(width: 260)
+        .modifier(SectionMod(sectionType: .fullWidth))
     }
 }
 
