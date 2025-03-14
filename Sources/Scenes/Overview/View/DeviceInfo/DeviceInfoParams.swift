@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeviceInfoParams: View {
     var body: some View {
-        HStack{
+        HStack(spacing: 12){
             VStack(alignment:.leading,spacing: 16) {
                 Creator.infoRow(title: "Company:", value: "Samsung", icon: "link.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "Model:", value: "SM-S916B", icon: "iphone.gen3.circle",size: .init(width: 20, height: 20))
@@ -17,7 +17,6 @@ struct DeviceInfoParams: View {
                 Creator.infoRow(title: "Security:", value: "2025-02-01", icon: "lock.circle",size: .init(width: 20, height: 20))
             }
             .modifier(SectionMod(sectionType: .automatic))
-            Spacer()
             VStack(alignment:.leading,spacing: 16) {
                 Creator.infoRow(title: "ID:", value: "R5CW22MLZ7H", icon: "dot.arrowtriangles.up.right.down.left.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "BL:", value: "S916BXXU8CYB4", icon: "square.and.pencil.circle",size: .init(width: 20, height: 20))
