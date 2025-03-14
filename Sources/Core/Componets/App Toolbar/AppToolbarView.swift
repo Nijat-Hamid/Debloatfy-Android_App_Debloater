@@ -22,9 +22,9 @@ struct AppToolbarView: View {
                 Button {
                     print("Batch Remove")
                 } label: {
-                    Label("Remove", systemImage: "trash")
+                    Label("Refresh", systemImage: "repeat")
                 }
-                .buttonStyle(ButtonStyles(type: .danger,padV: 8))
+                .buttonStyle(ButtonStyles(type: .success,padV: 8))
                 
                 Button {
                     print("Backup and Remove")
@@ -32,10 +32,19 @@ struct AppToolbarView: View {
                     Label("Backup & Remove", systemImage: "arrow.up.trash")
                 }
                 .buttonStyle(ButtonStyles(type: .warning,padV: 8))
+                
+                Button {
+                    print("Batch Remove")
+                } label: {
+                    Label("Remove", systemImage: "trash")
+                }
+                .buttonStyle(ButtonStyles(type: .danger,padV: 8))
+                
             }
             .font(.appHeadline)
             .fontWeight(.semibold)
         }
+        .modifier(SectionMod(sectionType: .fullWidth))
         
     }
 }

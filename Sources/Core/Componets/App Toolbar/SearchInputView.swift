@@ -21,14 +21,14 @@ struct SearchInputView: View {
                 .padding(.leading,8)
                 .padding(.trailing,24)
                 .disableAutocorrection(true)
-                .background(.hover)
+                .background(.clear)
                 .font(.appHeadline)
                 .fontWeight(.semibold)
                 .focused($isSearchFocused)
                 .clipShape(.rect(cornerRadius: 8))
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(isSearchFocused ? Color.brand : Color.backgroundPrimary, lineWidth: 2)
+                        .stroke(isSearchFocused ? Color.brandSecondary : Color.secondary.opacity(0.5), lineWidth: 2)
                 )
                 .animation(.snappy(duration: 0.3), value: isSearchFocused)
                 .onTapGesture {
@@ -54,7 +54,7 @@ struct SearchInputView: View {
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
-                        .foregroundColor(.brand)
+                        .foregroundColor(.secondary)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 16)
                 }

@@ -13,7 +13,7 @@ struct DebloatView: View {
             AppToolbarView()
             Spacer()
         }
-        .modifier(SectionMod())
+        
     }
 }
 

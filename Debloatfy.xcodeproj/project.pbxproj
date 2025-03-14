@@ -462,7 +462,6 @@
 			children = (
 				1FD384F22D7CA525007FA48B /* Visual Effect */,
 				1FF986FA2D7B2BD80008BDA3 /* App Toolbar */,
-				1FF986EF2D7B01F70008BDA3 /* Search Input */,
 				1F1C945F2D680110008B6E19 /* Theme Switch */,
 			);
 			path = Componets;
@@ -692,17 +691,10 @@
 			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
-		1FF986EF2D7B01F70008BDA3 /* Search Input */ = {
-			isa = PBXGroup;
-			children = (
-				1FF986F02D7B02090008BDA3 /* SearchInputView.swift */,
-			);
-			path = "Search Input";
-			sourceTree = "<group>";
-		};
 		1FF986FA2D7B2BD80008BDA3 /* App Toolbar */ = {
 			isa = PBXGroup;
 			children = (
+				1FF986F02D7B02090008BDA3 /* SearchInputView.swift */,
 				1FF986FB2D7B2BE60008BDA3 /* AppToolbarView.swift */,
 			);
 			path = "App Toolbar";
