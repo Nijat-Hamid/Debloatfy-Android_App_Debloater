@@ -13,18 +13,6 @@ struct DebloatView: View {
             AppToolbarView()
             Spacer()
         }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Debloat ")
-                    .font(.appTitle3)
-                    .fontWeight(.semibold)
-//                    .padding(.top,-10)
-//                    .padding(.bottom,5)
-//                    .offset(x:40)
-            }
-            
-        }
-        .toolbarTitleDisplayMode(.inline)
         .modifier(SectionMod())
     }
 }

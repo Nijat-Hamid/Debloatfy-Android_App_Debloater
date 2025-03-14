@@ -11,7 +11,7 @@ struct DeviceInfoParams: View {
     var body: some View {
         HStack{
             VStack(alignment:.leading,spacing: 16) {
-                Creator.infoRow(title: "Manufacturer:", value: "Samsung", icon: "link.circle",size: .init(width: 20, height: 20))
+                Creator.infoRow(title: "Company:", value: "Samsung", icon: "link.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "Model:", value: "SM-S916B", icon: "iphone.gen3.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "Android:", value: "v15", icon: "gear.circle",size: .init(width: 20, height: 20))
                 Creator.infoRow(title: "Security:", value: "2025-02-01", icon: "lock.circle",size: .init(width: 20, height: 20))
