@@ -28,6 +28,7 @@
 		1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94592D67EE24008B6E19 /* SocialSectionView.swift */; };
 		1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C945C2D6800C0008B6E19 /* OthersSectionView.swift */; };
 		1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94602D680121008B6E19 /* ThemeButtonView.swift */; };
+		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
 		1F992E792D6BCCBF00DCC645 /* BlurryTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* BlurryTransitionMod.swift */; };
@@ -56,7 +57,6 @@
 		1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D32D75ABB50008BDA3 /* ADB.swift */; };
 		1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D62D75CC460008BDA3 /* DebugImageView.swift */; };
 		1FF986D92D75CEF80008BDA3 /* DebugStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */; };
-		1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */; };
 		1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */; };
 		1FF986E62D77459B0008BDA3 /* DevinceInfoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986E52D77459B0008BDA3 /* DevinceInfoImage.swift */; };
 		1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986E72D7746690008BDA3 /* DeviceInfoParams.swift */; };
@@ -100,6 +100,7 @@
 		1F1C94592D67EE24008B6E19 /* SocialSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSectionView.swift; sourceTree = "<group>"; };
 		1F1C945C2D6800C0008B6E19 /* OthersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersSectionView.swift; sourceTree = "<group>"; };
 		1F1C94602D680121008B6E19 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
+		1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F992E782D6BCCB800DCC645 /* BlurryTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurryTransitionMod.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		1FF986D32D75ABB50008BDA3 /* ADB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADB.swift; sourceTree = "<group>"; };
 		1FF986D62D75CC460008BDA3 /* DebugImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugImageView.swift; sourceTree = "<group>"; };
 		1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStepsView.swift; sourceTree = "<group>"; };
-		1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
 		1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		1FF986E52D77459B0008BDA3 /* DevinceInfoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevinceInfoImage.swift; sourceTree = "<group>"; };
 		1FF986E72D7746690008BDA3 /* DeviceInfoParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParams.swift; sourceTree = "<group>"; };
@@ -667,9 +667,9 @@
 		1FF986D52D75CBFA0008BDA3 /* Debugging Section */ = {
 			isa = PBXGroup;
 			children = (
+				1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */,
 				1FF986D62D75CC460008BDA3 /* DebugImageView.swift */,
 				1FF986D82D75CEF80008BDA3 /* DebugStepsView.swift */,
-				1FF986DA2D75E4CD0008BDA3 /* DebugIndicatorView.swift */,
 			);
 			path = "Debugging Section";
 			sourceTree = "<group>";
@@ -874,10 +874,10 @@
 				1FF986EE2D79A0B70008BDA3 /* DeviceAppChart.swift in Sources */,
 				1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */,
 				1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */,
-				1FF986DB2D75E4CD0008BDA3 /* DebugIndicatorView.swift in Sources */,
 				1FF986F92D7B28D20008BDA3 /* RemoveFocusOnTapMod.swift in Sources */,
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
+				1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */,
 				1FF986DE2D75ECA70008BDA3 /* ButtonStyles.swift in Sources */,
 				1F992E702D6B967800DCC645 /* Routable.swift in Sources */,
 				1F1C94402D660A5F008B6E19 /* RestoreView.swift in Sources */,

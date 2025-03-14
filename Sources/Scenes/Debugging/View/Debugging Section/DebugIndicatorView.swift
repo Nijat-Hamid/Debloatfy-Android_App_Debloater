@@ -39,7 +39,7 @@ struct DebugIndicatorView: View {
             }
             .font(.appTitle3)
             .fontWeight(.semibold)
-
+            
         }
     }
 }
