@@ -17,7 +17,9 @@ struct Creator {
         fontWeight:Font.Weight = .semibold,
         iconMode:SymbolRenderingMode = .palette,
         size:CGSize = .init(width: 18, height: 18),
-        font:Font = .appTitle3
+        font:Font = .appTitle3,
+        lineLimit: Int = 1,
+        truncationMode: Text.TruncationMode = .tail
     ) -> some View {
         Label {
             HStack(spacing: spacing) {
@@ -25,6 +27,8 @@ struct Creator {
                     .fontWeight(fontWeight)
                 if !onlyTitle {
                     Text(value)
+                        .lineLimit(lineLimit)
+                        .truncationMode(truncationMode)
                 }
             }
         } icon: {
