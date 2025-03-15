@@ -13,7 +13,7 @@ struct SocialItemView: View {
     var isHoveredItem: Bool
         
     @Environment(\.openURL) private var openURL
-    
+    @Environment(\.colorScheme) private var scheme
     var body: some View {
         Button {
             if let url = URL(string: socialItem.url) {
@@ -23,11 +23,11 @@ struct SocialItemView: View {
             HStack(spacing:4) {
                 Image(socialItem.icon)
                     .resizable()
-                    .foregroundStyle(isHoveredItem ? .brand : .primary)
+                    .foregroundStyle(isHoveredItem ? Color.brandSecondary : .primary)
                     .clipShape(.rect(cornerRadius: 8))
                     .frame(width: 20, height: 20)
-                   
                     .animation(.snappy, value: isHoveredItem)
+                    .animation(.snappy, value: scheme)
                 ZStack {
                     if isHoveredItem {
                         Text(socialItem.name)
