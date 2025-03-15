@@ -17,20 +17,7 @@ struct OverviewView: View {
                     DeviceAppChart()
                 }
             }
-            Spacer()
         }
-        
-//        VStack{
-//            HStack(alignment: .center) {
-//                DevinceInfoImage()
-//                Spacer()
-//                DeviceInfoParams()
-//                Spacer()
-//                DeviceAppChart()
-//            }
-//            .modifier(SectionMod())
-//            Spacer()
-//        }
     }
 }
 

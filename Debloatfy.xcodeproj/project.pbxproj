@@ -45,6 +45,8 @@
 		1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */; };
 		1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
+		1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */; };
+		1FF10DD92D85872C00EBECB5 /* DebloatListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */; };
@@ -120,6 +122,8 @@
 		1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
 		1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
+		1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListView.swift; sourceTree = "<group>"; };
+		1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItem.swift; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLogoView.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 		1F1C94282D660966008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FF10DD52D8586FB00EBECB5 /* DebloatList */,
 				1F1C943B2D660A30008B6E19 /* DebloatView.swift */,
 			);
 			path = View;
@@ -635,6 +640,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		1FF10DD52D8586FB00EBECB5 /* DebloatList */ = {
+			isa = PBXGroup;
+			children = (
+				1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */,
+				1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */,
+			);
+			path = DebloatList;
+			sourceTree = "<group>";
+		};
 		1FF986AA2D7045CA0008BDA3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +848,7 @@
 			files = (
 				1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */,
 				1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */,
+				1FF10DD92D85872C00EBECB5 /* DebloatListItem.swift in Sources */,
 				1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */,
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
@@ -860,6 +875,7 @@
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
+				1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
 				1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */,

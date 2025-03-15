@@ -12,7 +12,7 @@ struct PageMod:ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.horizontal, 12)
-            .padding(.bottom, 16)
+            .padding(.bottom, 24)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
