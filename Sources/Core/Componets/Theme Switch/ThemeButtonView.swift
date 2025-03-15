@@ -34,7 +34,7 @@ struct ThemeButtonView: View {
         .buttonStyle(.plain)
         .padding(.vertical, 4)
         .padding(.horizontal, 6)
-        .background(isHovered ? Color.hover : Color.clear)
+        .background(isHovered ? Color.gray.opacity(0.2) : Color.clear)
         .clipShape(.rect(cornerRadius: 8))
         .animation(.snappy, value: isHovered)
     }
@@ -42,5 +42,5 @@ struct ThemeButtonView: View {
 
 #Preview {
     ThemeButtonView()
-        .modifier(PreviewMod())
+        .modifier(PreviewMod(type:.none))
 }

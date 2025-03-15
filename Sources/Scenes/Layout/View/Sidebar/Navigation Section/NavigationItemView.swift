@@ -28,7 +28,7 @@ struct NavigationItemView: View {
                 Image(systemName: navigationItem.icon)
                     .symbolRenderingMode(.palette)
                     .resizable()
-                    .foregroundStyle(.foregroundPrimary, .brand)
+                    .foregroundStyle(.primary, .brand)
                     .frame(width: 16, height: 16)
                     .scaleEffect(isHovered && !isActive && !navigationItem.isDisabled ? 1.2 : 1.0)
                 
@@ -41,7 +41,7 @@ struct NavigationItemView: View {
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
             .fontWeight(.medium)
-            .background((isHovered || isActive) && !navigationItem.isDisabled ? Color.hover : Color.clear)
+            .background((isHovered || isActive) && !navigationItem.isDisabled ? Color.gray.opacity(0.2) : Color.clear)
             .clipShape(.rect(cornerRadius: 8))
             .animation(.snappy, value: isHovered)
         }
@@ -59,5 +59,5 @@ struct NavigationItemView: View {
         NavigationItemView(navigationItem: NavigationItem.mock)
         NavigationItemView(navigationItem: NavigationItem.mockFunc(isDisabled: true))
     }
-    .modifier(PreviewMod())
+    .modifier(PreviewMod(type: .none))
 }

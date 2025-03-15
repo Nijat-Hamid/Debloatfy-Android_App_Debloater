@@ -11,6 +11,7 @@ enum VisualEffectType {
     case sidebar
     case card
     case background
+    case others(NSVisualEffectView.Material)
 }
 
 struct VisualEffect: NSViewRepresentable {
@@ -30,6 +31,9 @@ struct VisualEffect: NSViewRepresentable {
             
         case .background:
             material = .hudWindow
+            alpha = 1
+        case .others(let others):
+            material = others
             alpha = 1
         }
         

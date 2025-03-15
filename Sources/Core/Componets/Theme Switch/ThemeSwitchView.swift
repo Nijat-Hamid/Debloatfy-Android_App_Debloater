@@ -38,7 +38,7 @@ struct ThemeSwitchView: View {
                             ZStack {
                                 if userTheme == theme {
                                     RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color.hover)
+                                        .fill(Color.gray.opacity(0.3))
                                         .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
                                 }
                             }
@@ -50,10 +50,10 @@ struct ThemeSwitchView: View {
                         }
                 }
             }
-            .background(.backgroundCard,in: .rect(cornerRadius: 8))
+            .background(.clear,in: .rect(cornerRadius: 8))
         }
         .padding()
-        .background(Color.backgroundPrimary.ignoresSafeArea())
+        .background(VisualEffect(.card).ignoresSafeArea())
         .modifier(ColorSchemeTransition())
     }
 }
@@ -63,5 +63,5 @@ struct ThemeSwitchView: View {
         ThemeSwitchView(scheme: .dark)
         ThemeSwitchView(scheme: .light)
     }
-    
+    .modifier(PreviewMod(type: .none,width: nil))
 }

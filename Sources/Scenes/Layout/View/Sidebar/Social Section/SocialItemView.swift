@@ -23,7 +23,7 @@ struct SocialItemView: View {
             HStack(spacing:4) {
                 Image(socialItem.icon)
                     .resizable()
-                    .foregroundStyle(isHoveredItem ? .brand : .foregroundPrimary)
+                    .foregroundStyle(isHoveredItem ? .brand : .primary)
                     .clipShape(.rect(cornerRadius: 8))
                     .frame(width: 20, height: 20)
                    
@@ -32,6 +32,7 @@ struct SocialItemView: View {
                     if isHoveredItem {
                         Text(socialItem.name)
                             .font(.appSubHeadline)
+                            .fontWeight(.semibold)
                             .transition(.opacity)
                     }
                 }
@@ -40,7 +41,7 @@ struct SocialItemView: View {
             }
             .padding(.vertical, 4)
             .padding(.horizontal, 6)
-            .background(isHoveredItem ? Color.hover : Color.clear)
+            .background(isHoveredItem ? Color.gray.opacity(0.2) : Color.clear)
             .clipShape(.rect(cornerRadius: 8))
             .animation(.snappy, value: isHoveredItem)
         }

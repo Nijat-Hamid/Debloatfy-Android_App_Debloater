@@ -21,7 +21,7 @@ struct DebugIndicatorView: View {
             } icon: {
                 Image(systemName: isConnected ? "lock.open":"lock")
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(isConnected ? .greenish : .reddish , .foregroundPrimary)
+                    .foregroundStyle(isConnected ? .greenish : .reddish , .primary)
                     .contentTransition(.symbolEffect(.replace.magic(fallback: .downUp.byLayer), options: .nonRepeating))
             }
             .font(.appTitle3)
@@ -34,7 +34,7 @@ struct DebugIndicatorView: View {
             } icon: {
                 Image(systemName: isAuthorized ? "lock.open":"lock")
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(isAuthorized ? .greenish : .reddish , .foregroundPrimary)
+                    .foregroundStyle(isAuthorized ? .greenish : .reddish , .primary)
                     .contentTransition(.symbolEffect(.replace.magic(fallback: .downUp.byLayer), options: .nonRepeating))
             }
             .font(.appTitle3)

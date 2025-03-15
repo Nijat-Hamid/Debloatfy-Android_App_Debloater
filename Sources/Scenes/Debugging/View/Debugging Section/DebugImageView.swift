@@ -13,7 +13,7 @@ struct DebugImageView: View {
         Image(systemName: "cable.connector.slash")
             .font(.system(size: 100))
             .symbolRenderingMode(.palette)
-            .foregroundStyle(.foregroundPrimary, .brand)
+            .foregroundStyle(.primary, .brand)
             .scaleEffect(isScaled ? 1.05 : 1.0)
             .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: isScaled)
             .onAppear {
