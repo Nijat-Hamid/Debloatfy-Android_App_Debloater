@@ -9,11 +9,10 @@ import SwiftUI
 
 struct DebloatView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 12) {
             AppToolbarView()
-            Spacer()
+            DebloatListView()
         }
-        
     }
 }
 

@@ -9,6 +9,10 @@ import SwiftUI
 
 enum ButtonTypes:CaseIterable {
     case success,warning,danger,normal
+    
+    var id:String {
+        String(describing: self)
+    }
 }
 
 struct ButtonStyles:ButtonStyle {
@@ -64,7 +68,7 @@ struct ButtonStyles:ButtonStyle {
         case .success: return .greenish
         case .warning: return .yellowish
         case .danger: return .reddish
-        case .normal: return .hover
+        case .normal: return .mute.opacity(0.5)
         }
     }
     
@@ -85,7 +89,7 @@ struct ButtonStyles:ButtonStyle {
             Button {
                 print("Button Pressed")
             } label: {
-                Text("Button")
+                Text(button.id)
             }
             .buttonStyle(ButtonStyles(type: button))
         }
@@ -93,10 +97,10 @@ struct ButtonStyles:ButtonStyle {
         Button {
             print("Button Pressed")
         } label: {
-            Text("Button")
+            Text("disabled")
         }
         .buttonStyle(ButtonStyles(type: .normal,disable: true))
         .disabled(true)
     }
-    .modifier(PreviewMod())
+    .modifier(PreviewMod(type:.card))
 }

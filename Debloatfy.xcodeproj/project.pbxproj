@@ -47,6 +47,9 @@
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */; };
 		1FF10DD92D85872C00EBECB5 /* DebloatListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */; };
+		1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */; };
+		1FF10DDD2D8870DA00EBECB5 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */; };
+		1FF10DDF2D88A11500EBECB5 /* DebloatListItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */; };
@@ -124,6 +127,9 @@
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
 		1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListView.swift; sourceTree = "<group>"; };
 		1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItem.swift; sourceTree = "<group>"; };
+		1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListHeader.swift; sourceTree = "<group>"; };
+		1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
+		1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItemLabel.swift; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLogoView.swift; sourceTree = "<group>"; };
@@ -645,6 +651,8 @@
 			children = (
 				1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */,
 				1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */,
+				1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */,
+				1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */,
 			);
 			path = DebloatList;
 			sourceTree = "<group>";
@@ -690,6 +698,7 @@
 		1FF986DC2D75EC970008BDA3 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */,
 				1FF986DD2D75ECA70008BDA3 /* ButtonStyles.swift */,
 			);
 			path = Styles;
@@ -856,6 +865,7 @@
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
+				1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
 				1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
@@ -878,10 +888,12 @@
 				1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
+				1FF10DDF2D88A11500EBECB5 /* DebloatListItemLabel.swift in Sources */,
 				1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */,
 				1FF986EE2D79A0B70008BDA3 /* DeviceAppChart.swift in Sources */,
 				1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */,
 				1FF986D42D75ABB60008BDA3 /* ADB.swift in Sources */,
+				1FF10DDD2D8870DA00EBECB5 /* ToggleStyles.swift in Sources */,
 				1FF986F92D7B28D20008BDA3 /* RemoveFocusOnTapMod.swift in Sources */,
 				1F1C94132D60C5B6008B6E19 /* EnvironmentValues+Extension.swift in Sources */,
 				1F1C94192D60D6A6008B6E19 /* LayoutView.swift in Sources */,
