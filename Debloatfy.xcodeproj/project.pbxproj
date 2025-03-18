@@ -50,6 +50,7 @@
 		1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */; };
 		1FF10DDD2D8870DA00EBECB5 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */; };
 		1FF10DDF2D88A11500EBECB5 /* DebloatListItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */; };
+		1FF10DE12D8985FA00EBECB5 /* AnyTransition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DE02D8985F100EBECB5 /* AnyTransition+Extension.swift */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */; };
@@ -130,6 +131,7 @@
 		1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListHeader.swift; sourceTree = "<group>"; };
 		1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 		1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItemLabel.swift; sourceTree = "<group>"; };
+		1FF10DE02D8985F100EBECB5 /* AnyTransition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+Extension.swift"; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLogoView.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 		1FDCD6002D5E04C70036B15F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1FF10DE02D8985F100EBECB5 /* AnyTransition+Extension.swift */,
 				1F1C94122D60C5B1008B6E19 /* EnvironmentValues+Extension.swift */,
 				1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */,
 			);
@@ -906,6 +909,7 @@
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
 				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
+				1FF10DE12D8985FA00EBECB5 /* AnyTransition+Extension.swift in Sources */,
 				1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */,
 				1F1C943E2D660A41008B6E19 /* BackupView.swift in Sources */,
 				1F1C94252D660944008B6E19 /* OverviewView.swift in Sources */,
