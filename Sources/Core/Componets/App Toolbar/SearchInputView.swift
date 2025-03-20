@@ -17,7 +17,7 @@ struct SearchInputView: View {
         ZStack(alignment: .trailing) {
             TextField("Search App", text: $searchText)
                 .textFieldStyle(.plain)
-                .padding(.vertical,8)
+                .padding(.vertical,6)
                 .padding(.leading,8)
                 .padding(.trailing,24)
                 .disableAutocorrection(true)
@@ -64,7 +64,7 @@ struct SearchInputView: View {
                 .modifier(BlurryTransitionMod())
             }
         }
-        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200)
+        .frame(width: 170)
     }
 }
 

@@ -24,14 +24,15 @@ struct DebloatListItem: View {
                 .toggleStyle(ToggleStyles(color: .brand))
                 .frame(width: 30,alignment: .leading)
             
-            DebloatListItemLabel(label: "Facebook",withIcon: true)
+            DebloatListItemLabel(label: "Facebook",width: 120, withIcon: true)
             Spacer()
-            DebloatListItemLabel(label: "com.package.facebook",width: 180)
+            DebloatListItemLabel(label: "com.package.facebook",width: 180,alignment: .center)
             Spacer()
-            DebloatListItemLabel(label: "System",width: 80)
+            DebloatListItemLabel(label: "System",width: 60,alignment: .center)
             Spacer()
-            DebloatListItemLabel(label: "44.3MB",width: 100)
-            
+            DebloatListItemLabel(label: "44.3MB",width: 70,alignment: .center)
+            Spacer()
+            AppActionsView(width: 192)            
         }
         .padding(8)
         .background {
@@ -39,7 +40,7 @@ struct DebloatListItem: View {
                 .fill(Color.secondary.opacity(isHovered ? 0.5 : 0.2))
                 .animation(.snappy, value: isHovered)
         }
-        .frame(maxWidth:.infinity)
+        .frame(width:792)
         .contentShape(Rectangle())
         .onHover { hovering in
             withAnimation {

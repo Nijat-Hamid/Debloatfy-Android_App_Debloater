@@ -20,22 +20,28 @@ struct DebloatListHeader: View {
             
             HStack(spacing:0) {
                 Text("Name")
-                    .frame(width: 150,alignment: .leading)
+                    .padding(.leading,28)
+                    .frame(width: 120,alignment: .leading)
                 
                 Spacer()
                 
                 Text("Package")
-                    .frame(width: 185,alignment: .leading)
+                    .frame(width: 185)
                 
                 Spacer()
                 
                 Text("Type")
-                    .frame(width: 84,alignment: .leading)
+                    .frame(width: 60)
                 
                 Spacer()
                 
                 Text("Size")
-                    .frame(width: 120,alignment: .leading)
+                    .frame(width: 70)
+                
+                Spacer()
+                
+                Text("Actions")
+                    .frame(width: 200)
                 
             }
             .font(.appHeadline)

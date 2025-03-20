@@ -23,7 +23,7 @@ struct ButtonStyles:ButtonStyle {
     private let paddingV:CGFloat
     private let paddingH:CGFloat
     private let cornerRadius:CGFloat
-    private let disableOpacity:CGFloat = 0.7
+    private let disableOpacity:CGFloat = 0.5
     private let pressedScale:CGFloat = 0.96
     
     
@@ -49,6 +49,7 @@ struct ButtonStyles:ButtonStyle {
             .onHover{ hovering in
                 isHovered = hovering
             }
+            .disabled(isDisabled)
     }
     
     private func backgroundWithHoverState(isPressed: Bool) -> Color {

@@ -10,35 +10,57 @@ import SwiftUI
 enum AppToolbarType {
     case debloat
     case restore
+    case logs
+    
+    var btnTitle:
 }
 
 struct AppToolbarView: View {
+    
+    private let type:AppToolbarType
+    
+    init(type: AppToolbarType) {
+        self.type = type
+    }
     
     var body: some View {
         HStack {
             SearchInputView()
             Spacer()
-            HStack(spacing:16) {
+            HStack(spacing:12) {
+                Button {
+                } label: {
+                    Text("Selected: 0")
+                }
+                .buttonStyle(ButtonStyles(type: .normal,disable: true,padV: 6))
+                
                 Button {
                     print("Batch Remove")
                 } label: {
-                    Label("Refresh", systemImage: "repeat")
+                    Text("Refresh")
                 }
-                .buttonStyle(ButtonStyles(type: .success,padV: 8))
+                .buttonStyle(ButtonStyles(type: .normal,padV: 6))
+                
+                Button {
+                    print("Batch Remove")
+                } label: {
+                    Text("Backup")
+                }
+                .buttonStyle(ButtonStyles(type: .success,padV: 6))
                 
                 Button {
                     print("Backup and Remove")
                 } label: {
-                    Label("Backup & Remove", systemImage: "arrow.up.trash")
+                    Text("Backup&Remove")
                 }
-                .buttonStyle(ButtonStyles(type: .warning,padV: 8))
+                .buttonStyle(ButtonStyles(type: .warning,padV: 6))
                 
                 Button {
                     print("Batch Remove")
                 } label: {
-                    Label("Remove", systemImage: "trash")
+                    Text("Remove")
                 }
-                .buttonStyle(ButtonStyles(type: .danger,padV: 8))
+                .buttonStyle(ButtonStyles(type: .danger,padV: 6))
                 
             }
             .font(.appHeadline)

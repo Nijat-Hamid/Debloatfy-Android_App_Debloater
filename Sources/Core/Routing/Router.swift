@@ -22,6 +22,8 @@ final class Router:Routable {
         case .about: AboutView()
         case .adb: ADBView()
         case .debugging: DebuggingView()
+        case .logs: LogsView()
+        case .donate: DonateView()
         }
     }
     

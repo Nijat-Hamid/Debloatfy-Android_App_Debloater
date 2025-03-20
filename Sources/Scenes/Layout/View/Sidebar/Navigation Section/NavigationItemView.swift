@@ -28,8 +28,9 @@ struct NavigationItemView: View {
                 Image(systemName: navigationItem.icon)
                     .symbolRenderingMode(.palette)
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .foregroundStyle(.primary, .brand)
-                    .frame(width: 16, height: 16)
+                    .frame(width: 16)
                     .scaleEffect(isHovered && !isActive && !navigationItem.isDisabled ? 1.2 : 1.0)
                 
                 Text(navigationItem.title)

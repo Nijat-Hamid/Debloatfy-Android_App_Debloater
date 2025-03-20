@@ -27,6 +27,8 @@ enum Route {
     case adb
     case transfer
     case debugging
+    case logs
+    case donate
     
     var title:String {
         switch self {
@@ -35,6 +37,8 @@ enum Route {
         case .restore: "Restore"
         case .transfer: "Transfer"
         case .about: "About"
+        case .logs: "Logs"
+        case .donate: "Donate"
         default:""
         }
     }
@@ -43,9 +47,11 @@ enum Route {
         switch self {
         case .overview: "bubbles.and.sparkles"
         case .debloat: "square.3.layers.3d"
-        case .restore: "wrench.and.screwdriver"
+        case .restore: "checkmark.arrow.trianglehead.counterclockwise"
         case .transfer: "arrow.up.arrow.down"
         case .about: "exclamationmark.circle"
+        case .logs: "document.viewfinder"
+        case .donate: "dollarsign.ring.dashed"
         default: "xmark.shield"
         }
     }

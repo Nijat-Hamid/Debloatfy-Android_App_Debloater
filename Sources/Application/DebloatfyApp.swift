@@ -18,7 +18,7 @@ struct DebloatfyApp: App {
         }
         .windowToolbarStyle(.unifiedCompact)
         .windowStyle(.hiddenTitleBar)
-        .defaultSize(width: 900, height: 500)
+        .defaultSize(width: 1000, height: 500)
         .windowResizability(.contentSize)
     }
 }

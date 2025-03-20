@@ -15,7 +15,9 @@ final class LayoutVM {
             NavigationItem(type: .debloat),
             NavigationItem(type: .restore),
             NavigationItem(type: .transfer,isDisabled: true),
-            NavigationItem(type: .about)
+            NavigationItem(type: .logs),
+            NavigationItem(type: .about),
+            NavigationItem(type: .donate)
         ]),
     ]
     
