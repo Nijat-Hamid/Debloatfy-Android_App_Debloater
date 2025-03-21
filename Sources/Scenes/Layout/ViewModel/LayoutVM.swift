@@ -17,7 +17,6 @@ final class LayoutVM {
             NavigationItem(type: .transfer,isDisabled: true),
             NavigationItem(type: .logs),
             NavigationItem(type: .about),
-            NavigationItem(type: .donate)
         ]),
     ]
     

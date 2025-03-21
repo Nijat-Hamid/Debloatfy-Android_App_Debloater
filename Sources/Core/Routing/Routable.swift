@@ -28,7 +28,6 @@ enum Route {
     case transfer
     case debugging
     case logs
-    case donate
     
     var title:String {
         switch self {
@@ -38,7 +37,6 @@ enum Route {
         case .transfer: "Transfer"
         case .about: "About"
         case .logs: "Logs"
-        case .donate: "Donate"
         default:""
         }
     }
@@ -51,7 +49,6 @@ enum Route {
         case .transfer: "arrow.up.arrow.down"
         case .about: "exclamationmark.circle"
         case .logs: "document.viewfinder"
-        case .donate: "dollarsign.ring.dashed"
         default: "xmark.shield"
         }
     }
