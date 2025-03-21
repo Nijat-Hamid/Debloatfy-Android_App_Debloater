@@ -12,14 +12,14 @@ enum AppToolbarType {
     case restore
     case logs
     
-    var btnTitle:
+//    var btnTitle:
 }
 
 struct AppToolbarView: View {
     
     private let type:AppToolbarType
     
-    init(type: AppToolbarType) {
+    init(type: AppToolbarType = .debloat) {
         self.type = type
     }
     
