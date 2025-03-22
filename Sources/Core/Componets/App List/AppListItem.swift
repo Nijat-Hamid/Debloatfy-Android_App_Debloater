@@ -13,9 +13,11 @@ struct AppListItem: View {
     @State private var check:Bool = false
     
     private var item:Int
+    private let type:AppListType
     
-    init(item: Int) {
+    init(item: Int,type:AppListType) {
         self.item = item
+        self.type = type
     }
     
     var body: some View {
@@ -32,7 +34,7 @@ struct AppListItem: View {
             Spacer()
             AppListItemLabel(label: "44.3MB",width: 70,alignment: .center)
             Spacer()
-            AppActionsView(width: 192)            
+            AppActionsView(type:type,width: 192)
         }
         .padding(8)
         .background {
@@ -52,6 +54,6 @@ struct AppListItem: View {
 }
 
 #Preview {
-    AppListItem(item: 1)
+    AppListItem(item: 1, type: .debloat)
         .modifier(PreviewMod(type: .card,width: 400))
 }

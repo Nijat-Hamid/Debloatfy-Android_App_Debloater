@@ -7,30 +7,11 @@
 
 import SwiftUI
 
-enum AppActionsType {
-    case debloat
-    case restore
-    
-    var btnOne:String {
-        switch self {
-        case .debloat: return "Backup"
-        case .restore: return "Restore"
-        }
-    }
-    
-    var btnTwo:String {
-        switch self {
-        case .debloat: return "Backup&Remove"
-        case .restore: return "Restore&Remove"
-        }
-    }
-}
-
 struct AppActionsView: View {
     private let width:CGFloat
-    private let type:AppActionsType
+    private let type:AppListType
     
-    init(type:AppActionsType = .debloat ,width: CGFloat) {
+    init(type:AppListType,width: CGFloat) {
         self.width = width
         self.type = type
     }
@@ -54,6 +35,6 @@ struct AppActionsView: View {
 }
 
 #Preview {
-    AppActionsView(width: 92)
+    AppActionsView(type: .debloat, width: 92)
         .modifier(PreviewMod(type:.card))
 }

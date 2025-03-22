@@ -11,7 +11,7 @@ struct RestoreView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             AppToolbarView(type: .restore)
-            AppListView()
+            AppListView(type: .restore)
         }
     }
 }
