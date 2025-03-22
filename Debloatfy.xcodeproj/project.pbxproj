@@ -55,6 +55,8 @@
 		1FF10DF02D8B0C5600EBECB5 /* AppActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DEF2D8B0C5600EBECB5 /* AppActionItem.swift */; };
 		1FF10DFB2D8B4A6000EBECB5 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DFA2D8B4A6000EBECB5 /* LogsView.swift */; };
 		1FF10E032D8B50BC00EBECB5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10E022D8B50B800EBECB5 /* View+Extension.swift */; };
+		1FF10E062D8E336A00EBECB5 /* LogListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10E052D8E336A00EBECB5 /* LogListItem.swift */; };
+		1FF10E082D8E3D4100EBECB5 /* LogListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10E072D8E3D4100EBECB5 /* LogListHeader.swift */; };
 		1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AB2D7045F50008BDA3 /* Mockable.swift */; };
 		1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */; };
 		1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */; };
@@ -140,6 +142,8 @@
 		1FF10DEF2D8B0C5600EBECB5 /* AppActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActionItem.swift; sourceTree = "<group>"; };
 		1FF10DFA2D8B4A6000EBECB5 /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		1FF10E022D8B50B800EBECB5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		1FF10E052D8E336A00EBECB5 /* LogListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListItem.swift; sourceTree = "<group>"; };
+		1FF10E072D8E3D4100EBECB5 /* LogListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListHeader.swift; sourceTree = "<group>"; };
 		1FF986AB2D7045F50008BDA3 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		1FF986AD2D7068D60008BDA3 /* PreviewMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMod.swift; sourceTree = "<group>"; };
 		1FF986B12D7191AC0008BDA3 /* InfoLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLogoView.swift; sourceTree = "<group>"; };
@@ -700,6 +704,7 @@
 		1FF10DF82D8B4A4E00EBECB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FF10E042D8E334100EBECB5 /* LogList */,
 				1FF10DFA2D8B4A6000EBECB5 /* LogsView.swift */,
 			);
 			path = View;
@@ -710,6 +715,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1FF10E042D8E334100EBECB5 /* LogList */ = {
+			isa = PBXGroup;
+			children = (
+				1FF10E052D8E336A00EBECB5 /* LogListItem.swift */,
+				1FF10E072D8E3D4100EBECB5 /* LogListHeader.swift */,
+			);
+			path = LogList;
 			sourceTree = "<group>";
 		};
 		1FF986AA2D7045CA0008BDA3 /* Protocols */ = {
@@ -919,6 +933,7 @@
 				1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */,
 				1F1C94522D66B992008B6E19 /* AppMod.swift in Sources */,
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
+				1FF10E082D8E3D4100EBECB5 /* LogListHeader.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
 				1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
@@ -966,6 +981,7 @@
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
 				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
 				1FF10DE12D8985FA00EBECB5 /* AnyTransition+Extension.swift in Sources */,
+				1FF10E062D8E336A00EBECB5 /* LogListItem.swift in Sources */,
 				1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */,
 				1F1C943E2D660A41008B6E19 /* BackupView.swift in Sources */,
 				1F1C94252D660944008B6E19 /* OverviewView.swift in Sources */,

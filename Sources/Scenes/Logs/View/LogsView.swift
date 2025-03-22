@@ -9,7 +9,30 @@ import SwiftUI
 
 struct LogsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing:4) {
+            LogListHeader()
+            VStack(spacing:16) {
+                List {
+                    ForEach(0..<100) { item in
+                        LogListItem()
+                            .listRowInsets(.init(top: 4, leading: -8, bottom: 4, trailing: 0))
+                    }
+                    
+                }
+                .padding(.trailing, -10)
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
+                
+                Button {
+                    print("clear all logs")
+                } label: {
+                    Text("Clear Logs")
+                }
+                .buttonStyle(ButtonStyles(type:.normal,padH: 12))
+                .frame(maxWidth:.infinity,alignment: .trailing)
+            }
+        }
+        .modifier(SectionMod(sectionType: .fullWidth))
     }
 }
 
