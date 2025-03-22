@@ -9,11 +9,9 @@ import SwiftUI
 
 struct RestoreView: View {
     var body: some View {
-        VStack {
-            Text("Restore Page")
-            Button("Test") {
-                print("")
-            }
+        VStack(alignment: .leading, spacing: 12) {
+            AppToolbarView(type: .restore)
+            AppListView()
         }
     }
 }

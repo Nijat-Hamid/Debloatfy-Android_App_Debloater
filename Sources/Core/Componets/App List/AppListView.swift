@@ -1,5 +1,5 @@
 //
-//  DebloatListView.swift
+//  AppListView.swift
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 3/15/25.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct DebloatListView: View {
+struct AppListView: View {
     var body: some View {
         VStack(spacing: 12) {
-            DebloatListHeader()
+            AppListHeader()
             List {
                 ForEach(0..<100) { item in
-                    DebloatListItem(item: item)
+                    AppListItem(item: item)
                         .listRowSeparator(.hidden)
                         .listRowInsets(.init(top: 4, leading: -8, bottom: 4, trailing: 0))
                 }
@@ -28,5 +28,5 @@ struct DebloatListView: View {
 }
 
 #Preview {
-    DebloatListView()
+    AppListView()
 }

@@ -7,20 +7,41 @@
 
 import SwiftUI
 
+enum AppActionsType {
+    case debloat
+    case restore
+    
+    var btnOne:String {
+        switch self {
+        case .debloat: return "Backup"
+        case .restore: return "Restore"
+        }
+    }
+    
+    var btnTwo:String {
+        switch self {
+        case .debloat: return "Backup&Remove"
+        case .restore: return "Restore&Remove"
+        }
+    }
+}
+
 struct AppActionsView: View {
     private let width:CGFloat
+    private let type:AppActionsType
     
-    init(width: CGFloat) {
+    init(type:AppActionsType = .debloat ,width: CGFloat) {
         self.width = width
+        self.type = type
     }
     
     var body: some View {
         HStack(spacing:8) {
-            AppActionItem(title: "Backup", icon: "arrow.trianglehead.2.clockwise",size: 12,type: .success) {
+            AppActionItem(title: type.btnOne, icon: "arrow.trianglehead.2.clockwise",size: 12,type: .success) {
                 print("pressed")
             }
             
-            AppActionItem(title: "Backup&Remove", icon: "arrow.up.trash",size: 12,type: .warning) {
+            AppActionItem(title: type.btnTwo, icon: "arrow.up.trash",size: 12,type: .warning) {
                 print("pressed")
             }
             

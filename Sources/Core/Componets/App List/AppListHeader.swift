@@ -1,5 +1,5 @@
 //
-//  DebloatListHeader.swift
+//  AppListHeader.swift
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 3/15/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DebloatListHeader: View {
+struct AppListHeader: View {
     
     @State private var checkAll:Bool = false
     
@@ -54,6 +54,6 @@ struct DebloatListHeader: View {
 }
 
 #Preview {
-    DebloatListHeader()
+    AppListHeader()
         .modifier(PreviewMod(type: .card,width: 500))
 }

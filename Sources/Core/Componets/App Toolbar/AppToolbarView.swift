@@ -10,9 +10,20 @@ import SwiftUI
 enum AppToolbarType {
     case debloat
     case restore
-    case logs
     
-//    var btnTitle:
+    var btnOne:String {
+        switch self {
+        case .debloat: return "Backup"
+        case .restore: return "Restore"
+        }
+    }
+    
+    var btnTwo:String {
+        switch self {
+        case .debloat: return "Backup&Remove"
+        case .restore: return "Restore&Remove"
+        }
+    }
 }
 
 struct AppToolbarView: View {
@@ -44,14 +55,14 @@ struct AppToolbarView: View {
                 Button {
                     print("Batch Remove")
                 } label: {
-                    Text("Backup")
+                    Text(type.btnOne)
                 }
                 .buttonStyle(ButtonStyles(type: .success,padV: 6))
                 
                 Button {
                     print("Backup and Remove")
                 } label: {
-                    Text("Backup&Remove")
+                    Text(type.btnTwo)
                 }
                 .buttonStyle(ButtonStyles(type: .warning,padV: 6))
                 

@@ -1,5 +1,5 @@
 //
-//  DebloatListItem.swift
+//  AppListItem.swift
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 3/15/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DebloatListItem: View {
+struct AppListItem: View {
     
     @State private var isHovered:Bool = false
     @State private var check:Bool = false
@@ -24,13 +24,13 @@ struct DebloatListItem: View {
                 .toggleStyle(ToggleStyles(color: .brand))
                 .frame(width: 30,alignment: .leading)
             
-            DebloatListItemLabel(label: "Facebook",width: 120, withIcon: true)
+            AppListItemLabel(label: "Facebook",width: 120, withIcon: true)
             Spacer()
-            DebloatListItemLabel(label: "com.package.facebook",width: 180,alignment: .center)
+            AppListItemLabel(label: "com.package.facebook",width: 180,alignment: .center)
             Spacer()
-            DebloatListItemLabel(label: "System",width: 60,alignment: .center)
+            AppListItemLabel(label: "System",width: 60,alignment: .center)
             Spacer()
-            DebloatListItemLabel(label: "44.3MB",width: 70,alignment: .center)
+            AppListItemLabel(label: "44.3MB",width: 70,alignment: .center)
             Spacer()
             AppActionsView(width: 192)            
         }
@@ -52,6 +52,6 @@ struct DebloatListItem: View {
 }
 
 #Preview {
-    DebloatListItem(item: 1)
+    AppListItem(item: 1)
         .modifier(PreviewMod(type: .card,width: 400))
 }

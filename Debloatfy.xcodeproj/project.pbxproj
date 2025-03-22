@@ -45,11 +45,11 @@
 		1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */; };
 		1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
-		1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */; };
-		1FF10DD92D85872C00EBECB5 /* DebloatListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */; };
-		1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */; };
+		1FF10DD72D85870F00EBECB5 /* AppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD62D85870F00EBECB5 /* AppListView.swift */; };
+		1FF10DD92D85872C00EBECB5 /* AppListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DD82D85872C00EBECB5 /* AppListItem.swift */; };
+		1FF10DDB2D85A77A00EBECB5 /* AppListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDA2D85A77A00EBECB5 /* AppListHeader.swift */; };
 		1FF10DDD2D8870DA00EBECB5 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */; };
-		1FF10DDF2D88A11500EBECB5 /* DebloatListItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */; };
+		1FF10DDF2D88A11500EBECB5 /* AppListItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DDE2D88A11500EBECB5 /* AppListItemLabel.swift */; };
 		1FF10DE12D8985FA00EBECB5 /* AnyTransition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DE02D8985F100EBECB5 /* AnyTransition+Extension.swift */; };
 		1FF10DE42D8AE02600EBECB5 /* AppActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DE32D8AE02600EBECB5 /* AppActionsView.swift */; };
 		1FF10DF02D8B0C5600EBECB5 /* AppActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF10DEF2D8B0C5600EBECB5 /* AppActionItem.swift */; };
@@ -132,11 +132,11 @@
 		1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
 		1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
-		1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListView.swift; sourceTree = "<group>"; };
-		1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItem.swift; sourceTree = "<group>"; };
-		1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListHeader.swift; sourceTree = "<group>"; };
+		1FF10DD62D85870F00EBECB5 /* AppListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListView.swift; sourceTree = "<group>"; };
+		1FF10DD82D85872C00EBECB5 /* AppListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListItem.swift; sourceTree = "<group>"; };
+		1FF10DDA2D85A77A00EBECB5 /* AppListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListHeader.swift; sourceTree = "<group>"; };
 		1FF10DDC2D8870D500EBECB5 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
-		1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatListItemLabel.swift; sourceTree = "<group>"; };
+		1FF10DDE2D88A11500EBECB5 /* AppListItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListItemLabel.swift; sourceTree = "<group>"; };
 		1FF10DE02D8985F100EBECB5 /* AnyTransition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+Extension.swift"; sourceTree = "<group>"; };
 		1FF10DE32D8AE02600EBECB5 /* AppActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActionsView.swift; sourceTree = "<group>"; };
 		1FF10DEF2D8B0C5600EBECB5 /* AppActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActionItem.swift; sourceTree = "<group>"; };
@@ -300,7 +300,6 @@
 		1F1C94282D660966008B6E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1FF10DD52D8586FB00EBECB5 /* DebloatList */,
 				1F1C943B2D660A30008B6E19 /* DebloatView.swift */,
 			);
 			path = View;
@@ -485,10 +484,11 @@
 		1F1C945E2D680105008B6E19 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				1FF10E092D8E44D900EBECB5 /* App List */,
 				1FF10DEC2D8B0A4500EBECB5 /* App Actions */,
-				1FD384F22D7CA525007FA48B /* Visual Effect */,
 				1FF986FA2D7B2BD80008BDA3 /* App Toolbar */,
 				1F1C945F2D680110008B6E19 /* Theme Switch */,
+				1FD384F22D7CA525007FA48B /* Visual Effect */,
 			);
 			path = Componets;
 			sourceTree = "<group>";
@@ -664,17 +664,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		1FF10DD52D8586FB00EBECB5 /* DebloatList */ = {
-			isa = PBXGroup;
-			children = (
-				1FF10DD62D85870F00EBECB5 /* DebloatListView.swift */,
-				1FF10DD82D85872C00EBECB5 /* DebloatListItem.swift */,
-				1FF10DDA2D85A77A00EBECB5 /* DebloatListHeader.swift */,
-				1FF10DDE2D88A11500EBECB5 /* DebloatListItemLabel.swift */,
-			);
-			path = DebloatList;
-			sourceTree = "<group>";
-		};
 		1FF10DEC2D8B0A4500EBECB5 /* App Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +713,17 @@
 				1FF10E072D8E3D4100EBECB5 /* LogListHeader.swift */,
 			);
 			path = LogList;
+			sourceTree = "<group>";
+		};
+		1FF10E092D8E44D900EBECB5 /* App List */ = {
+			isa = PBXGroup;
+			children = (
+				1FF10DD62D85870F00EBECB5 /* AppListView.swift */,
+				1FF10DD82D85872C00EBECB5 /* AppListItem.swift */,
+				1FF10DDA2D85A77A00EBECB5 /* AppListHeader.swift */,
+				1FF10DDE2D88A11500EBECB5 /* AppListItemLabel.swift */,
+			);
+			path = "App List";
 			sourceTree = "<group>";
 		};
 		1FF986AA2D7045CA0008BDA3 /* Protocols */ = {
@@ -926,7 +926,7 @@
 			files = (
 				1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */,
 				1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */,
-				1FF10DD92D85872C00EBECB5 /* DebloatListItem.swift in Sources */,
+				1FF10DD92D85872C00EBECB5 /* AppListItem.swift in Sources */,
 				1FF986D02D748B970008BDA3 /* AppInfo.swift in Sources */,
 				1F1C94542D67E826008B6E19 /* SocialItemView.swift in Sources */,
 				1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */,
@@ -935,7 +935,7 @@
 				1F1C941F2D6608EC008B6E19 /* AboutView.swift in Sources */,
 				1FF10E082D8E3D4100EBECB5 /* LogListHeader.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
-				1FF10DDB2D85A77A00EBECB5 /* DebloatListHeader.swift in Sources */,
+				1FF10DDB2D85A77A00EBECB5 /* AppListHeader.swift in Sources */,
 				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
 				1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
@@ -956,10 +956,10 @@
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
 				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
-				1FF10DD72D85870F00EBECB5 /* DebloatListView.swift in Sources */,
+				1FF10DD72D85870F00EBECB5 /* AppListView.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
-				1FF10DDF2D88A11500EBECB5 /* DebloatListItemLabel.swift in Sources */,
+				1FF10DDF2D88A11500EBECB5 /* AppListItemLabel.swift in Sources */,
 				1FF986D72D75CC460008BDA3 /* DebugImageView.swift in Sources */,
 				1FF986EE2D79A0B70008BDA3 /* DeviceAppChart.swift in Sources */,
 				1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */,
