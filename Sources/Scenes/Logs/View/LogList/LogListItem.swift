@@ -33,6 +33,7 @@ struct LogListItem: View {
                 .frame(maxWidth: .infinity,alignment: .leading)
         }
         .padding(.vertical,4)
+        .frame(width:790)
     }
 }
 

@@ -19,7 +19,7 @@ struct LogsView: View {
                     }
                     
                 }
-                .padding(.trailing, -10)
+                .padding(.trailing, -14)
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
                 
