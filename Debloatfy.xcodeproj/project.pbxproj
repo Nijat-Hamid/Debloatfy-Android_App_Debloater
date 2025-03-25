@@ -38,10 +38,6 @@
 		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
 		1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */; };
 		1FDCD5EC2D5DFE740036B15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E42D5DFE740036B15F /* Assets.xcassets */; };
-		1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */; };
-		1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5F92D5E04140036B15F /* RequestMethod.swift */; };
-		1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */; };
-		1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5FD2D5E04460036B15F /* Networkable.swift */; };
 		1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */; };
 		1FDCD6092D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
 		1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */; };
@@ -141,10 +137,6 @@
 		1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyApp.swift; sourceTree = "<group>"; };
 		1FDCD5F12D5E01730036B15F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1FDCD5F22D5E02240036B15F /* Debloatfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debloatfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		1FDCD5F92D5E04140036B15F /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
-		1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		1FDCD5FD2D5E04460036B15F /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		1FDCD6022D5E04F10036B15F /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
 		1FDCD6082D5E0A6F0036B15F /* Nunito-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Variable.ttf"; sourceTree = "<group>"; };
 		1FDCD60B2D5E0B040036B15F /* Debloatfy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debloatfy-Info.plist"; sourceTree = "<group>"; };
@@ -619,7 +611,6 @@
 				1FDCD6012D5E04EB0036B15F /* Constans */,
 				1FDCD6002D5E04C70036B15F /* Extensions */,
 				1FF986B72D7198770008BDA3 /* Helpers */,
-				1FDCD5F32D5E03BE0036B15F /* Network */,
 				1FF986AA2D7045CA0008BDA3 /* Protocols */,
 				1F992E632D6B92B600DCC645 /* Routing */,
 				1F1C94462D660BA9008B6E19 /* Modifiers */,
@@ -645,33 +636,6 @@
 				1FDCD5E32D5DFE740036B15F /* Preview Content */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		1FDCD5F32D5E03BE0036B15F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1FDCD5F52D5E03D40036B15F /* Base */,
-				1FDCD5F42D5E03C90036B15F /* Endpoints */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		1FDCD5F42D5E03C90036B15F /* Endpoints */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Endpoints;
-			sourceTree = "<group>";
-		};
-		1FDCD5F52D5E03D40036B15F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				1FDCD5FD2D5E04460036B15F /* Networkable.swift */,
-				1FDCD5FB2D5E042A0036B15F /* NetworkError.swift */,
-				1FDCD5F92D5E04140036B15F /* RequestMethod.swift */,
-				1FDCD5F62D5E03DD0036B15F /* EndPoint.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		1FDCD6002D5E04C70036B15F /* Extensions */ = {
@@ -1038,10 +1002,8 @@
 				1FF10E082D8E3D4100EBECB5 /* LogListHeader.swift in Sources */,
 				1F1C94482D660BDA008B6E19 /* PageMod.swift in Sources */,
 				1FF10DDB2D85A77A00EBECB5 /* AppListHeader.swift in Sources */,
-				1FDCD5FA2D5E04180036B15F /* RequestMethod.swift in Sources */,
 				1FF986E82D7746690008BDA3 /* DeviceInfoParams.swift in Sources */,
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
-				1FDCD5F72D5E03EB0036B15F /* EndPoint.swift in Sources */,
 				1FF10DFB2D8B4A6000EBECB5 /* LogsView.swift in Sources */,
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
 				1FF10E1F2D91E2F700EBECB5 /* FolderListMenuItem.swift in Sources */,
@@ -1059,7 +1021,6 @@
 				1FF986B22D7191AC0008BDA3 /* InfoLogoView.swift in Sources */,
 				1FF986AE2D7068DA0008BDA3 /* PreviewMod.swift in Sources */,
 				1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */,
-				1FDCD5FE2D5E04490036B15F /* Networkable.swift in Sources */,
 				1FF10DD72D85870F00EBECB5 /* AppListView.swift in Sources */,
 				1FDCD6032D5E04F40036B15F /* GlobalEnums.swift in Sources */,
 				1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */,
@@ -1085,7 +1046,6 @@
 				1FF986FC2D7B2BE70008BDA3 /* AppToolbarView.swift in Sources */,
 				1FF986AC2D7045FA0008BDA3 /* Mockable.swift in Sources */,
 				1F992E722D6B986C00DCC645 /* Router.swift in Sources */,
-				1FDCD5FC2D5E042E0036B15F /* NetworkError.swift in Sources */,
 				1FF10DE12D8985FA00EBECB5 /* AnyTransition+Extension.swift in Sources */,
 				1FF10E062D8E336A00EBECB5 /* LogListItem.swift in Sources */,
 				1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */,
