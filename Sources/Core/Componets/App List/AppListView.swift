@@ -47,6 +47,7 @@ struct AppListView: View {
             .padding(.trailing, -16)
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
+            .modifier(UnavailableMod(type: .empty))
         }
         .modifier(SectionMod(sectionType: .fullWidth))
     }
