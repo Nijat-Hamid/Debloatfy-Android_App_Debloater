@@ -51,10 +51,12 @@ struct VisualEffect: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
-        nsView.material = material
-        nsView.blendingMode = .behindWindow
-        nsView.state = .active
-        nsView.isEmphasized = true
-        nsView.alphaValue = alpha
+        DispatchQueue.main.async {
+            nsView.material = material
+            nsView.blendingMode = .behindWindow
+            nsView.state = .active
+            nsView.isEmphasized = true
+            nsView.alphaValue = alpha
+        }
     }
 }
