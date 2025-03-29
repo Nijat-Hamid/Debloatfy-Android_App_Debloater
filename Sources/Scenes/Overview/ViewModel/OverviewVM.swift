@@ -17,16 +17,7 @@ class OverviewVM {
     }
     
     private(set) var isLoading:Bool = false
-    private(set) var deviceParams:DeviceParamsModel = .init(
-        companyName: "N/A",
-        deviceModel: "N/A",
-        androidVersion: "N/A",
-        securityPatch: "N/A",
-        deviceID: "N/A",
-        deviceBL: "N/A",
-        product: "N/A",
-        build: "N/A"
-    )
+    private(set) var deviceParams:DeviceParamsModel = .init()
     private(set) var appChartData: [AppChartModel] = []
    
     func getDeviceData() async {

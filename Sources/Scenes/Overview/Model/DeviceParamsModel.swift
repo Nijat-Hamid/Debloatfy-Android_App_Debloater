@@ -6,14 +6,14 @@
 //
 
 struct DeviceParamsModel {
-   var companyName:String
-   var deviceModel:String
-   var androidVersion:String
-   var securityPatch:String
-   var deviceID:String
-   var deviceBL:String
-   var product:String
-   var build:String
+    var companyName: String = "N/A"
+    var deviceModel: String = "N/A"
+    var androidVersion: String = "N/A"
+    var securityPatch: String = "N/A"
+    var deviceID: String = "N/A"
+    var deviceBL: String = "N/A"
+    var product: String = "N/A"
+    var build: String = "N/A"
 }
 
 extension DeviceParamsModel:Mockable {
