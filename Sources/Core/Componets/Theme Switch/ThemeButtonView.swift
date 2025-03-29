@@ -37,6 +37,7 @@ struct ThemeButtonView: View {
         .background(isHovered ? Color.gray.opacity(0.2) : Color.clear)
         .clipShape(.rect(cornerRadius: 8))
         .animation(.snappy, value: isHovered)
+        .pointerStyle(.link)
     }
 }
 
