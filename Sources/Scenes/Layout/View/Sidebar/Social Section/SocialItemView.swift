@@ -46,7 +46,7 @@ struct SocialItemView: View {
             .animation(.snappy, value: isHoveredItem)
         }
         .buttonStyle(.plain)
-        
+        .pointerStyle(.link)
     }
 }
 

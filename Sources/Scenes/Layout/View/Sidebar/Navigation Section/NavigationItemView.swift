@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct NavigationItemView: View {
-    @State private var isHovered: Bool = false
     @Environment(\.router) private var router
+    @Environment(\.auth) private var auth
+    @State private var isHovered: Bool = false
     let navigationItem: NavigationItem
     
-    var isActive:Bool {
+    private var isActive:Bool {
         router.currentPage == navigationItem.type
+    }
+    
+    private var isDisabled:Bool {
+        return !auth.isAccessed && (navigationItem.type != .about && navigationItem.type != .overview)
     }
     
     var body: some View {
@@ -31,7 +36,7 @@ struct NavigationItemView: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundStyle(.primary, .brand)
                     .frame(width: 16)
-                    .scaleEffect(isHovered && !isActive && !navigationItem.isDisabled ? 1.2 : 1.0)
+                    .scaleEffect(isHovered && !isActive && !isDisabled ? 1.2 : 1.0)
                 
                 Text(navigationItem.title)
                     .font(.appTitle3)
@@ -42,23 +47,20 @@ struct NavigationItemView: View {
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
             .fontWeight(.medium)
-            .background((isHovered || isActive) && !navigationItem.isDisabled ? Color.gray.opacity(0.2) : Color.clear)
+            .background((isHovered || isActive) && !isDisabled ? Color.gray.opacity(0.2) : Color.clear)
             .clipShape(.rect(cornerRadius: 8))
             .animation(.snappy, value: isHovered)
         }
-        .disabled(navigationItem.isDisabled)
+        .disabled(isDisabled)
         .onHover{ hovering in
             isHovered = hovering
         }
         .buttonStyle(.plain)
-        
+        .pointerStyle(isDisabled ? .default : .link)
     }
 }
 
 #Preview {
-    VStack {
-        NavigationItemView(navigationItem: NavigationItem.mock)
-        NavigationItemView(navigationItem: NavigationItem.mockFunc(isDisabled: true))
-    }
-    .modifier(PreviewMod(type: .none))
+    NavigationItemView(navigationItem: NavigationItem.mock)
+            .modifier(PreviewMod(type: .none))
 }
