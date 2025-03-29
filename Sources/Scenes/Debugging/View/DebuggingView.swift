@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct DebuggingView: View {
-    
-    @State private var isConnected = false
-    @State private var isAuthorized = false
+        
+    @Environment(\.auth) private var auth
     
     var body: some View {
         VStack(spacing:32) {
@@ -18,20 +17,17 @@ struct DebuggingView: View {
                 DebugImageView()
                 DebugStepsView()
             }
-            DebugIndicatorView(isConnected: isConnected, isAuthorized: isAuthorized)
+            DebugIndicatorView(isConnected: auth.isConnected, isAuthorized: auth.isDebugEnabled)
             Button {
-                withAnimation(.bouncy) {
-                    isConnected.toggle()
-                    isAuthorized.toggle()
+                Task {
+                   await auth.startServer()
                 }
             } label: {
-                Text(!isConnected || !isAuthorized ? "Check Status" : " Go to Dashboard" )
+                Text(auth.isAccessed ? "Access Granted" : "Check Again" )
                     .contentTransition(.numericText())
             }
-            .buttonStyle(ButtonStyles(type: isConnected && isAuthorized ? .success : .danger))
-
+            .buttonStyle(ButtonStyles(type: auth.isAccessed ? .success : .danger))
         }
-        .modifier(PageMod())
     }
 }
 
