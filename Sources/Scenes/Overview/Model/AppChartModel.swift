@@ -6,8 +6,8 @@
 //
 
 struct AppChartModel {
-    var category: String
-    var count: Int
+    var category: String = "N/A"
+    var count: Int = 0
 }
 
 extension AppChartModel:Mockable {
