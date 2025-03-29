@@ -11,7 +11,7 @@ protocol Routable {
     
     associatedtype ViewType: View
     
-    var currentPage: Route { get set }
+    var currentPage: Route { get }
     
     func makeView(for route:Route) -> ViewType
     
@@ -24,7 +24,6 @@ enum Route {
     case debloat
     case restore
     case about
-    case adb
     case transfer
     case debugging
     case logs
@@ -43,7 +42,7 @@ enum Route {
     
     var icon:String {
         switch self {
-        case .overview: "bubbles.and.sparkles"
+        case .overview: "tent.circle"
         case .debloat: "square.3.layers.3d"
         case .restore: "checkmark.arrow.trianglehead.counterclockwise"
         case .transfer: "arrow.up.arrow.down"

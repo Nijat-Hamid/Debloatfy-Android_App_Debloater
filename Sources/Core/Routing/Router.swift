@@ -10,7 +10,8 @@ import SwiftUI
 @Observable
 final class Router:Routable {
     
-    var currentPage: Route = .overview
+    private(set) var currentPage: Route = .overview
+    private(set) var debugPage:Route = .debugging
     
     @ViewBuilder
     func makeView(for route: Route) -> some View {
@@ -20,7 +21,6 @@ final class Router:Routable {
         case .restore: RestoreView()
         case .transfer: TransferView()
         case .about: AboutView()
-        case .adb: ADBView()
         case .debugging: DebuggingView()
         case .logs: LogsView()
         }
