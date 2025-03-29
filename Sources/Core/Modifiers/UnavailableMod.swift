@@ -65,7 +65,7 @@ struct UnavailableMod:ViewModifier {
                             .font(.appHeadline)
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .modifier(PageMod())
                 .background(VisualEffect(.background))
                 .clipShape(.rect(cornerRadius: 8))
                     
