@@ -61,7 +61,7 @@ struct SearchInputView: View {
                 .zIndex(1)
                 .buttonStyle(.plain)
                 .padding(.trailing,12)
-                .modifier(BlurryTransitionMod())
+                .modifier(OpacityTransitionMod())
             }
         }
         .frame(width: 170)
