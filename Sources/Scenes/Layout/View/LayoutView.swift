@@ -8,30 +8,23 @@
 import SwiftUI
 
 struct LayoutView: View {
-    @State private var vm = LayoutVM()
     @Environment(\.router) private var router
-    @State private var isAviable = true
+    @Environment(\.auth) private var auth
+    @State private var vm = LayoutVM()
+    
+    private var currentPage:Route {
+        !auth.isAccessed && router.currentPage != .about ? router.debugPage : router.currentPage
+    }
+    
     var body: some View {
         HSplitView {
             SidebarView()
-            if isAviable {
-                ZStack {
-                    router.makeView(for: router.currentPage)
-                        .modifier(PageMod())
-                        .modifier(BlurryTransitionMod())
-                }
-            } else {
-                ContentUnavailableView {
-                    Text("Unaviable")
-                } description: {
-                    Text("No Content")
-                }
-                .background(VisualEffect(.card))
-                .modifier(PageMod())
-                .modifier(BlurryTransitionMod())
-
+                .environment(\.layoutVM,vm)
+            ZStack {
+                router.makeView(for: currentPage)
+                    .modifier(PageMod())
+                    .modifier(OpacityTransitionMod())
             }
-            
         }
     }
 }
