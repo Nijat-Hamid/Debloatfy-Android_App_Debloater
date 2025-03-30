@@ -25,10 +25,7 @@ struct AppListItem: View {
             Toggle("", isOn: $check)
                 .toggleStyle(ToggleStyles(color: .brand))
                 .frame(width: 30,alignment: .leading)
-            
-            AppListItemLabel(label: "Facebook",width: 120, withIcon: true)
-            Spacer()
-            AppListItemLabel(label: "com.package.facebook",width: 180,alignment: .center)
+            AppListItemLabel(label: "com.google.android.apps.docs.editors.sheets",width: 280,withIcon: true)
             Spacer()
             AppListItemLabel(label: "System",width: 60,alignment: .center)
             Spacer()

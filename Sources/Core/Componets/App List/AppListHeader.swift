@@ -19,15 +19,10 @@ struct AppListHeader: View {
                 .background(Color.secondary.opacity(0.2),in: .rect(cornerRadius: 8))
             
             HStack(spacing:0) {
-                Text("Name")
-                    .padding(.leading,28)
-                    .frame(width: 120,alignment: .leading)
-                
-                Spacer()
-                
                 Text("Package")
-                    .frame(width: 185)
-                
+                    .padding(.leading,10)
+                    .frame(width: 277,alignment: .leading)
+
                 Spacer()
                 
                 Text("Type")
