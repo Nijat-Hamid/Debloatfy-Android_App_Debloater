@@ -29,7 +29,6 @@ struct ToggleStyles: ToggleStyle {
                     .foregroundStyle(configuration.isOn ? color : .secondary)
                     .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
                     .imageScale(.large)
-                    .animation(.snappy, value:configuration.isOn)
                 
                 configuration.label
             }

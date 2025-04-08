@@ -25,14 +25,21 @@ struct ButtonStyles:ButtonStyle {
     private let cornerRadius:CGFloat
     private let disableOpacity:CGFloat = 0.5
     private let pressedScale:CGFloat = 0.96
+    private let pointerStyle: PointerStyle
     
-    
-    init(type:ButtonTypes = .normal,disable:Bool = false,padV:CGFloat = 4,padH:CGFloat = 12,radius:CGFloat = 8){
+    init(type:ButtonTypes = .normal,
+         disable:Bool = false,
+         padV:CGFloat = 4,
+         padH:CGFloat = 12,
+         radius:CGFloat = 8,
+         pointerStyle:PointerStyle = .default
+    ){
         buttonType = type
         isDisabled = disable
         paddingV = padV
         paddingH = padH
         cornerRadius = radius
+        self.pointerStyle = pointerStyle
     }
     
     func makeBody(configuration: Configuration) -> some View {
@@ -44,11 +51,11 @@ struct ButtonStyles:ButtonStyle {
             .clipShape(.rect(cornerRadius: cornerRadius))
             .opacity(isDisabled ? disableOpacity : 1)
             .scaleEffect(configuration.isPressed ? pressedScale : 1.0)
-            .animation(.snappy, value: configuration.isPressed)
-            .animation(.snappy, value: isHovered)
+            .animation(.snappy, value: isDisabled || isHovered ||  configuration.isPressed)
             .onHover{ hovering in
                 isHovered = hovering
             }
+            .pointerStyle(isDisabled ? .default : pointerStyle )
             .disabled(isDisabled)
     }
     
