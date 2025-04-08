@@ -8,49 +8,42 @@
 import SwiftUI
 
 struct AppListItem: View {
-    
-    @State private var isHovered:Bool = false
-    @State private var check:Bool = false
-    
-    private var item:Int
+    @Environment(\.selectManager) private var selectManager
+   
+    private let item:AppListModel
     private let type:AppListType
     
-    init(item: Int,type:AppListType) {
+    init(item: AppListModel,type:AppListType) {
         self.item = item
         self.type = type
     }
     
     var body: some View {
         HStack(spacing:10) {
-            Toggle("", isOn: $check)
+            Toggle("", isOn: Binding(
+                get: { selectManager.isSelected(package: item.package)},
+                set: { _ in selectManager.toggle(package: item.package)}
+            ))
                 .toggleStyle(ToggleStyles(color: .brand))
                 .frame(width: 30,alignment: .leading)
-            AppListItemLabel(label: "com.google.android.apps.docs.editors.sheets",width: 280,withIcon: true)
+            AppListItemLabel(label: item.package,width: 280,withIcon: true)
             Spacer()
-            AppListItemLabel(label: "System",width: 60,alignment: .center)
+            AppListItemLabel(label: item.type.rawValue, width: 60,alignment: .center)
             Spacer()
-            AppListItemLabel(label: "44.3MB",width: 70,alignment: .center)
+            AppListItemLabel(label: Utils.formatSize(item.size),width: 70,alignment: .center)
             Spacer()
-            AppActionsView(type:type,width: 192)
+            AppActionsView(type:type,width: 192, item: item)
         }
-        .padding(8)
+        .padding(.horizontal,8)
+        .frame(width:792,height: 38)
         .background {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.secondary.opacity(isHovered ? 0.5 : 0.2))
-                .animation(.snappy, value: isHovered)
+                .fill(Color.secondary.opacity(0.2))
         }
-        .frame(width:792)
-        .contentShape(Rectangle())
-        .onHover { hovering in
-            withAnimation {
-                isHovered = hovering
-            }
-        }
-        
     }
 }
 
 #Preview {
-    AppListItem(item: 1, type: .debloat)
-        .modifier(PreviewMod(type: .card,width: 400))
+    AppListItem(item: AppListModel.mock, type: .debloat)
+        .modifier(PreviewMod(type: .card,width: nil))
 }

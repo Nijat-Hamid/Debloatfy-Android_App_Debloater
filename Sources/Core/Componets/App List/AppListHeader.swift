@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct AppListHeader: View {
+    @Environment(\.selectManager) private var selectManager
+    private let checkingItems:[AppListModel]
     
-    @State private var checkAll:Bool = false
+    init(checkingItems:[AppListModel]) {
+        self.checkingItems = checkingItems
+    }
     
     var body: some View {
         HStack {
-            Toggle("", isOn: $checkAll)
+            Toggle("", isOn: Binding(
+                get: { selectManager.allSelected },
+                set: { newValue in
+                    selectManager.allSelected = newValue
+                    selectManager.toggleAll(items: checkingItems)
+                }
+            ))
                 .toggleStyle(ToggleStyles(color: .brand))
                 .padding(8)
                 .background(Color.secondary.opacity(0.2),in: .rect(cornerRadius: 8))
@@ -36,7 +46,7 @@ struct AppListHeader: View {
                 Spacer()
                 
                 Text("Actions")
-                    .frame(width: 200)
+                    .frame(width: 196)
                 
             }
             .font(.appHeadline)
@@ -49,6 +59,6 @@ struct AppListHeader: View {
 }
 
 #Preview {
-    AppListHeader()
+    AppListHeader(checkingItems: AppListModel.mockList)
         .modifier(PreviewMod(type: .card,width: 500))
 }
