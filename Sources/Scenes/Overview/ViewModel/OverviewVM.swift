@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable
-class OverviewVM {
+final class OverviewVM {
     
     private let auth: Auth
     

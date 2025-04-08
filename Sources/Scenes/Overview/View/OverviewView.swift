@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct OverviewView: View {
-    @Environment(\.auth) private var auth
     @State private var vm = OverviewVM()
     
     var body: some View {
