@@ -64,4 +64,17 @@ struct Utils {
         let downloadsFolder = downloadsURL.appending(path: userName).appending(path: "Downloads")
         return downloadsFolder
     }
+    
+   
+    static func formatSize(_ sizeInMB: String) -> String {
+        if let sizeValue = Double(sizeInMB) {
+            if sizeValue >= 1000 {
+                let sizeInGB = sizeValue / 1000.0
+                return String(format: "%.2f GB", sizeInGB)
+            } else {
+                return "\(sizeInMB) MB"
+            }
+        }
+        return "N/A"
+    }
 }
