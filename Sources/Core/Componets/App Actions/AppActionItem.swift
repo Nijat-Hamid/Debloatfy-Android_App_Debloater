@@ -43,7 +43,7 @@ struct AppActionItem: View {
                 }
             }
         }
-        .buttonStyle(ButtonStyles(type: type,padV: 4,padH: 6))
+        .buttonStyle(ButtonStyles(type: type,padV: 4,padH: 6,pointerStyle: .link))
         .contentShape(Rectangle())
         .onHover { hovering in
             withAnimation(.snappy) {
@@ -55,7 +55,18 @@ struct AppActionItem: View {
 }
 
 #Preview {
-    AppActionItem(title: "Test",icon: "globe",type: .normal){
-        print("pressed")
+    VStack {
+        AppActionItem(title: "Remove",icon: "trash",type: .danger){
+            print("pressed")
+        }
+        
+        AppActionItem(title: "Restore",icon: "arrow.trianglehead.2.clockwise",type: .success){
+            print("pressed")
+        }
+        
+        AppActionItem(title: "Backup&Remove",icon: "arrow.up.trash",type: .warning){
+            print("pressed")
+        }
     }
+    .modifier(PreviewMod())
 }

@@ -9,9 +9,16 @@ import SwiftUI
 
 struct SearchInputView: View {
     
-    @State private var searchText = ""
+    @Binding private var searchText: String
     @FocusState private var isSearchFocused: Bool
     private let maxLength = 20
+    
+    private let isLoading:Bool
+    
+    init(isLoading:Bool,searchText:Binding<String>){
+        self.isLoading = isLoading
+        self._searchText = searchText
+    }
     
     var body: some View {
         ZStack(alignment: .trailing) {
@@ -19,7 +26,7 @@ struct SearchInputView: View {
                 .textFieldStyle(.plain)
                 .padding(.vertical,6)
                 .padding(.leading,8)
-                .padding(.trailing,24)
+                .padding(.trailing,32)
                 .disableAutocorrection(true)
                 .background(.clear)
                 .font(.appHeadline)
@@ -41,11 +48,11 @@ struct SearchInputView: View {
                         searchText = filtered
                     }
                     
-
                     if filtered.count > maxLength {
                         searchText = String(filtered.prefix(maxLength))
                     }
                 }
+                .disabled(isLoading)
             
             if !searchText.isEmpty {
                 Button {
@@ -69,6 +76,6 @@ struct SearchInputView: View {
 }
 
 #Preview {
-    SearchInputView()
+    SearchInputView(isLoading: false, searchText: .constant(""))
         .modifier(PreviewMod(type: .card,width: 250))
 }

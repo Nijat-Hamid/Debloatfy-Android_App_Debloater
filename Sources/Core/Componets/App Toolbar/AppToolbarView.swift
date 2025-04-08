@@ -28,61 +28,143 @@ enum AppToolbarType {
 
 struct AppToolbarView: View {
     
-    private let type:AppToolbarType
+    @Environment(\.selectManager) private var selectManager
+    @Binding private var searchText: String
+    @State private var showConfirmationSheet = false
+    @State private var sheetType: ConfirmationSheet.SheetType = .backup
+    @State private var pendingAction: (() async -> Void)? = nil
     
-    init(type: AppToolbarType = .debloat) {
+    private let type:AppToolbarType
+    private let refreshAction: () async -> Void
+    private let primaryAction: () async -> Void
+    private let secondaryAction: () async -> Void
+    private let removeAction: () async -> Void
+    private let isLoading: Bool
+    private let isProceeding:Bool
+    
+    init(type: AppToolbarType = .debloat,
+         refreshAction: @escaping @Sendable () async -> Void,
+         removeAction: @escaping @Sendable () async -> Void,
+         primaryAction: @escaping @Sendable () async -> Void,
+         secondaryAction: @escaping @Sendable () async -> Void,
+         isLoading:Bool,
+         searchText:Binding<String>,
+         isProceeding:Bool
+    ) {
         self.type = type
+        self.refreshAction = refreshAction
+        self.removeAction = removeAction
+        self.primaryAction = primaryAction
+        self.secondaryAction = secondaryAction
+        self.isLoading = isLoading
+        self._searchText = searchText
+        self.isProceeding = isProceeding
     }
     
     var body: some View {
         HStack {
-            SearchInputView()
+            SearchInputView(isLoading: isLoading,searchText: $searchText)
             Spacer()
             HStack(spacing:12) {
                 Button {
                 } label: {
-                    Text("Selected: 0")
+                    Text("Selected: \(selectManager.selectedCount)")
+                        .contentTransition(.numericText())
+                        .animation(.default, value: selectManager.selectedCount)
                 }
                 .buttonStyle(ButtonStyles(type: .normal,disable: true,padV: 6))
                 
                 Button {
-                    print("Batch Remove")
+                    Task {
+                       await refreshAction()
+                    }
+                    selectManager.resetAllSelect()
+                    
                 } label: {
                     Text("Refresh")
                 }
-                .buttonStyle(ButtonStyles(type: .normal,padV: 6))
+                .buttonStyle(ButtonStyles(
+                    type: .normal,
+                    disable: isLoading,
+                    padV: 6,
+                    pointerStyle: .link))
                 
                 Button {
-                    print("Batch Remove")
+                    sheetType = type == .debloat ? .backup : .restore
+                    pendingAction = primaryAction
+                    showConfirmationSheet = true
                 } label: {
                     Text(type.btnOne)
                 }
-                .buttonStyle(ButtonStyles(type: .success,padV: 6))
+                .buttonStyle(ButtonStyles(
+                    type: .success,
+                    disable: isLoading || selectManager.selectedCount == 0,
+                    padV: 6,
+                    pointerStyle: .link))
                 
                 Button {
-                    print("Backup and Remove")
+                    sheetType = type == .debloat ? .backupRemove : .restoreRemove
+                    pendingAction = secondaryAction
+                    showConfirmationSheet = true
                 } label: {
                     Text(type.btnTwo)
                 }
-                .buttonStyle(ButtonStyles(type: .warning,padV: 6))
+                .buttonStyle(ButtonStyles(
+                    type: .warning,
+                    disable: isLoading || selectManager.selectedCount == 0,
+                    padV: 6,
+                    pointerStyle: .link))
                 
                 Button {
-                    print("Batch Remove")
+                    sheetType = .remove
+                    pendingAction = removeAction
+                    showConfirmationSheet = true
                 } label: {
                     Text("Remove")
                 }
-                .buttonStyle(ButtonStyles(type: .danger,padV: 6))
+                .buttonStyle(ButtonStyles(
+                    type: .danger,
+                    disable: isLoading || selectManager.selectedCount == 0,
+                    padV: 6,
+                    pointerStyle: .link))
                 
             }
             .font(.appHeadline)
             .fontWeight(.semibold)
         }
         .modifier(SectionMod(sectionType: .fullWidth))
+        .sheet(isPresented: $showConfirmationSheet) {
+            ConfirmationSheet(
+                type: $sheetType,
+                isProceeding: isProceeding,
+                appCount: selectManager.selectedCount
+            ) {
+                if let action = pendingAction {
+                    Task {
+                        await action()
+                        DispatchQueue.main.async {
+                            pendingAction = nil
+                            showConfirmationSheet = false
+                        }
+                        
+                    }
+                }
+            }
+            .interactiveDismissDisabled()
+        }
         
     }
 }
 
 #Preview {
-    AppToolbarView()
-        .modifier(PreviewMod(type: .card,width: 600))
+    AppToolbarView(
+        refreshAction: { print("Refresh tapped") },
+        removeAction: { print("Remove tapped") },
+        primaryAction: { print("Primary button tapped") },
+        secondaryAction: { print("Secondary button tapped") },
+        isLoading: false,
+        searchText: .constant("Search"),
+        isProceeding: false
+    )
+        .modifier(PreviewMod(type: .card,width: 750))
 }
