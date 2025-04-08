@@ -42,15 +42,6 @@ final class Auth {
         isConnected = !connectedDevices.isEmpty
         isDebugEnabled = isConnected && !connectedDevices.contains { $0.contains("unauthorized") }
         
-//        isConnected = splittedOutput.count > 1 && splittedOutput
-//            .filter { ($0.contains("device") || $0.contains("unauthorized")) && !$0.contains("List of devices attached") }
-//            .count > 0
-//        
-//        isDebugEnabled = splittedOutput.count > 1 && !splittedOutput
-//            .contains { $0.contains("unauthorized") }
-//        
-//        isLoading = false
-        
     }
     
 }
