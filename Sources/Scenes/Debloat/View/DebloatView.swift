@@ -8,15 +8,67 @@
 import SwiftUI
 
 struct DebloatView: View {
+    @State private var vm = DebloatVM()
+    @State private var searchText = ""
+    
+    private var filteredDeviceAppList:[AppListModel] {
+        if searchText.isEmpty {
+            return vm.deviceAppList
+        } else {
+            return vm.deviceAppList.filter { item in
+                 item.package.contains(searchText.lowercased())
+            }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            AppToolbarView()
-            AppListView()
+            AppToolbarView(
+                refreshAction: vm.getDeviceApps,
+                removeAction: vm.bulkDeleteApps,
+                primaryAction: vm.bulkBackupApps,
+                secondaryAction: vm.bulkBackupAndRemove,
+                isLoading: vm.isLoading,
+                searchText: $searchText,
+                isProceeding: vm.isProceeding
+            )
+            AppListView(
+                data: filteredDeviceAppList,
+                isLoading: vm.isLoading,
+                searchText: searchText
+            )
+            .environment(\.debloatVM,vm)
+           
+        }
+        .environment(\.selectManager,vm.selectManager)
+        .sheet(isPresented: $vm.showActionSheet) {
+            ConfirmationSheet(
+                type: $vm.sheetType,
+                isProceeding: vm.isProceeding,
+                appCount: 1
+            ) {
+                Task {
+                    switch vm.sheetType {
+                    case .remove:
+                        await vm.singleDeleteApp()
+                    case .backup,.restore:
+                        await vm.singleBackup()
+                    case .backupRemove,.restoreRemove:
+                        await vm.singleBackupAndRemove()
+                    }
+                    DispatchQueue.main.async {
+                        vm.closeSheet()
+                    }
+                }
+            }
+            .interactiveDismissDisabled()
+        }
+        .task {
+            await vm.getDeviceApps()
         }
     }
 }
 
 #Preview {
     DebloatView()
-        .modifier(PreviewMod(type: .card,width: nil))
 }
