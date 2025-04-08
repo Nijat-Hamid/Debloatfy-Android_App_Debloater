@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct LogsView: View {
+    
+    @State private var vm = LogsVM(logger: .shared)
+    
     var body: some View {
         VStack(spacing:4) {
             LogListHeader()
             VStack(spacing:16) {
                 List {
-                    ForEach(0..<100) { item in
+                    ForEach(vm.logList) { item in
                         LogListItem()
                             .listRowInsets(.init(top: 4, leading: -8, bottom: 4, trailing: 0))
                     }

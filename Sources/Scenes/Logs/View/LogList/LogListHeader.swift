@@ -10,7 +10,7 @@ import SwiftUI
 struct LogListHeader: View {
     var body: some View {
         HStack(spacing:0) {
-            Text("Time")
+            Text("Date")
                 .frame(width: 160,alignment: .leading)
             
             Spacer()
