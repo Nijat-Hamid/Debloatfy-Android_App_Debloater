@@ -10,8 +10,8 @@ import SwiftUI
 struct RestoreView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            AppToolbarView(type: .restore)
-            AppListView(type: .restore)
+//            AppToolbarView(type: .restore)
+//            AppListView(type: .restore)
         }
     }
 }
