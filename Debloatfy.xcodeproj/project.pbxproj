@@ -31,8 +31,8 @@
 		1F4C5FF52D9D7519000831B1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF42D9D7517000831B1 /* Logger.swift */; };
 		1F4C5FF72D9DBB89000831B1 /* LogsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */; };
 		1F4C5FFA2D9F0D9D000831B1 /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */; };
-		1F4C60032DA44B02000831B1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C60012DA44B02000831B1 /* libc++.dylib */; };
-		1F4C60042DA44D1E000831B1 /* libc++.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 1F4C60012DA44B02000831B1 /* libc++.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F4C60092DA5A4BE000831B1 /* RestoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C60082DA5A4BA000831B1 /* RestoreVM.swift */; };
+		1F4C600B2DA5B3F0000831B1 /* FileKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C600A2DA5B37B000831B1 /* FileKit.swift */; };
 		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
@@ -113,20 +113,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1F4C60052DA44D1E000831B1 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1F4C60042DA44D1E000831B1 /* libc++.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
@@ -154,6 +140,8 @@
 		1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVM.swift; sourceTree = "<group>"; };
 		1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
 		1F4C60012DA44B02000831B1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libc++.dylib"; sourceTree = "<group>"; };
+		1F4C60082DA5A4BA000831B1 /* RestoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreVM.swift; sourceTree = "<group>"; };
+		1F4C600A2DA5B37B000831B1 /* FileKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKit.swift; sourceTree = "<group>"; };
 		1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -232,7 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4C60032DA44B02000831B1 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +428,7 @@
 		1F1C94312D660981008B6E19 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1F4C60082DA5A4BA000831B1 /* RestoreVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -448,18 +436,9 @@
 		1F1C94332D6609C2008B6E19 /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
-				1F1C94382D660A04008B6E19 /* Model */,
 				1F1C94392D660A04008B6E19 /* View */,
-				1F1C943A2D660A04008B6E19 /* ViewModel */,
 			);
 			path = Debugging;
-			sourceTree = "<group>";
-		};
-		1F1C94382D660A04008B6E19 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1F1C94392D660A04008B6E19 /* View */ = {
@@ -469,13 +448,6 @@
 				1F1C94442D660ACE008B6E19 /* DebuggingView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1F1C943A2D660A04008B6E19 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1F1C94462D660BA9008B6E19 /* Modifiers */ = {
@@ -848,6 +820,7 @@
 		1FF986B72D7198770008BDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1F4C600A2DA5B37B000831B1 /* FileKit.swift */,
 				1FF10E482D96314400EBECB5 /* ADB.swift */,
 				1FF986E92D774DDA0008BDA3 /* Creator.swift */,
 				1FF986CF2D748B930008BDA3 /* Utils.swift */,
@@ -904,7 +877,6 @@
 				1F1C94002D5E63AB008B6E19 /* Automatically Terminate Old Instances */,
 				1FDCD5AE2D5CCA920036B15F /* Frameworks */,
 				1FDCD5AF2D5CCA920036B15F /* Resources */,
-				1F4C60052DA44D1E000831B1 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -1058,6 +1030,7 @@
 				1F1C940E2D5FC9D6008B6E19 /* LayoutVM.swift in Sources */,
 				1FF10DFB2D8B4A6000EBECB5 /* LogsView.swift in Sources */,
 				1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */,
+				1F4C600B2DA5B3F0000831B1 /* FileKit.swift in Sources */,
 				1FF10E1F2D91E2F700EBECB5 /* FolderListMenuItem.swift in Sources */,
 				1FF986D22D7592200008BDA3 /* InfoPurposeView.swift in Sources */,
 				1FAD12BE2D9BF735004CF8DC /* SelectManager.swift in Sources */,
@@ -1109,6 +1082,7 @@
 				1F1C943E2D660A41008B6E19 /* TransferView.swift in Sources */,
 				1F1C94252D660944008B6E19 /* OverviewView.swift in Sources */,
 				1F4C5FF52D9D7519000831B1 /* Logger.swift in Sources */,
+				1F4C60092DA5A4BE000831B1 /* RestoreVM.swift in Sources */,
 				1F1C94572D67ECC0008B6E19 /* NavigationSectionView.swift in Sources */,
 				1FF986C22D731A350008BDA3 /* SectionMod.swift in Sources */,
 				1FF986E62D77459B0008BDA3 /* DevinceInfoImage.swift in Sources */,
@@ -1292,8 +1266,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64",
-					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64\\ 2",
-					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1331,8 +1303,6 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64",
-					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64\\ 2",
 					"$(PROJECT_DIR)/Sources/Core/Package/ADB\\ Sdk/lib64",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
