@@ -52,7 +52,15 @@ struct ConfirmationSheet: View {
                     Text(" \(type.description)")
                         .font(.appHeadline)
                         .fontWeight(.medium)
+                    
+                    if type != .remove {
+                        Text("System Apps will be excluded from the backup or restore process. Because of Android's restrictions, you will not be able to restore even if you backup the system apps.")
+                            .font(.appCallout)
+                            .multilineTextAlignment(.center)
+                            .frame(minHeight: 32, alignment: .center)
+                    }
                 }
+                .padding(.horizontal, 60)
             }
             
             Divider()
@@ -105,7 +113,7 @@ struct ConfirmationSheet: View {
 
 #Preview {
     ConfirmationSheet(
-        type:.constant(.backupRemove),
+        type:.constant(.restore),
         isProceeding: false,
         appCount: 10,
         onProceed: {}
