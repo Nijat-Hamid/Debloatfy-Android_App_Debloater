@@ -11,5 +11,6 @@ extension EnvironmentValues {
     @Entry var auth = Auth.shared
     @Entry var selectManager = SelectManager()
     @Entry var debloatVM = DebloatVM()
-//    @Entry var 
+    @Entry var restoreVM = RestoreVM()
+//    @Entry var
 }
