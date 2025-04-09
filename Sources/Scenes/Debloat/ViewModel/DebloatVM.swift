@@ -61,28 +61,26 @@ final class DebloatVM {
             print("Access not granted, returning early")
             return
         }
-        guard !packageName.isEmpty else {return}
+        guard !packageName.isEmpty,
+              let systemApk = deviceAppList.filter({ $0.package == packageName}).first,
+              systemApk.type != .system
+        else {return}
         
-        let fileManager = FileManager.default
-        let appDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let backupsDirectory = appDirectory.appendingPathComponent("\(Utils.appName)").appending(component: "Backups")
         
         do {
-            if !fileManager.fileExists(atPath: backupsDirectory.path) {
-                try fileManager.createDirectory(at: backupsDirectory, withIntermediateDirectories: true)
+            if !FileKit.existsBackupDir {
+                try FileKit.createBackupDirIfNeeded()
             }
             
-            let backupInfoURL = backupsDirectory.appendingPathComponent("backup_info.json")
+            var allBackupInfo = loadExistingBackupInfo(from: FileKit.backupJson)
             
-            var allBackupInfo = loadExistingBackupInfo(from: backupInfoURL)
-            
-            let resultOfProcessing = await processPackage(packageName, backupsDirectory: backupsDirectory)
+            let resultOfProcessing = await processPackage(packageName, backupsDirectory: FileKit.backupDir)
             
             allBackupInfo[packageName] = resultOfProcessing?.1
             
-            try saveBackupInfo(allBackupInfo, to: backupInfoURL)
+            try saveBackupInfo(allBackupInfo, to: FileKit.backupJson)
             
-            print("Backup completed. All info saved to \(backupInfoURL.path)")
+            print("Backup completed. All info saved to \(FileKit.backupJson.path()))")
             
         } catch {
             print("Error during backup process: \(error.localizedDescription)")
@@ -143,26 +141,19 @@ final class DebloatVM {
             return
         }
         
-        let fileManager = FileManager.default
-        let appDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let backupsDirectory = appDirectory.appendingPathComponent("\(Utils.appName)").appending(component: "Backups")
         
         do {
-            
-            if !fileManager.fileExists(atPath: backupsDirectory.path) {
-                try fileManager.createDirectory(at: backupsDirectory, withIntermediateDirectories: true)
+            if !FileKit.existsBackupDir {
+                try FileKit.createBackupDirIfNeeded()
             }
             
-            let backupInfoURL = backupsDirectory.appendingPathComponent("backup_info.json")
+            var allBackupInfo = loadExistingBackupInfo(from: FileKit.backupJson)
             
-            var allBackupInfo = loadExistingBackupInfo(from: backupInfoURL)
+            try await processPackagesInParallel(backupsDirectory: FileKit.backupDir, allBackupInfo: &allBackupInfo)
             
-          
-            try await processPackagesInParallel(backupsDirectory: backupsDirectory, allBackupInfo: &allBackupInfo)
+            try saveBackupInfo(allBackupInfo, to: FileKit.backupJson)
             
-            try saveBackupInfo(allBackupInfo, to: backupInfoURL)
-            
-            print("Backup completed. All info saved to \(backupInfoURL.path)")
+            print("Backup completed. All info saved to \(FileKit.backupJson.path())")
         } catch {
             print("Error during backup process: \(error.localizedDescription)")
         }
@@ -230,7 +221,7 @@ final class DebloatVM {
     
     
     private func loadExistingBackupInfo(from url: URL) -> [String: [String: Any]] {
-        guard FileManager.default.fileExists(atPath: url.path) else { return [:] }
+        guard FileKit.manager.fileExists(atPath: url.path) else { return [:] }
         
         do {
             let existingData = try Data(contentsOf: url)
@@ -247,8 +238,10 @@ final class DebloatVM {
             var packageResults = [(String, [String: Any])]()
             
             for package in selectManager.selectedItems {
-                group.addTask {
-                    return await self.processPackage(package, backupsDirectory: backupsDirectory)
+                if let choosenApk = deviceAppList.filter({ $0.package == package}).first, choosenApk.type != .system {
+                    group.addTask {
+                        return await self.processPackage(package, backupsDirectory: backupsDirectory)
+                    }
                 }
             }
             
@@ -284,12 +277,11 @@ final class DebloatVM {
             return nil
         }
         
-        let packageDirectory = backupsDirectory.appendingPathComponent(package)
+        let packageDirectory = backupsDirectory.appending(path: package)
         
         do {
-            let fileManager = FileManager.default
-            if !fileManager.fileExists(atPath: packageDirectory.path) {
-                try fileManager.createDirectory(at: packageDirectory, withIntermediateDirectories: true)
+            if !FileKit.manager.fileExists(atPath: packageDirectory.path) {
+                try FileKit.manager.createDirectory(at: packageDirectory, withIntermediateDirectories: true)
             }
             
             
