@@ -40,7 +40,7 @@ struct ADB {
 
 extension ADB {
     enum Commands {
-        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String)
+        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String), restoreApk(String)
         
         var raw:String {
             switch self {
@@ -62,6 +62,7 @@ extension ADB {
             case .getApkSize(let path): return "shell du -sm \(path)"
             case .uninstallApk(let package): return "shell pm uninstall \(package)"
             case .backupApk(let from, let to): return "pull \(from) \(to)"
+            case .restoreApk(let splitApks): return "install-multiple \(splitApks)"
             }
         }
 
