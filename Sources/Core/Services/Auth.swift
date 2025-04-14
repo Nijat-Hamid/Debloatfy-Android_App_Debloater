@@ -22,26 +22,51 @@ final class Auth {
         return isDebugEnabled && isConnected
     }
     
-    func startServer() async {
+    func killServer() async {
         isLoading = true
+        
         defer { isLoading = false }
         
-        guard let output = await ADB.run(arguments: [.devices]) else {
-            isConnected = false
-            isDebugEnabled = false
-            return
+        let result = await ADB.run(arguments: [.devices])
+        
+        switch result {
+        case .success(let output, _):
+            Log.of(.services(Auth.self)).info("\(output)")
+        case .failure(let error, _, _):
+            Log.of(.services(Auth.self)).error("\(error.message)")
         }
-
-        let splittedOutput = output.split(separator: "\n")
-        
-        let connectedDevices = splittedOutput.filter {
-            ($0.contains("device") || $0.contains("unauthorized")) &&
-            !$0.contains("List of devices attached")
-        }
-        
-        isConnected = !connectedDevices.isEmpty
-        isDebugEnabled = isConnected && !connectedDevices.contains { $0.contains("unauthorized") }
-        
     }
     
+    func startServer() async {
+        isLoading = true
+        
+        defer { isLoading = false }
+        
+        let result = await ADB.run(arguments: [.devices])
+        
+        switch result {
+        case .success(let output, _):
+    
+            let splittedOutput = output.split(separator: "\n")
+            
+            let connectedDevices = splittedOutput.filter {
+                ($0.contains("device") || $0.contains("unauthorized")) &&
+                !$0.contains("List of devices attached")
+            }
+            
+            isConnected = !connectedDevices.isEmpty
+            isDebugEnabled = isConnected && !connectedDevices.contains { $0.contains("unauthorized") }
+            
+            if !isConnected || !isDebugEnabled {
+                return Log.of(.services(Auth.self)).warning("Access Denied!")
+            }
+            
+            Log.of(.services(Auth.self)).info("Access granted!")
+            
+        case .failure(let error, _, _):
+            isConnected = false
+            isDebugEnabled = false
+            Log.of(.services(Auth.self)).error("\(error.message)")
+        }
+    }
 }
