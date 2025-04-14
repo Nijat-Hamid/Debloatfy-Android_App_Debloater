@@ -1,54 +1,56 @@
 //
-//  LogDBModel.swift
+//  DBModel.swift
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 4/2/25.
 //
-import RealmSwift
-import Foundation
 
-final class LogDBModel:Object {
-    @Persisted(primaryKey: true) var id:ObjectId
-    @Persisted var date: Date = Date()
-    @Persisted var name: String = "N/A"
-    @Persisted var type: LogType = .transfer
-    @Persisted var transferFrom: String?
-    @Persisted var transferTo: String?
-    @Persisted var message:String
-    
-    convenience init(name: String, type: LogType, transferFrom: String? = nil, transferTo: String? = nil) {
-        self.init()
+import Foundation
+import GRDB
+
+struct DBModel:Codable,Identifiable,Equatable,FetchableRecord,PersistableRecord {
+    var id: Int64?
+    var date: Date
+    var name: String
+    var message: String
+    var type: String
+ 
+    init(id: Int64? = nil, date: Date = Date(), name: String, type: LogType, from: String = "-", to: String = "-") {
+        self.id = id
+        self.date = date
         self.name = name
-        self.type = type
-        self.transferFrom = transferFrom
-        self.transferTo = transferTo
-        self.message = type.generateMessage(name: name, type: type, from: transferFrom, to: transferTo)
+        self.message = type.generateMessage(type: type, from: from, to: to)
+        self.type = type.rawValue
+    }
+    
+    static var databaseTableName: String {
+        return "database"
     }
 }
 
-extension LogDBModel:Mockable {
-    typealias MockType = LogDBModel
+extension DBModel:Mockable {
+    typealias MockType = DBModel
     
-    static var mock: LogDBModel {
-        MockType(name: "Mp3", type: .transfer,transferFrom: "Desktop",transferTo: "Internal Storage")
+    static var mock: DBModel {
+        DBModel(name: "Mp3", type: .transfer, from: "Desktop", to: "Internal Storage")
     }
-    
-    static var mockList: [LogDBModel] {
+   
+    static var mockList: [DBModel] {
         [
-            MockType(name: "com.facebook.android", type: .remove),
-            MockType(name: "com.whatsapp", type: .backup),
-            MockType(name: "com.samsung", type: .backupRemove),
-            MockType(name: "com.instagram.dro", type: .restoreRemove),
+            DBModel(name: "com.facebook.android", type: .remove),
+            DBModel(name: "com.whatsapp", type: .backup),
+            DBModel(name: "com.samsung", type: .backupRemove),
+            DBModel(name: "com.instagram.dro", type: .restoreRemove)
         ]
     }
     
-    enum LogType:String,PersistableEnum {
-        case transfer, remove, backup, restore,backupRemove, restoreRemove
+    enum LogType:String {
+        case transfer, remove, backup, restore,backupRemove, restoreRemove, fileRemove
         
         var typeTitle:String {
             switch self {
             case .transfer: "Transfer"
-            case .remove: "Remove"
+            case .remove,.fileRemove: "Remove"
             case .backup: "Backup"
             case .restore: "Restore"
             case .backupRemove: "Backup & Remove"
@@ -56,21 +58,27 @@ extension LogDBModel:Mockable {
             }
         }
         
-         func generateMessage(name: String, type: LogType, from: String?, to: String?) -> String {
+         func generateMessage(type: LogType, from: String = "-", to: String = "-") -> String {
             switch type {
             case .transfer:
-                return "\(name) transferred from \(from ?? "Unknown") to \(to ?? "Unknown")."
+                return "Copied from \(from) to \(to)."
             case .remove:
-                return "\(name) was removed."
+                return "App was removed from \(from)"
             case .backup:
-                return "\(name) was backed up."
+                return "App was backed up to \(to)"
             case .restore:
-                return "\(name) was restored."
+                return "App was restored to \(to)"
             case .backupRemove:
-                return "\(name) was backed up and then removed."
+                return "App was backed up and then removed."
             case .restoreRemove:
-                return "\(name) was restored and then removed."
+                return "App was restored and then removed."
+            case .fileRemove:
+                return "Content was removed from Phone"
             }
+        }
+        
+        static func safeTitle(from rawValue: String) -> String {
+            Self(rawValue: rawValue)?.typeTitle ?? "N/A"
         }
     }
     
