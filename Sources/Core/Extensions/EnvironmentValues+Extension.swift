@@ -12,5 +12,5 @@ extension EnvironmentValues {
     @Entry var selectManager = SelectManager()
     @Entry var debloatVM = DebloatVM()
     @Entry var restoreVM = RestoreVM()
-//    @Entry var
+    @Entry var transferVM = TransferVM()
 }
