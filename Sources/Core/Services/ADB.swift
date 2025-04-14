@@ -45,7 +45,7 @@ struct ADB {
                     }) {
                         continuation.resume(returning: .success(output: output, code: 0))
                     } else {
-                        let error = determineError(from: output, code: statusCode)
+                        let error = ADBError.determineError(from: output, code: statusCode)
                         continuation.resume(returning: .failure(error: error, code: statusCode, rawOutput: output))
                     }
                 } else {
@@ -61,39 +61,18 @@ struct ADB {
             }
         }
     }
-    
-    private static func determineError(from output: String, code: Int32) -> ADBError {
-        let lowercaseOutput = output.lowercased()
-        
-        if lowercaseOutput.contains("permission denied") || lowercaseOutput.contains("access denied") {
-            return .permissionDenied
-        } else if lowercaseOutput.contains("device not found") || lowercaseOutput.contains("device '(null)' not found") {
-            return .deviceNotFound
-        } else if lowercaseOutput.contains("no such file") || lowercaseOutput.contains("no such file or directory") {
-            return .fileNotFound
-        } else if lowercaseOutput.contains("no devices/emulators found") || lowercaseOutput.contains("no devices found") {
-            return .noDevicesConnected
-        } else if lowercaseOutput.contains("failure") && lowercaseOutput.contains("install") {
-            return .installFailed
-        } else if lowercaseOutput.contains("failed to copy") && lowercaseOutput.contains("push") {
-            return .pushFailed
-        } else if lowercaseOutput.contains("failed to copy") && lowercaseOutput.contains("pull") {
-            return .pullFailed
-        } else {
-            return .unknown(description: output)
-        }
-    }
 }
 
 extension ADB {
     enum Commands {
-        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String), restoreApk(String), getInternalStorage,getContentSize(String),custom(String), detectType(String), deleteFile(String), deleteFolder(String), copyToPhone(String), copyToPC(String,String)
+        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String), restoreApk(String), getInternalStorage,getContentSize(String),custom(String), detectType(String), deleteFile(String), deleteFolder(String), copyToPhone(String), copyToPC(String,String), reconnect
         
         var raw:String {
             switch self {
             case .kill: return "kill-server"
             case .start: return "start-server"
             case .devices: return "devices"
+            case .reconnect: return "kill-server && adb start server"
             case .reboot: return "reboot"
             case .getBootloader: return "shell getprop ro.bootloader"
             case .getCompany: return "shell getprop ro.product.manufacturer"
@@ -167,6 +146,28 @@ extension ADB {
                 return "Process error: \(description)"
             case .unknown(let description):
                 return "Unknown error: \(description)"
+            }
+        }
+        
+        static func determineError(from output: String, code: Int32) -> ADBError {
+            let lowercaseOutput = output.lowercased()
+            
+            if lowercaseOutput.contains("permission denied") || lowercaseOutput.contains("access denied") {
+                return .permissionDenied
+            } else if lowercaseOutput.contains("device not found") || lowercaseOutput.contains("device '(null)' not found") {
+                return .deviceNotFound
+            } else if lowercaseOutput.contains("no such file") || lowercaseOutput.contains("no such file or directory") {
+                return .fileNotFound
+            } else if lowercaseOutput.contains("no devices/emulators found") || lowercaseOutput.contains("no devices found") {
+                return .noDevicesConnected
+            } else if lowercaseOutput.contains("failure") && lowercaseOutput.contains("install") {
+                return .installFailed
+            } else if lowercaseOutput.contains("failed to copy") && lowercaseOutput.contains("push") {
+                return .pushFailed
+            } else if lowercaseOutput.contains("failed to copy") && lowercaseOutput.contains("pull") {
+                return .pullFailed
+            } else {
+                return .unknown(description: output)
             }
         }
     }
