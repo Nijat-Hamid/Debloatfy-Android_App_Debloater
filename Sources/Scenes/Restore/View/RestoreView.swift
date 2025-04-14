@@ -58,7 +58,7 @@ struct RestoreView: View {
                     case .backupRemove,.restoreRemove:
                         await vm.singleRestoreAndRemove()
                     }
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         vm.closeSheet()
                     }
                 }
