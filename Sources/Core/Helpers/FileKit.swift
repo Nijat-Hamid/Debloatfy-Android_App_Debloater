@@ -42,5 +42,9 @@ struct FileKit {
     
     static let defaultTransferDir = appDir.appending(path: "\(Utils.appName)").appending(component: "Transfers")
     
-    static let dataKitURL = appDir.appending(path: "\(Utils.appName)").appending(component: "Logs")
+    static let databaseURL = appDir.appending(path: "\(Utils.appName)/Database")
+    
+    static func createDatabaseDirIfNeeded() throws {
+        try manager.createDirectory(at: databaseURL, withIntermediateDirectories: true)
+    }
 }
