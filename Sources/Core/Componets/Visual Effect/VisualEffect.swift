@@ -51,7 +51,7 @@ struct VisualEffect: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
-        DispatchQueue.main.async {
+        Task { @MainActor in
             nsView.material = material
             nsView.blendingMode = .behindWindow
             nsView.state = .active

@@ -41,6 +41,4 @@ struct FileKit {
     }
     
     static let defaultTransferDir = appDir.appending(path: "\(Utils.appName)").appending(component: "Transfers")
-    
-    static let dataKitURL = appDir.appending(path: "\(Utils.appName)").appending(component: "Logs")
 }
