@@ -10,10 +10,12 @@ import SwiftUI
 final class DebloatVM {
     private let auth: Auth
     private(set) var selectManager: SelectManager
+    private let dbService: DBService
     
-    init(auth:Auth = Auth.shared, selectManager:SelectManager = SelectManager()) {
+    init(auth:Auth = Auth.shared, selectManager:SelectManager = SelectManager(), dbService:DBService = .shared) {
         self.auth = auth
         self.selectManager = selectManager
+        self.dbService = dbService
     }
     
     private(set) var isLoading:Bool = false
@@ -40,12 +42,7 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
-        
-        guard !packageName.isEmpty else {return}
+        guard auth.isAccessed, !packageName.isEmpty else { return }
         
         await singleBackup()
         await singleDeleteApp()
@@ -57,15 +54,11 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
-        guard !packageName.isEmpty,
+        guard auth.isAccessed,
+              !packageName.isEmpty,
               let systemApk = deviceAppList.filter({ $0.package == packageName}).first,
               systemApk.type != .system
-        else {return}
-        
+        else { return }
         
         do {
             if !FileKit.existsBackupDir {
@@ -79,11 +72,10 @@ final class DebloatVM {
             allBackupInfo[packageName] = resultOfProcessing?.1
             
             try saveBackupInfo(allBackupInfo, to: FileKit.backupJson)
-            
-            print("Backup completed. All info saved to \(FileKit.backupJson.path()))")
+            try? await dbService.save(.init(name:packageName, type: .backup, to: "PC"))
             
         } catch {
-            print("Error during backup process: \(error.localizedDescription)")
+            Log.of(.viewModel(DebloatVM.self)).error("Error during backup process: \(error.localizedDescription)")
         }
     }
     
@@ -97,19 +89,20 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
-        guard !packageName.isEmpty else {return}
+        guard auth.isAccessed,!packageName.isEmpty else { return }
         
-        guard let result = await ADB.run(arguments: [.uninstallApk(packageName)]) else {return}
         
-        if result.contains("Success") {
+        let result = await ADB.run(arguments: [.uninstallApk(packageName)])
+        
+        switch result {
+        case .success:
+            
             deviceAppList.removeAll(where: { $0.package == packageName })
+            selectManager.removeSelected(packageName)
+            try? await dbService.save(.init(name:packageName,type: .remove,from: "Phone"))
+        case .failure(let error,_,_):
+            Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
         }
-        
-        selectManager.removeSelected(packageName)
         
     }
     
@@ -119,10 +112,7 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         await bulkBackupApps()
         
@@ -136,11 +126,7 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
-        
+        guard auth.isAccessed else { return }
         
         do {
             if !FileKit.existsBackupDir {
@@ -153,12 +139,9 @@ final class DebloatVM {
             
             try saveBackupInfo(allBackupInfo, to: FileKit.backupJson)
             
-            print("Backup completed. All info saved to \(FileKit.backupJson.path())")
         } catch {
-            print("Error during backup process: \(error.localizedDescription)")
+            Log.of(.viewModel(DebloatVM.self)).error("Error during backup process: \(error.localizedDescription)")
         }
-        
-        print("All backup tasks completed")
     }
     
     
@@ -172,34 +155,37 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         await withTaskGroup { group in
             for package in selectManager.selectedItems {
                 group.addTask {
                     let result = await ADB.run(arguments: [.uninstallApk(package)])
-                    let isSuccess = result?.contains("Success") ?? false
-                    return (package, isSuccess)
+                    switch result {
+                    case .success:
+                        return (package, true)
+                    case .failure(let error, _,_):
+                        Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
+                        return (package, false)
+                    }
                 }
             }
             
             for await (package, isSuccess) in group {
                 if isSuccess {
                     deviceAppList.removeAll(where: { $0.package == package })
+                    selectManager.removeSelected(package)
+                    try? await dbService.save(.init(name:package,type: .remove,from: "Phone"))
                 }
             }
         }
-        
-        selectManager.resetAllSelect()
     }
     
     
     func getDeviceApps() async {
         
         isLoading = true
+        
         deviceAppList = []
         
         defer {
@@ -208,10 +194,7 @@ final class DebloatVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         await processApps(type: .system, arguments: .getListSystemApps)
         await processApps(type: .user, arguments: .getListUserApps)
@@ -227,7 +210,7 @@ final class DebloatVM {
             let existingData = try Data(contentsOf: url)
             return (try JSONSerialization.jsonObject(with: existingData) as? [String: [String: Any]]) ?? [:]
         } catch {
-            print("Warning: Could not read existing backup info: \(error.localizedDescription)")
+            Log.of(.viewModel(DebloatVM.self)).error("Warning: Could not read existing backup info: \(error.localizedDescription)")
             return [:]
         }
     }
@@ -256,52 +239,59 @@ final class DebloatVM {
         
         for (package, info) in results {
             allBackupInfo[package] = info
+            try? await dbService.save(.init(name:package, type: .backup,to: "PC"))
         }
     }
     
     private func processPackage(_ package: String, backupsDirectory: URL) async -> (String, [String: Any])? {
-        print("Processing package: \(package)")
         
-        guard let apkPath = await ADB.run(arguments: [.getApksFullPath(package)]) else {
-            print("Failed to get APK path for package: \(package)")
-            return nil
-        }
+        let apkPath = await ADB.run(arguments: [.getApksFullPath(package)])
         
-        let filteredApkPaths = apkPath
-            .split(separator: "\n")
-            .filter { $0.hasPrefix("package:") }
-            .map { $0.replacingOccurrences(of: "package:", with: "") }
-        
-        if filteredApkPaths.isEmpty {
-            print("No APKs found for package: \(package)")
-            return nil
-        }
-        
-        let packageDirectory = backupsDirectory.appending(path: package)
-        
-        do {
-            if !FileKit.manager.fileExists(atPath: packageDirectory.path) {
-                try FileKit.manager.createDirectory(at: packageDirectory, withIntermediateDirectories: true)
+        switch apkPath {
+        case .success(let output, _ ):
+            
+            let filteredApkPaths = output
+                .split(separator: "\n")
+                .filter { $0.hasPrefix("package:") }
+                .map { $0.replacingOccurrences(of: "package:", with: "") }
+            
+            if filteredApkPaths.isEmpty {
+                Log.of(.viewModel(DebloatVM.self)).info("No APKs found for package: \(package)")
+                return nil
+            }
+            
+            let packageDirectory = backupsDirectory.appending(path: package)
+            
+            do {
+                if !FileKit.manager.fileExists(atPath: packageDirectory.path) {
+                    try FileKit.manager.createDirectory(at: packageDirectory, withIntermediateDirectories: true)
+                }
+                
+                
+                var packageInfo: [String: Any] = [:]
+                
+                
+                if let appInfo = self.deviceAppList.first(where: { $0.package == package }) {
+                    packageInfo["appType"] = appInfo.type.rawValue
+                    packageInfo["totalSize"] = appInfo.size
+                }
+                
+                
+                let apksInfo = try await pullApksInParallel(filteredApkPaths: filteredApkPaths, packageDirectory: packageDirectory)
+                packageInfo["apks"] = apksInfo
+                
+                return (package, packageInfo)
+            } catch {
+                Log.of(.viewModel(DebloatVM.self)).error("Error processing package \(package): \(error.localizedDescription)")
+                return nil
             }
             
             
-            var packageInfo: [String: Any] = [:]
-            
-            
-            if let appInfo = self.deviceAppList.first(where: { $0.package == package }) {
-                packageInfo["appType"] = appInfo.type.rawValue
-                packageInfo["totalSize"] = appInfo.size
-            }
-            
-            
-            let apksInfo = try await pullApksInParallel(filteredApkPaths: filteredApkPaths, packageDirectory: packageDirectory)
-            packageInfo["apks"] = apksInfo
-            
-            return (package, packageInfo)
-        } catch {
-            print("Error processing package \(package): \(error.localizedDescription)")
+        case .failure(let error, _, _):
+            Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
             return nil
         }
+        
     }
     
     private func pullApksInParallel(filteredApkPaths: [String], packageDirectory: URL) async throws -> [[String: Any]] {
@@ -332,16 +322,16 @@ final class DebloatVM {
         let fileName = URL(fileURLWithPath: path).lastPathComponent
         let destinationURL = packageDirectory.appendingPathComponent(fileName)
         
-        print("Pulling \(fileName) to \(destinationURL.path)")
         
-        if let _ = await ADB.run(arguments: [.backupApk(path, destinationURL.path)]) {
-            print("Successfully pulled: \(fileName)")
+        let result = await ADB.run(arguments: [.backupApk(path, destinationURL.path)])
+        switch result {
+        case .success:
             return [
                 "fileName": fileName,
                 "originalPath": baseDir
             ]
-        } else {
-            print("Failed to pull \(fileName)")
+        case .failure(let error,_,_):
+            Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
             return nil
         }
     }
@@ -350,7 +340,6 @@ final class DebloatVM {
         let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
         try jsonData.write(to: url)
     }
-    
     
     
     private func sortAppsBySize() {
@@ -362,74 +351,95 @@ final class DebloatVM {
     }
     
     private func processApps(type: ListAppType, arguments: ADB.Commands) async {
-        guard let appList = await ADB.run(arguments: [arguments]) else { return }
+        let appList = await ADB.run(arguments: [arguments])
         
-        let startTime = Date()
-        defer {
-            let endTime = Date()
-            print("Function completed: \(endTime.timeIntervalSince(startTime)) ")
-        }
-        
-        let filteredOutput = appList
-            .split(separator: "\n")
-            .filter { $0.starts(with: "package:") }
-            .map { $0.replacingOccurrences(of: "package:", with: "")}
-        
-        
-        await withTaskGroup { group in
-            for packageName in filteredOutput {
-                group.addTask {
-                    await self.getPackageSize(packageName: packageName)
-                }
+        switch appList {
+        case .success(let output, _):
+            let startTime = Date()
+            defer {
+                let endTime = Date()
+                Log.of(.viewModel(DebloatVM.self)).info("Function completed: \(endTime.timeIntervalSince(startTime))")
             }
             
-            for await (packageName, size) in group {
-                deviceAppList.append(.init(package: packageName, type: type, size: size))
+            let filteredOutput = output
+                .split(separator: "\n")
+                .filter { $0.starts(with: "package:") }
+                .map { $0.replacingOccurrences(of: "package:", with: "")}
+            
+            
+            await withTaskGroup { group in
+                for packageName in filteredOutput {
+                    group.addTask {
+                        await self.getPackageSize(packageName: packageName)
+                    }
+                }
+                
+                for await (packageName, size) in group {
+                    deviceAppList.append(.init(package: packageName, type: type, size: size))
+                }
             }
+        case .failure(let error, _, _):
+            Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
+            return
         }
+        
+        
     }
     
     private func getPackageSize(packageName: String) async -> (String, String) {
-        guard let apkPath = await ADB.run(arguments: [.getApksFullPath(packageName)]) else {
-            return (packageName, "N/A")
-        }
-        
-        let filteredApkPath = apkPath
-            .split(separator: "\n")
-            .filter { $0.starts(with: "package") }
-            .map { $0.replacingOccurrences(of: "package:", with: "")}
-        
-        guard let firstPath = filteredApkPath.first,
-              let lastSlashIndex = firstPath.lastIndex(of: "/") else {
-            return (packageName, "N/A")
-        }
-        
-        let baseDir = String(firstPath[..<lastSlashIndex])
-        
-        guard let sizeOutput = await ADB.run(arguments: [.getApkSize(baseDir)]) else {
-            return (packageName, "N/A")
-        }
+        let apkPath = await ADB.run(arguments: [.getApksFullPath(packageName)])
         
         
-        let validLines = sizeOutput
-            .split(separator: "\n")
-            .filter {
-                !$0.lowercased().contains("permission denied") &&
-                !$0.starts(with: "du:") &&
-                $0.contains(baseDir)
+        switch apkPath {
+        case .success(let output, _):
+            
+            let filteredApkPath = output
+                .split(separator: "\n")
+                .filter { $0.starts(with: "package") }
+                .map { $0.replacingOccurrences(of: "package:", with: "")}
+            
+            guard let firstPath = filteredApkPath.first,
+                  let lastSlashIndex = firstPath.lastIndex(of: "/") else {
+                return (packageName, "N/A")
             }
-        
-        
-        guard let sizeLine = validLines.first else {
+            
+            let baseDir = String(firstPath[..<lastSlashIndex])
+            
+            
+            let sizeOutput = await ADB.run(arguments: [.getApkSize(baseDir)])
+            
+            switch sizeOutput {
+            case .success(let output, _):
+                let validLines = output
+                    .split(separator: "\n")
+                    .filter {
+                        !$0.lowercased().contains("permission denied") &&
+                        !$0.starts(with: "du:") &&
+                        $0.contains(baseDir)
+                    }
+                
+                
+                guard let sizeLine = validLines.first else {
+                    return (packageName, "N/A")
+                }
+                
+                let components = sizeLine.split(separator: "\t")
+                guard let sizeComponent = components.first else {
+                    return (packageName, "N/A")
+                }
+                
+                return (packageName, String(sizeComponent))
+                
+            case .failure:
+                return (packageName, "N/A")
+            }
+            
+            
+        case .failure(let error, _ , _ ):
+            Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
             return (packageName, "N/A")
         }
         
-        let components = sizeLine.split(separator: "\t")
-        guard let sizeComponent = components.first else {
-            return (packageName, "N/A")
-        }
-        
-        return (packageName, String(sizeComponent))
     }
 }
 

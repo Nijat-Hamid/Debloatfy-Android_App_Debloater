@@ -56,7 +56,7 @@ struct DebloatView: View {
                     case .backupRemove,.restoreRemove:
                         await vm.singleBackupAndRemove()
                     }
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         vm.closeSheet()
                     }
                 }
