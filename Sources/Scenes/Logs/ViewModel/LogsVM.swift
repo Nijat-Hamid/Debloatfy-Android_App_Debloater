@@ -7,25 +7,42 @@
 import SwiftUI
 
 @Observable
-@MainActor
+
 final class LogsVM {
-    
     private let auth: Auth
-    private let logger: Logger
-    
+    private let dbService: DBService
+
     private(set) var isLoading:Bool = false
-    private(set) var logList:[LoggerModel] = []
+    private(set) var isProceeding:Bool = false
+    private(set) var logList:[DBModel] = []
     
-    init(auth:Auth = Auth.shared, logger:Logger) {
+    init(auth:Auth = Auth.shared,dbService:DBService = .shared ) {
         self.auth = auth
-        self.logger = logger
-        
-        logList = logger.fetchLogs()
+        self.dbService = dbService
     }
     
+    @MainActor
+    func fetchLogs() async {
+        isLoading = true
+        logList = []
+        
+        defer {
+            isLoading = false
+        }
+        
+        await auth.startServer()
+        
+        guard auth.isAccessed else { return }
+        
+        do{
+            logList = try await dbService.get()
+        }catch {
+            Log.of(.viewModel(LogsVM.self)).error("Error occuried during fetchLogs:\(error)")
+        }
+    }
     
-    
-    func getLogs() async {
+    @MainActor
+    func removeLogs() async {
         isLoading = true
         
         defer {
@@ -34,11 +51,13 @@ final class LogsVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
+        guard auth.isAccessed else { return }
+        
+        do{
+            try await dbService.deleteAll()
+            logList = []
+        }catch{
+            Log.of(.viewModel(LogsVM.self)).error("Error occuried during deleting logs:\(error)")
         }
     }
-    
-    
 }
