@@ -10,12 +10,12 @@ struct RemoveFocusOnTapModifier: ViewModifier {
      func body(content: Content) -> some View {
         content
             .onTapGesture {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     NSApp.keyWindow?.makeFirstResponder(nil)
                 }
             }
             .onDisappear {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     NSApp.keyWindow?.makeFirstResponder(nil)
                 }
             }
