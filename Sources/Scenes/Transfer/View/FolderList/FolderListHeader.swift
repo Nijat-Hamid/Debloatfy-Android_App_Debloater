@@ -11,7 +11,7 @@ struct FolderListHeader: View {
     var body: some View {
         HStack(spacing:12) {
             Text("Name")
-                .frame(width: 160,alignment: .leading)
+                .frame(width:300,alignment: .leading)
                 .padding(.leading,8)
             
             Spacer()
@@ -21,14 +21,9 @@ struct FolderListHeader: View {
             
             Spacer()
             
-            Text("Modified")
-                .frame(width: 160)
-            
-            Spacer()
-            
             Text("Owner")
-                .frame(width: 120)
-                .padding(.trailing,4)
+                .frame(maxWidth: .infinity)
+                .padding(.trailing,6)
             Spacer()
         }
         .font(.appHeadline)

@@ -15,7 +15,7 @@ enum TransferActionBtnType {
     var description:String {
         switch self {
         case .destination: return "Copy to:"
-        case .choose: return "Import file:"
+        case .choose: return "Import from:"
         }
     }
     
@@ -29,19 +29,45 @@ enum TransferActionBtnType {
     var types:[UTType] {
         switch self {
         case .destination(_): return [.folder]
-        case .choose: return [.item, .content, .data]
+        case .choose: return [.item, .content, .data, .folder]
+        }
+    }
+    
+    var message:String {
+        switch self {
+        case .destination(_): return "Choose default location transfer from phone to PC"
+        case .choose: return "Choose File/Folder to transfer phone"
+        }
+    }
+    
+    var defaultLocation:URL {
+        switch self {
+        case .destination(let url): return url
+        case .choose: return .desktopDirectory
         }
     }
 }
 
 struct TransferActionButton: View {
+    @Environment(\.transferVM) private var vm
     @State private var isImporting: Bool = false
-    @Binding var defaultLocation: URL
+    @Binding private var defaultLocation: URL
+    @Binding private var sheetType:ProgressSheetType
+    @Binding private var fileName:String
     private let type:TransferActionBtnType
+    private let isDeactive:Bool
     
-    init(type: TransferActionBtnType = .choose, defaultLocation: Binding<URL>) {
+    init(type: TransferActionBtnType = .choose,
+         defaultLocation: Binding<URL>,
+         isDeactive:Bool = false,
+         sheetType: Binding<ProgressSheetType>,
+         fileName:Binding<String>
+    ) {
+        self.isDeactive = isDeactive
         self.type = type
         self._defaultLocation = defaultLocation
+        self._sheetType = sheetType
+        self._fileName = fileName
     }
     
     var body: some View {
@@ -59,22 +85,27 @@ struct TransferActionButton: View {
                     switch result {
                     case .success(let url):
                         switch type {
-                        case .destination(_):
+                        case .destination:
                             defaultLocation = url
                         case .choose:
-                            print(url)
+                            fileName = url.lastPathComponent
+                            sheetType = .copyToPhone
+                            vm.setActiveTask {
+                                await vm.copyToPhone(url.path())
+                            }
                         }
-
                     case .failure(let error):
-                        print(error)
+                        Log.of(.viewCycle(TransferActionButton.self)).error("\(error.localizedDescription)")
                     }
                 })
-            .buttonStyle(ButtonStyles(type: .normal))
+            .fileDialogMessage(type.message)
+            .fileDialogDefaultDirectory(type.defaultLocation)
+            .buttonStyle(ButtonStyles(type: .normal,disable: isDeactive, padV: 6,pointerStyle: .link))
         }
     }
 }
 
 #Preview {
-    TransferActionButton(type:.choose,defaultLocation: .constant(URL.homeDirectory))
+    TransferActionButton(type:.choose,defaultLocation: .constant(URL.homeDirectory), sheetType: .constant(.copyToPC), fileName: .constant("N/A"))
         .modifier(PreviewMod(type: .card, width: 300))
 }

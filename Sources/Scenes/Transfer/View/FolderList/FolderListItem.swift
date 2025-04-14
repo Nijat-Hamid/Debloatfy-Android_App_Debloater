@@ -8,41 +8,44 @@
 import SwiftUI
 
 struct FolderListItem: View {
+    @Environment(\.transferVM) private var vm
     @State private var isHovered:Bool = false
+    @Binding private var fileName:String
+    @Binding private var sheetType:ProgressSheetType
     private let defaultLocation: URL
-    private let item:Int
+    private let item:TransferModel
     
-    init(defaultLocation: URL,item:Int) {
+    init(defaultLocation: URL,
+         item:TransferModel,
+         fileName:Binding<String>,
+         sheetType:Binding<ProgressSheetType>
+    ) {
         self.defaultLocation = defaultLocation
         self.item = item
+        self._fileName = fileName
+        self._sheetType = sheetType
     }
     
 
     var body: some View {
         HStack(spacing:0) {
             HStack(spacing:12) {
-                Label("MP3", systemImage: "folder")
-                    .frame(width:160,alignment: .leading)
-                    .padding(.leading,8)
+                Label(item.name, systemImage: item.type == .folder ? "folder" : "document")
+                    .frame(width:300,alignment: .leading)
+                    .padding(.leading,item.type == .folder ? 8 : 10)
                 
                 Spacer()
                 
-                Text("128GB")
+                Text(Utils.formatSize(item.size))
                     .frame(width:100)
                 
                 Spacer()
                 
-                Text("SEP 25,2025")
-                    .frame(width:160)
-                
-                Spacer()
-                
-                Text("System")
-                    .frame(width: 110)
+                Text(item.owner)
+                    .frame(maxWidth: .infinity)
                 Spacer()
             }
-            .padding(.vertical,6)
-            .frame(width:786)
+            .frame(width:786, height: 28)
             .background {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.secondary.opacity(isHovered ? 0.5 : 0))
@@ -54,17 +57,24 @@ struct FolderListItem: View {
                 }
             }
             .contextMenu {
-                ZStack {
-                    FolderListMenuItem(title: "Copy to ...") {
-                        print(item)
-                    }
-                    Divider()
+                Group {
                     FolderListMenuItem(title: "Copy to \(defaultLocation.lastPathComponent)") {
-                        print("copied")
+                        sheetType = .copyToPC
+                        fileName = item.name
+                        vm.setActiveTask {
+                            await vm.copyToPC(item.name, copyLocation: defaultLocation.path())
+                        }
                     }
                     Divider()
                     FolderListMenuItem(title: "Remove") {
-                        print("copied")
+                        sheetType = .delete
+                        fileName = item.name
+                        
+                        vm.setActiveTask {
+                            item.type == .file ?
+                            await vm.deleteContent(item.name, isDirectory: false) :
+                            await vm.deleteContent(item.name, isDirectory: true)
+                        }
                     }
                 }
                 .isHidden(!isHovered)
@@ -75,6 +85,9 @@ struct FolderListItem: View {
 }
 
 #Preview {
-    FolderListItem(defaultLocation: .userDirectory,item: 1)
-        .modifier(PreviewMod(type:.card,width: 400))
+    FolderListItem(defaultLocation: .userDirectory,
+                   item: TransferModel.mock,
+                   fileName: .constant("N/A"),
+                   sheetType: .constant(.copyToPC))
+        .modifier(PreviewMod(type:.card,width: nil))
 }
