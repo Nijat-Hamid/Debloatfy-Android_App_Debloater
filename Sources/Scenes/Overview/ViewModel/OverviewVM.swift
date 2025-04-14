@@ -19,74 +19,87 @@ final class OverviewVM {
     private(set) var isLoading:Bool = false
     private(set) var deviceParams:DeviceParamsModel = .init()
     private(set) var appChartData: [AppChartModel] = []
-   
+    
     func getDeviceData() async {
         
         isLoading = true
         defer {
             Task {
-                try? await Task.sleep(nanoseconds: 500_000_000 )
+                try? await Task.sleep(for: .seconds(0.5))
                 isLoading = false
             }
         }
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
-
-        if let getCompany = await ADB.run(arguments: [.getCompany]) {
-            deviceParams.companyName = getCompany.trimmingCharacters(in: .whitespacesAndNewlines).capitalized
-        }
+        await executeADBCommand(.getCompany,
+                                property: \.companyName,
+                                transform: { $0.capitalized },
+                                errorContext: "Failed to get company")
         
-        if let getDeviceModel = await ADB.run(arguments: [.getModel]) {
-            deviceParams.deviceModel = getDeviceModel.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
+        await executeADBCommand(.getModel,
+                                property: \.deviceModel,
+                                errorContext: "Failed to get device model")
+        
+        await executeADBCommand(.getAndroidVersion,
+                                property: \.androidVersion,
+                                transform: { "v\($0)" },
+                                errorContext: "Failed to get Android version")
+        
+        await executeADBCommand(.getSecurityPatch,
+                                property: \.securityPatch,
+                                errorContext: "Failed to get security patch")
+        
+        await executeADBCommand(.getDeviceID,
+                                property: \.deviceID,
+                                errorContext: "Failed to get device ID")
+        
+        await executeADBCommand(.getBootloader,
+                                property: \.deviceBL,
+                                errorContext: "Failed to get bootloader status")
+        
+        await executeADBCommand(.getProduct,
+                                property: \.product,
+                                errorContext: "Failed to get product info")
+        
+        await executeADBCommand(.getBuildID,
+                                property: \.build,
+                                errorContext: "Failed to get build ID")
+        
+        await getAppList(command: .getListSystemApps, category: "System")
+        await getAppList(command: .getListUserApps, category: "User")
+        
+    }
     
-        if let getAndroidVersion = await ADB.run(arguments: [.getAndroidVersion]) {
-            deviceParams.androidVersion = "v\(getAndroidVersion.trimmingCharacters(in: .whitespacesAndNewlines))"
+    private func executeADBCommand(
+        _ command: ADB.Commands,
+        property keyPath: WritableKeyPath<DeviceParamsModel, String>,
+        transform: ((String) -> String)? = nil,
+        errorContext: String
+    ) async {
+        switch await ADB.run(arguments: [command]) {
+        case .success(let output, _):
+            let trimmed = output.trimmingCharacters(in: .whitespacesAndNewlines)
+            let value = transform?(trimmed) ?? trimmed
+            deviceParams[keyPath: keyPath] = value
+        case .failure(let error, _, _):
+            Log.of(.viewModel(OverviewVM.self)).warning("\(error.message)")
         }
-        
-        if let getSecurityPatch = await ADB.run(arguments: [.getSecurityPatch]) {
-            deviceParams.securityPatch = getSecurityPatch.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        if let getDeviceID = await ADB.run(arguments: [.getDeviceID]) {
-            deviceParams.deviceID = getDeviceID.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        if let getDeviceBL = await ADB.run(arguments: [.getBootloader]) {
-            deviceParams.deviceBL = getDeviceBL.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        if let getProduct = await ADB.run(arguments: [.getProduct]) {
-            deviceParams.product = getProduct.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        if let getBuild = await ADB.run(arguments: [.getBuildID]) {
-            deviceParams.build = getBuild.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        
-        if let getSystemApps = await ADB.run(arguments: [.getListSystemApps]) {
-            let filteredOutput = getSystemApps
+    }
+    
+    private func getAppList(command: ADB.Commands, category: String) async {
+        switch await ADB.run(arguments: [command]) {
+        case .success(let output, _):
+            let filteredOutput = output
                 .split(separator: "\n")
                 .filter { $0.starts(with: "package:") }
             
-            appChartData.append(.init(category: "System", count: filteredOutput.count))
+            appChartData.append(.init(category: category, count: filteredOutput.count))
+        case .failure(let error, _, _):
+            appChartData.append(.init(category: category, count: 0))
+            Log.of(.viewModel(OverviewVM.self)).error("\(error.message)")
         }
-        
-        if let getUserApps = await ADB.run(arguments: [.getListUserApps]) {
-            let filteredOutput = getUserApps
-                .split(separator: "\n")
-                .filter { $0.starts(with: "package:") }
-            
-            appChartData.append(.init(category: "User", count: filteredOutput.count))
-        }
-        
-     }
-    
-    
+    }
 }

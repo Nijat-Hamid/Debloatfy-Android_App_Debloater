@@ -8,13 +8,14 @@ import SwiftUI
 
 @Observable
 final class RestoreVM {
-    
     private let auth: Auth
     private(set) var selectManager: SelectManager
+    private let dbService: DBService
     
-    init(auth:Auth = Auth.shared, selectManager:SelectManager = SelectManager()) {
+    init(auth:Auth = Auth.shared, selectManager:SelectManager = SelectManager(),dbService:DBService = .shared) {
         self.auth = auth
         self.selectManager = selectManager
+        self.dbService = dbService
     }
     
     private(set) var isLoading:Bool = false
@@ -44,10 +45,7 @@ final class RestoreVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         await singleRestore()
         await singleDelete()
@@ -62,10 +60,7 @@ final class RestoreVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         await bulkRestore()
         await bulkDelete()
@@ -80,10 +75,7 @@ final class RestoreVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         guard FileKit.existsBackupDir,
               FileKit.existsBackupJson
@@ -94,11 +86,18 @@ final class RestoreVM {
                 let apkDir = FileKit.returnApkDir(packageName).path()
                 let apkContents = try FileKit.manager.contentsOfDirectory(atPath: apkDir)
                 let apkSplitBundle = apkContents.filter { $0.hasSuffix(".apk")}.map { "\(apkDir)/\($0)" }.joined(separator: " ")
-                guard let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)]) else {return}
-                let _ = result.contains("Success")
+                
+                let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)])
+                
+                switch result {
+                case .success:
+                    try? await dbService.save(.init(name:packageName, type: .restore,to: "Phone"))
+                case .failure(let error, _ , _):
+                    Log.of(.viewModel(RestoreVM.self)).error("\(error.message)")
+                }
                 
             } catch {
-                print("Error reading apk directory for \(packageName):\(error.localizedDescription)")
+                Log.of(.viewModel(RestoreVM.self)).error("\(self.packageName):\(error.localizedDescription)")
             }
         }
     }
@@ -112,10 +111,7 @@ final class RestoreVM {
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         guard FileKit.existsBackupDir,
               FileKit.existsBackupJson
@@ -129,17 +125,28 @@ final class RestoreVM {
                         let apkContents = try FileKit.manager.contentsOfDirectory(atPath: apkDir)
                         let apkSplitBundle = apkContents.filter { $0.hasSuffix(".apk")}.map { "\(apkDir)/\($0)" }.joined(separator: " ")
                         group.addTask {
-                            guard let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)]) else {return}
-                            let _ = result.contains("Success")
+                            let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)])
+                            
+                            switch result {
+                            case .success:
+                                return (package, true)
+                            case .failure(let error, _,_):
+                                Log.of(.viewModel(RestoreVM.self)).error("\(error.message)")
+                                return (package, false)
+                            }
                         }
                         
                     } catch {
-                        print("Error reading apk directory for \(package):\(error.localizedDescription)")
+                        Log.of(.viewModel(RestoreVM.self)).error("Error reading apk directory for \(package):\(error.localizedDescription)")
                     }
                 }
             }
             
-            await group.waitForAll()
+             for await (package,isSuccess) in group {
+                 if isSuccess {
+                     try? await dbService.save(.init(name:package, type: .restore,to: "Phone"))
+                 }
+            }
         }
     }
     
@@ -148,17 +155,14 @@ final class RestoreVM {
         
         defer {
             Task {
-                try? await Task.sleep(nanoseconds: 500_000_000 )
+                try? await Task.sleep(for: .seconds(0.5))
                 isProceeding = false
             }
         }
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         do {
             guard FileKit.existsBackupDir,
@@ -179,7 +183,6 @@ final class RestoreVM {
                                     return (packageName, false)
                                 }
                             } catch {
-                                print("Remove error: \(packageName): \(error.localizedDescription)")
                                 return (packageName, false)
                             }
                         }
@@ -190,10 +193,12 @@ final class RestoreVM {
                             if isSuccess {
                                 deviceAppList.removeAll(where: { $0.package == packageName })
                                 jsonDict.removeValue(forKey: packageName)
+                                
+                                try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
                             }
                         }
                     } catch {
-                        print("An error occurred during tasks: \(error.localizedDescription)")
+                        Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
                     }
                 }
                 
@@ -203,7 +208,7 @@ final class RestoreVM {
                 try updatedData.write(to: FileKit.backupJson)
             }
         } catch {
-            print("An error occurred during tasks: \(error.localizedDescription)")
+            Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
         }
         
     }
@@ -213,17 +218,14 @@ final class RestoreVM {
         
         defer {
             Task {
-                try? await Task.sleep(nanoseconds: 500_000_000 )
+                try? await Task.sleep(for: .seconds(0.5))
                 isProceeding = false
             }
         }
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         guard !packageName.isEmpty else { return }
         
@@ -242,20 +244,19 @@ final class RestoreVM {
                     
                     deviceAppList.removeAll(where: { $0.package == packageName })
                     jsonDict.removeValue(forKey: packageName)
-                    
+                    try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
                     selectManager.removeSelected(packageName)
                     
                     let updatedData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
                     
                     try updatedData.write(to: FileKit.backupJson)
                 } catch {
-                    print("Remove error: \(packageName): \(error.localizedDescription)")
+                    Log.of(.viewModel(RestoreVM.self)).error("Remove error: \(self.packageName): \(error.localizedDescription)")
                 }
             }
-    
             
         } catch {
-            print("An error occurred during tasks: \(error.localizedDescription)")
+            Log.of(.viewModel(RestoreVM.self)).error("An error occurred during tasks: \(error.localizedDescription)")
         }
         
     }
@@ -266,17 +267,14 @@ final class RestoreVM {
         
         defer {
             Task {
-                try? await Task.sleep(nanoseconds: 500_000_000 )
+                try? await Task.sleep(for: .seconds(0.5))
                 isLoading = false
             }
         }
         
         await auth.startServer()
         
-        guard auth.isAccessed else {
-            print("Access not granted, returning early")
-            return
-        }
+        guard auth.isAccessed else { return }
         
         do {
             guard FileKit.existsBackupDir,
@@ -306,7 +304,7 @@ final class RestoreVM {
             }
             
         } catch {
-            print("Error during backup process: \(error.localizedDescription)")
+            Log.of(.viewModel(RestoreVM.self)).error("Error during backup process: \(error.localizedDescription)")
         }
     }
 }
