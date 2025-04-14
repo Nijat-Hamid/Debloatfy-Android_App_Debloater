@@ -142,7 +142,7 @@ struct AppToolbarView: View {
                 if let action = pendingAction {
                     Task {
                         await action()
-                        DispatchQueue.main.async {
+                        await MainActor.run {
                             pendingAction = nil
                             showConfirmationSheet = false
                         }
