@@ -25,7 +25,7 @@ final class TransferVM {
     var showActionSheet:Bool = false
         
     
-    func setActiveTask(action: @escaping () async -> Void) {
+    func setActiveTask(action: @escaping () async -> ()) {
         
         activeTask?.cancel()
         

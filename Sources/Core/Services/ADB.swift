@@ -65,10 +65,11 @@ struct ADB {
 
 extension ADB {
     enum Commands {
-        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String), restoreApk(String), getInternalStorage,getContentSize(String),custom(String), detectType(String), deleteFile(String), deleteFolder(String), copyToPhone(String), copyToPC(String,String), reconnect
+        case kill, start, devices, reboot, getBootloader, getCompany, getModel, getProduct, getSecurityPatch, getAndroidVersion, getBuildID, getDeviceID, getListSystemApps, getListUserApps, getApksFullPath(String), getApkSize(String), uninstallApk(String), backupApk(String, String), restoreApk(String), getInternalStorage,getContentSize(String),custom(String), detectType(String), deleteFile(String), deleteFolder(String), copyToPhone(String), copyToPC(String,String), reconnect, auth
         
         var raw:String {
             switch self {
+            case .auth:return "devices && adb get-serialno"
             case .kill: return "kill-server"
             case .start: return "start-server"
             case .devices: return "devices"

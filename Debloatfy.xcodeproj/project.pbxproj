@@ -38,6 +38,7 @@
 		1F4C601A2DA9F4EE000831B1 /* ProgressSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C60192DA9F4EE000831B1 /* ProgressSheet.swift */; };
 		1F4C601C2DAB24C1000831B1 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C601B2DAB24BE000831B1 /* DBService.swift */; };
 		1F4C60242DAB6C70000831B1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4C60232DAB6C70000831B1 /* GRDB */; };
+		1F4C60292DADF0FC000831B1 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4C60282DADF0FC000831B1 /* SwiftUIIntrospect */; };
 		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
@@ -243,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4C60242DAB6C70000831B1 /* GRDB in Frameworks */,
+				1F4C60292DADF0FC000831B1 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,6 +915,7 @@
 			name = Debloatfy;
 			packageProductDependencies = (
 				1F4C60232DAB6C70000831B1 /* GRDB */,
+				1F4C60282DADF0FC000831B1 /* SwiftUIIntrospect */,
 			);
 			productName = Debloatfy;
 			productReference = 1FDCD5F22D5E02240036B15F /* Debloatfy.app */;
@@ -968,6 +971,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				1F4C60222DAB6C70000831B1 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				1F4C60272DADF0FC000831B1 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1FDCD5A82D5CCA920036B15F;
@@ -1420,6 +1424,14 @@
 				kind = branch;
 			};
 		};
+		1F4C60272DADF0FC000831B1 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1427,6 +1439,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1F4C60222DAB6C70000831B1 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
+		};
+		1F4C60282DADF0FC000831B1 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F4C60272DADF0FC000831B1 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

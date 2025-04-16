@@ -17,6 +17,7 @@ final class Auth {
     private(set) var isDebugEnabled:Bool = false
     private(set) var isConnected:Bool = false
     private(set) var isLoading:Bool = false
+    private(set) var deviceID:String? = nil
     
     var isAccessed:Bool {
         return isDebugEnabled && isConnected
@@ -59,13 +60,25 @@ final class Auth {
             
             if !isConnected || !isDebugEnabled {
                 return Log.of(.services(Auth.self)).warning("Access Denied!")
+            } else if isConnected && isDebugEnabled {
+                if let deviceString = connectedDevices.first {
+                    let components = deviceString.split(separator: "\t")
+                    if components.count > 0 {
+                        let deviceId = String(components[0])
+                        deviceID = deviceId
+                    }
+                } else {
+                    deviceID = nil
+                }
             }
             
             Log.of(.services(Auth.self)).info("Access granted!")
             
+            
         case .failure(let error, _, _):
             isConnected = false
             isDebugEnabled = false
+            deviceID = nil
             Log.of(.services(Auth.self)).error("\(error.message)")
         }
     }
