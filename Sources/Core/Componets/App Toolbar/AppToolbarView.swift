@@ -32,21 +32,21 @@ struct AppToolbarView: View {
     @Binding private var searchText: String
     @State private var showConfirmationSheet = false
     @State private var sheetType: ConfirmationSheet.SheetType = .backup
-    @State private var pendingAction: (() async -> Void)? = nil
+    @State private var pendingAction: (() async -> ())? = nil
     
     private let type:AppToolbarType
-    private let refreshAction: () async -> Void
-    private let primaryAction: () async -> Void
-    private let secondaryAction: () async -> Void
-    private let removeAction: () async -> Void
+    private let refreshAction: () async -> ()
+    private let primaryAction: () async -> ()
+    private let secondaryAction: () async -> ()
+    private let removeAction: () async -> ()
     private let isLoading: Bool
     private let isProceeding:Bool
     
     init(type: AppToolbarType = .debloat,
-         refreshAction: @escaping @Sendable () async -> Void,
-         removeAction: @escaping @Sendable () async -> Void,
-         primaryAction: @escaping @Sendable () async -> Void,
-         secondaryAction: @escaping @Sendable () async -> Void,
+         refreshAction: @escaping @Sendable () async -> (),
+         removeAction: @escaping @Sendable () async -> (),
+         primaryAction: @escaping @Sendable () async -> (),
+         secondaryAction: @escaping @Sendable () async -> (),
          isLoading:Bool,
          searchText:Binding<String>,
          isProceeding:Bool

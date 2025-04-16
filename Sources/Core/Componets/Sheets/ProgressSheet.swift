@@ -49,7 +49,7 @@ struct ProgressSheet: View {
     private let isCompleted: Bool
     private let type:ProgressSheetType
     private let fileName:String
-    private let cancelAction: () async -> Void
+    private let cancelAction: @Sendable () async -> ()
     private var isActuallyCompleted: Bool {
         isCompleted && progress >= 100
     }
@@ -58,7 +58,7 @@ struct ProgressSheet: View {
          fileName:String = "N/A",
          isCompleted: Bool,
          type:ProgressSheetType,
-         cancelAction: @escaping () async -> Void
+         cancelAction: @escaping () async -> ()
     ) {
         self.isCompleted = isCompleted
         self.type = type
