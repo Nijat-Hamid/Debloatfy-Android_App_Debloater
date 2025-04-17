@@ -49,7 +49,7 @@ struct ProgressSheet: View {
     private let isCompleted: Bool
     private let type:ProgressSheetType
     private let fileName:String
-    private let cancelAction: @Sendable () async -> ()
+    private let cancelAction: () async -> ()
     private var isActuallyCompleted: Bool {
         isCompleted && progress >= 100
     }
@@ -149,17 +149,19 @@ struct ProgressSheet: View {
         
         let interval = isCompleted ? 0.05 : 0.95
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
-            if isCompleted {
-                if progress < 100 {
-                    progress = min(progress + 4, 100)
+            Task { @MainActor in
+                if isCompleted {
+                    if progress < 100 {
+                        progress = min(progress + 4, 100)
+                    } else {
+                        timer?.invalidate()
+                    }
                 } else {
-                    timer?.invalidate()
-                }
-            } else {
-                if progress < 90 {
-                    progress = min(progress + 1, 100)
-                } else {
-                    progress = Float.random(in: 30...60)
+                    if progress < 90 {
+                        progress = min(progress + 1, 100)
+                    } else {
+                        progress = Float.random(in: 30...60)
+                    }
                 }
             }
         }
