@@ -140,13 +140,10 @@ struct AppToolbarView: View {
                 appCount: selectManager.selectedCount
             ) {
                 if let action = pendingAction {
-                    Task {
+                    Task { @MainActor in
                         await action()
-                        await MainActor.run {
-                            pendingAction = nil
-                            showConfirmationSheet = false
-                        }
-                        
+                        pendingAction = nil
+                        showConfirmationSheet = false
                     }
                 }
             }

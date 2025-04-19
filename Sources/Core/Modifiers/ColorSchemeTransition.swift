@@ -17,11 +17,9 @@ struct ColorSchemeTransition:ViewModifier {
             .preferredColorScheme(userTheme.colorScheme)
             .animation(isInitialLoad ? nil : .snappy, value: colorScheme)
             .onAppear {
-                Task {
+                Task { @MainActor in
                     try? await Task.sleep(for: .seconds(0.5))
-                    await MainActor.run {
-                        isInitialLoad = false
-                    }
+                    isInitialLoad = false
                 }
             }
     }
