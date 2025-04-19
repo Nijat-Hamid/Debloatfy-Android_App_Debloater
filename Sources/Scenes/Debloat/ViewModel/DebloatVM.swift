@@ -203,22 +203,23 @@ final class DebloatVM {
     }
     
     
-    private func loadExistingBackupInfo(from url: URL) -> [String: [String: Any]] {
+    private func loadExistingBackupInfo(from url: URL) -> [String: PackageInfo] {
         guard FileKit.manager.fileExists(atPath: url.path) else { return [:] }
         
         do {
             let existingData = try Data(contentsOf: url)
-            return (try JSONSerialization.jsonObject(with: existingData) as? [String: [String: Any]]) ?? [:]
+            let decoder = JSONDecoder()
+            return try decoder.decode([String: PackageInfo].self, from: existingData)
         } catch {
             Log.of(.viewModel(DebloatVM.self)).error("Warning: Could not read existing backup info: \(error.localizedDescription)")
             return [:]
         }
     }
     
-    private func processPackagesInParallel(backupsDirectory: URL, allBackupInfo: inout [String: [String: Any]]) async throws {
+    private func processPackagesInParallel(backupsDirectory: URL, allBackupInfo: inout [String: PackageInfo]) async throws {
         
         let results = await withTaskGroup { group in
-            var packageResults = [(String, [String: Any])]()
+            var packageResults = [(String, PackageInfo)]()
             
             for package in selectManager.selectedItems {
                 if let choosenApk = deviceAppList.filter({ $0.package == package}).first, choosenApk.type != .system {
@@ -243,7 +244,7 @@ final class DebloatVM {
         }
     }
     
-    private func processPackage(_ package: String, backupsDirectory: URL) async -> (String, [String: Any])? {
+    private func processPackage(_ package: String, backupsDirectory: URL) async -> (String, PackageInfo)? {
         
         let apkPath = await ADB.run(arguments: [.getApksFullPath(package)])
         
@@ -267,18 +268,16 @@ final class DebloatVM {
                     try FileKit.manager.createDirectory(at: packageDirectory, withIntermediateDirectories: true)
                 }
                 
-                
-                var packageInfo: [String: Any] = [:]
-                
+                var appType = ""
+                var totalSize = ""
                 
                 if let appInfo = self.deviceAppList.first(where: { $0.package == package }) {
-                    packageInfo["appType"] = appInfo.type.rawValue
-                    packageInfo["totalSize"] = appInfo.size
+                    appType = appInfo.type.rawValue
+                    totalSize = appInfo.size
                 }
                 
-                
                 let apksInfo = try await pullApksInParallel(filteredApkPaths: filteredApkPaths, packageDirectory: packageDirectory)
-                packageInfo["apks"] = apksInfo
+                let packageInfo = PackageInfo(type: appType, totalSize: totalSize, apks: apksInfo)
                 
                 return (package, packageInfo)
             } catch {
@@ -294,9 +293,9 @@ final class DebloatVM {
         
     }
     
-    private func pullApksInParallel(filteredApkPaths: [String], packageDirectory: URL) async throws -> [[String: Any]] {
+    private func pullApksInParallel(filteredApkPaths: [String], packageDirectory: URL) async throws -> [SingleApkModel] {
         return await withTaskGroup { group in
-            var results = [[String: Any]]()
+            var results = [SingleApkModel]()
             
             for path in filteredApkPaths {
                 group.addTask {
@@ -315,7 +314,7 @@ final class DebloatVM {
     }
     
     
-    private func pullSingleApk(path: String, packageDirectory: URL) async -> [String: Any]? {
+    private func pullSingleApk(path: String, packageDirectory: URL) async -> SingleApkModel? {
         guard let lastSlashIndex = path.lastIndex(of: "/") else { return nil }
         
         let baseDir = String(path[..<lastSlashIndex])
@@ -326,18 +325,17 @@ final class DebloatVM {
         let result = await ADB.run(arguments: [.backupApk(path, destinationURL.path)])
         switch result {
         case .success:
-            return [
-                "fileName": fileName,
-                "originalPath": baseDir
-            ]
+            return SingleApkModel(fileName: fileName, originalPath: baseDir)
         case .failure(let error,_,_):
             Log.of(.viewModel(DebloatVM.self)).error("\(error.message)")
             return nil
         }
     }
     
-    private func saveBackupInfo(_ info: [String: [String: Any]], to url: URL) throws {
-        let jsonData = try JSONSerialization.data(withJSONObject: info, options: .prettyPrinted)
+    private func saveBackupInfo(_ info: [String: PackageInfo], to url: URL) throws {     
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let jsonData = try encoder.encode(info)
         try jsonData.write(to: url)
     }
     

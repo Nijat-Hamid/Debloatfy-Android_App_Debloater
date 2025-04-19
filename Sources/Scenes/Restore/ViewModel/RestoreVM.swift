@@ -170,43 +170,46 @@ final class RestoreVM {
             else { return }
             
             let existingData = try Data(contentsOf: FileKit.backupJson)
+            let decoder = JSONDecoder()
+            var jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
             
-            if var jsonDict = try JSONSerialization.jsonObject(with: existingData) as? [String: [String: Any]] {
-                await withThrowingTaskGroup { group in
-                    for packageName in selectManager.selectedItems {
-                        group.addTask {
-                            do {
-                                if FileKit.existsApkDir(packageName) {
-                                    try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
-                                    return (packageName, true)
-                                } else {
-                                    return (packageName, false)
-                                }
-                            } catch {
+            await withThrowingTaskGroup { group in
+                for packageName in selectManager.selectedItems {
+                    group.addTask {
+                        do {
+                            if FileKit.existsApkDir(packageName) {
+                                try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
+                                return (packageName, true)
+                            } else {
                                 return (packageName, false)
                             }
+                        } catch {
+                            return (packageName, false)
                         }
-                    }
-                    
-                    do {
-                        for try await (packageName, isSuccess) in group {
-                            if isSuccess {
-                                deviceAppList.removeAll(where: { $0.package == packageName })
-                                jsonDict.removeValue(forKey: packageName)
-                                
-                                try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
-                            }
-                        }
-                    } catch {
-                        Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
                     }
                 }
                 
-                selectManager.resetAllSelect()
-                
-                let updatedData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
-                try updatedData.write(to: FileKit.backupJson)
+                do {
+                    for try await (packageName, isSuccess) in group {
+                        if isSuccess {
+                            deviceAppList.removeAll(where: { $0.package == packageName })
+                            jsonDict.removeValue(forKey: packageName)
+                            
+                            try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
+                        }
+                    }
+                } catch {
+                    Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
+                }
             }
+            
+            selectManager.resetAllSelect()
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let updatedData = try encoder.encode(jsonDict)
+            try updatedData.write(to: FileKit.backupJson)
+            
         } catch {
             Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
         }
@@ -235,24 +238,25 @@ final class RestoreVM {
             else { return }
             
             let existingData = try Data(contentsOf: FileKit.backupJson)
+            let decoder = JSONDecoder()
+            var jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
             
-            if var jsonDict = try JSONSerialization.jsonObject(with: existingData) as? [String: [String: Any]] {
-                do {
-                    if FileKit.existsApkDir(packageName) {
-                        try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
-                    }
-                    
-                    deviceAppList.removeAll(where: { $0.package == packageName })
-                    jsonDict.removeValue(forKey: packageName)
-                    try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
-                    selectManager.removeSelected(packageName)
-                    
-                    let updatedData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
-                    
-                    try updatedData.write(to: FileKit.backupJson)
-                } catch {
-                    Log.of(.viewModel(RestoreVM.self)).error("Remove error: \(self.packageName): \(error.localizedDescription)")
+            do {
+                if FileKit.existsApkDir(packageName) {
+                    try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
                 }
+                
+                deviceAppList.removeAll(where: { $0.package == packageName })
+                jsonDict.removeValue(forKey: packageName)
+                try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
+                selectManager.removeSelected(packageName)
+                
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                let updatedData = try encoder.encode(jsonDict)
+                try updatedData.write(to: FileKit.backupJson)
+            } catch {
+                Log.of(.viewModel(RestoreVM.self)).error("Remove error: \(self.packageName): \(error.localizedDescription)")
             }
             
         } catch {
@@ -282,21 +286,15 @@ final class RestoreVM {
             else {  return  }
             
             let existingData = try Data(contentsOf: FileKit.backupJson)
+            let decoder = JSONDecoder()
+            let jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
             
-            if let jsonDict = try JSONSerialization.jsonObject(with: existingData) as? [String: [String: Any]] {
-                for (packageName, packageInfo) in jsonDict {
-                    if FileKit.existsApkDir(packageName) {
-                        let appTypeString = packageInfo["appType"] as? String ?? "Unknown"
-                        
-                        let appType: ListAppType = appTypeString == "System" ? .system : .user
-                        
-                        let sizeString = packageInfo["totalSize"] as? String ?? "N/A"
-                        
-                        deviceAppList.append(.init(package: packageName, type: appType, size: sizeString))
-                    }
+            for (packageName, packageInfo) in jsonDict {
+                if FileKit.existsApkDir(packageName) {
+                    let appType: ListAppType = packageInfo.type == "System" ? .system : .user
+                    deviceAppList.append(.init(package: packageName, type: appType, size: packageInfo.totalSize))
                 }
             }
-            
             deviceAppList.sort { app1, app2 in
                 let size1 = Double(app1.size) ?? 0.0
                 let size2 = Double(app2.size) ?? 0.0

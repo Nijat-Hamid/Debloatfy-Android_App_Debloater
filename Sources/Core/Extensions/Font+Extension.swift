@@ -11,11 +11,6 @@ extension Font {
     static private var fontCache: [String: Font] = [:]
     
     static private func font(type: FontType, weight: FontWeight, style: Font.TextStyle) -> Font {
-        let key = "\(type.rawValue)-\(weight.rawValue)-\(style)"
-        if let cachedFont = fontCache[key] {
-            return cachedFont
-        }
-        
         let size:CGFloat
         switch style {
         case .largeTitle:
@@ -46,7 +41,6 @@ extension Font {
         
         let font = Font.custom(type.rawValue, size: size ,relativeTo: style)
             .weight(weight.fontWeight)
-        fontCache[key] = font
         return font
     }
     

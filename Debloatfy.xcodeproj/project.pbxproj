@@ -27,6 +27,7 @@
 		1F1C945A2D67EE24008B6E19 /* SocialSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94592D67EE24008B6E19 /* SocialSectionView.swift */; };
 		1F1C945D2D6800C0008B6E19 /* OthersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C945C2D6800C0008B6E19 /* OthersSectionView.swift */; };
 		1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94602D680121008B6E19 /* ThemeButtonView.swift */; };
+		1F465AEF2DB2C03000F2E7F7 /* DebloatUIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AEE2DB2C02D00F2E7F7 /* DebloatUIModels.swift */; };
 		1F4C5FF32D9D6DF9000831B1 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */; };
 		1F4C5FF72D9DBB89000831B1 /* LogsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */; };
 		1F4C5FFA2D9F0D9D000831B1 /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */; };
@@ -153,6 +154,7 @@
 		1F1C94592D67EE24008B6E19 /* SocialSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSectionView.swift; sourceTree = "<group>"; };
 		1F1C945C2D6800C0008B6E19 /* OthersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersSectionView.swift; sourceTree = "<group>"; };
 		1F1C94602D680121008B6E19 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
+		1F465AEE2DB2C02D00F2E7F7 /* DebloatUIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatUIModels.swift; sourceTree = "<group>"; };
 		1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVM.swift; sourceTree = "<group>"; };
 		1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		1F1C94292D66096A008B6E19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F465AEE2DB2C02D00F2E7F7 /* DebloatUIModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F465AEF2DB2C03000F2E7F7 /* DebloatUIModels.swift in Sources */,
 				1FF10E472D9601C500EBECB5 /* OverviewVM.swift in Sources */,
 				1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */,
 				1FF986C62D731BB10008BDA3 /* InfoDetailView.swift in Sources */,
