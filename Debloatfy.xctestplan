@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "7AC88201-928A-4F10-B25D-B537BBD24B00",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Debloatfy.xcodeproj",
+      "identifier" : "1FDCD5B02D5CCA920036B15F",
+      "name" : "Debloatfy"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "DebloatfyTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:Debloatfy.xcodeproj",
+        "identifier" : "1FDCD5C12D5CCA930036B15F",
+        "name" : "Tests"
+      }
+    }
+  ],
+  "version" : 2
+}
