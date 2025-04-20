@@ -31,6 +31,8 @@
 		1F465AF12DB3F82100F2E7F7 /* Processors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF02DB3F80100F2E7F7 /* Processors.swift */; };
 		1F465AF42DB4ECBA00F2E7F7 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */; };
 		1F465AF82DB4F07700F2E7F7 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF72DB4F07200F2E7F7 /* FontTests.swift */; };
+		1F465AFB2DB506C900F2E7F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F465AFA2DB506C900F2E7F7 /* README.md */; };
+		1F465AFF2DB507A400F2E7F7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F465AFE2DB507A400F2E7F7 /* logo.png */; };
 		1F4C5FF32D9D6DF9000831B1 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */; };
 		1F4C5FF72D9DBB89000831B1 /* LogsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */; };
 		1F4C5FFA2D9F0D9D000831B1 /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */; };
@@ -161,6 +163,8 @@
 		1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Debloatfy.xctestplan; sourceTree = "<group>"; };
 		1F465AF72DB4F07200F2E7F7 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
+		1F465AFA2DB506C900F2E7F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1F465AFE2DB507A400F2E7F7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVM.swift; sourceTree = "<group>"; };
 		1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
@@ -562,6 +566,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1F465AFC2DB5073100F2E7F7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				1F465AFD2DB5078D00F2E7F7 /* image */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		1F465AFD2DB5078D00F2E7F7 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				1F465AFE2DB507A400F2E7F7 /* logo.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		1F4C5FF12D9D6DD8000831B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,12 +629,14 @@
 		1FDCD5A82D5CCA920036B15F = {
 			isa = PBXGroup;
 			children = (
-				1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */,
 				1FDCD5F12D5E01730036B15F /* .gitignore */,
 				1FDCD5F22D5E02240036B15F /* Debloatfy.app */,
+				1F465AFA2DB506C900F2E7F7 /* README.md */,
+				1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */,
+				1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */,
+				1F465AFC2DB5073100F2E7F7 /* Demo */,
 				1FDCD5E82D5DFE740036B15F /* Sources */,
 				1FDCD5E02D5DFDA00036B15F /* Tests */,
-				1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1024,6 +1046,8 @@
 				1FF10E392D9253A500EBECB5 /* mke2fs.conf in Resources */,
 				1FF10E3A2D9253A500EBECB5 /* source.properties in Resources */,
 				1FF10E3B2D9253A500EBECB5 /* fastboot in Resources */,
+				1F465AFF2DB507A400F2E7F7 /* logo.png in Resources */,
+				1F465AFB2DB506C900F2E7F7 /* README.md in Resources */,
 				1FF10E3C2D9253A500EBECB5 /* hprof-conv in Resources */,
 				1FDCD5EC2D5DFE740036B15F /* Assets.xcassets in Resources */,
 			);
