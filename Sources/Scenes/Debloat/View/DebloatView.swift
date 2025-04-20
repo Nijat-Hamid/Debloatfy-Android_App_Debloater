@@ -40,7 +40,7 @@ struct DebloatView: View {
             .environment(\.debloatVM,vm)
            
         }
-        .environment(\.selectManager,vm.selectManager)
+        .environment(vm.selectManager)
         .sheet(isPresented: $vm.showActionSheet) {
             ConfirmationSheet(
                 type: $vm.sheetType,
