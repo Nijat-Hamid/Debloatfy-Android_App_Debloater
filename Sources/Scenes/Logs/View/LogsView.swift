@@ -37,7 +37,7 @@ struct LogsView: View {
                         }
                         .buttonStyle(ButtonStyles(
                             type:.normal,
-                            disable: vm.logList.isEmpty || vm.isLoading,
+                            disable: vm.logList.isEmpty || vm.isProceeding,
                             padV: 6,
                             pointerStyle: .link))
                         .frame(maxWidth:.infinity,alignment: .trailing)

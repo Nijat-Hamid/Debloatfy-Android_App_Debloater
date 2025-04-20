@@ -6,8 +6,7 @@
 //
 import SwiftUI
 
-@Observable
-
+@MainActor @Observable
 final class LogsVM {
     private let auth: Auth
     private let dbService: DBService
@@ -21,14 +20,9 @@ final class LogsVM {
         self.dbService = dbService
     }
     
-    @MainActor
     func fetchLogs() async {
         isLoading = true
         logList = []
-        
-        defer {
-            isLoading = false
-        }
         
         await auth.startServer()
         
@@ -39,16 +33,13 @@ final class LogsVM {
         }catch {
             Log.of(.viewModel(LogsVM.self)).error("Error occuried during fetchLogs:\(error)")
         }
+        
+        isLoading = false
     }
     
-    @MainActor
     func removeLogs() async {
-        isLoading = true
-        
-        defer {
-            isLoading = false
-        }
-        
+        isProceeding = true
+    
         await auth.startServer()
         
         guard auth.isAccessed else { return }
@@ -59,5 +50,7 @@ final class LogsVM {
         }catch{
             Log.of(.viewModel(LogsVM.self)).error("Error occuried during deleting logs:\(error)")
         }
+        
+        isProceeding = false
     }
 }
