@@ -39,10 +39,10 @@ struct RestoreView: View {
                 isLoading: vm.isLoading,
                 searchText: searchText
             )
-            .environment(\.restoreVM,vm)
+            .environment(\.restoreVM, vm)
             
         }
-        .environment(\.selectManager,vm.selectManager)
+        .environment(vm.selectManager)
         .sheet(isPresented: $vm.showActionSheet) {
             ConfirmationSheet(
                 type: $vm.sheetType,

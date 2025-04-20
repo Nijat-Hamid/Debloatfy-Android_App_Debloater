@@ -3,10 +3,10 @@
 //  Debloatfy
 //
 //  Created by Nijat Hamid on 4/8/25.
-//
+
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 final class RestoreVM {
     private let auth: Auth
     private(set) var selectManager: SelectManager
@@ -39,24 +39,18 @@ final class RestoreVM {
     func singleRestoreAndRemove() async {
         isProceeding = true
         
-        defer {
-            isProceeding = false
-        }
-        
         await auth.startServer()
         
         guard auth.isAccessed else { return }
         
         await singleRestore()
         await singleDelete()
+        
+        isProceeding = false
     }
     
     func bulkRestoreAndRemove() async {
         isProceeding = true
-        
-        defer {
-            isProceeding = false
-        }
         
         await auth.startServer()
         
@@ -64,14 +58,13 @@ final class RestoreVM {
         
         await bulkRestore()
         await bulkDelete()
+        
+        isProceeding = false
     }
     
     func singleRestore() async {
         isProceeding = true
         
-        defer {
-            isProceeding = false
-        }
         
         await auth.startServer()
         
@@ -80,35 +73,19 @@ final class RestoreVM {
         guard FileKit.existsBackupDir,
               FileKit.existsBackupJson
         else { return }
-            
-        if FileKit.existsApkDir(packageName) {
-            do {
-                let apkDir = FileKit.returnApkDir(packageName).path()
-                let apkContents = try FileKit.manager.contentsOfDirectory(atPath: apkDir)
-                let apkSplitBundle = apkContents.filter { $0.hasSuffix(".apk")}.map { "\(apkDir)/\($0)" }.joined(separator: " ")
-                
-                let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)])
-                
-                switch result {
-                case .success:
-                    try? await dbService.save(.init(name:packageName, type: .restore,to: "Phone"))
-                case .failure(let error, _ , _):
-                    Log.of(.viewModel(RestoreVM.self)).error("\(error.message)")
-                }
-                
-            } catch {
-                Log.of(.viewModel(RestoreVM.self)).error("\(self.packageName):\(error.localizedDescription)")
-            }
+        
+        let result = await Processors.restoreSingleApp(packageName)
+        
+        if result {
+            try? await dbService.save(.init(name:packageName, type: .restore,to: "Phone"))
         }
+        
+        isProceeding = false
     }
     
     func bulkRestore() async {
         isProceeding = true
         
-        defer {
-            isProceeding = false
-        }
-        
         await auth.startServer()
         
         guard auth.isAccessed else { return }
@@ -117,114 +94,36 @@ final class RestoreVM {
               FileKit.existsBackupJson
         else { return }
         
-        await withTaskGroup { group in
-            for package in selectManager.selectedItems {
-                if FileKit.existsApkDir(package) {
-                    do {
-                        let apkDir = FileKit.returnApkDir(package).path()
-                        let apkContents = try FileKit.manager.contentsOfDirectory(atPath: apkDir)
-                        let apkSplitBundle = apkContents.filter { $0.hasSuffix(".apk")}.map { "\(apkDir)/\($0)" }.joined(separator: " ")
-                        group.addTask {
-                            let result = await ADB.run(arguments: [.restoreApk(apkSplitBundle)])
-                            
-                            switch result {
-                            case .success:
-                                return (package, true)
-                            case .failure(let error, _,_):
-                                Log.of(.viewModel(RestoreVM.self)).error("\(error.message)")
-                                return (package, false)
-                            }
-                        }
-                        
-                    } catch {
-                        Log.of(.viewModel(RestoreVM.self)).error("Error reading apk directory for \(package):\(error.localizedDescription)")
-                    }
-                }
-            }
-            
-             for await (package,isSuccess) in group {
-                 if isSuccess {
-                     try? await dbService.save(.init(name:package, type: .restore,to: "Phone"))
-                 }
-            }
+        let result = await Processors.restoreMultipleApp(selectManager.selectedItems)
+        
+        for (package, isSuccess) in result where isSuccess {
+            try? await dbService.save(.init(name: package, type: .restore, to: "Phone"))
         }
+        
+        isProceeding = false
     }
     
     func bulkDelete() async {
         isProceeding = true
         
-        defer {
-            Task {
-                try? await Task.sleep(for: .seconds(0.5))
-                isProceeding = false
-            }
-        }
-        
         await auth.startServer()
         
         guard auth.isAccessed else { return }
         
-        do {
-            guard FileKit.existsBackupDir,
-                  FileKit.existsBackupJson
-            else { return }
-            
-            let existingData = try Data(contentsOf: FileKit.backupJson)
-            let decoder = JSONDecoder()
-            var jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
-            
-            await withThrowingTaskGroup { group in
-                for packageName in selectManager.selectedItems {
-                    group.addTask {
-                        do {
-                            if FileKit.existsApkDir(packageName) {
-                                try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
-                                return (packageName, true)
-                            } else {
-                                return (packageName, false)
-                            }
-                        } catch {
-                            return (packageName, false)
-                        }
-                    }
-                }
-                
-                do {
-                    for try await (packageName, isSuccess) in group {
-                        if isSuccess {
-                            deviceAppList.removeAll(where: { $0.package == packageName })
-                            jsonDict.removeValue(forKey: packageName)
-                            
-                            try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
-                        }
-                    }
-                } catch {
-                    Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
-                }
-            }
-            
+        let result = await Processors.deleteRestoredApps(selectManager.selectedItems)
+        
+        for (package, isSuccess) in result where isSuccess {
+            deviceAppList.removeAll(where: { $0.package == package })
             selectManager.resetAllSelect()
-            
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let updatedData = try encoder.encode(jsonDict)
-            try updatedData.write(to: FileKit.backupJson)
-            
-        } catch {
-            Log.of(.viewModel(RestoreVM.self)).error("An error occurred during bulk remove: \(error.localizedDescription)")
+            try? await dbService.save(.init(name:package, type: .remove,from: "PC"))
         }
         
+        try? await Task.sleep(for: .seconds(0.5))
+        isProceeding = false
     }
     
     func singleDelete() async {
         isProceeding = true
-        
-        defer {
-            Task {
-                try? await Task.sleep(for: .seconds(0.5))
-                isProceeding = false
-            }
-        }
         
         await auth.startServer()
         
@@ -232,77 +131,31 @@ final class RestoreVM {
         
         guard !packageName.isEmpty else { return }
         
-        do {
-            guard FileKit.existsBackupDir,
-                  FileKit.existsBackupJson
-            else { return }
-            
-            let existingData = try Data(contentsOf: FileKit.backupJson)
-            let decoder = JSONDecoder()
-            var jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
-            
-            do {
-                if FileKit.existsApkDir(packageName) {
-                    try FileKit.manager.removeItem(at: FileKit.returnApkDir(packageName))
-                }
-                
-                deviceAppList.removeAll(where: { $0.package == packageName })
-                jsonDict.removeValue(forKey: packageName)
-                try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
-                selectManager.removeSelected(packageName)
-                
-                let encoder = JSONEncoder()
-                encoder.outputFormatting = .prettyPrinted
-                let updatedData = try encoder.encode(jsonDict)
-                try updatedData.write(to: FileKit.backupJson)
-            } catch {
-                Log.of(.viewModel(RestoreVM.self)).error("Remove error: \(self.packageName): \(error.localizedDescription)")
-            }
-            
-        } catch {
-            Log.of(.viewModel(RestoreVM.self)).error("An error occurred during tasks: \(error.localizedDescription)")
+        let result = await Processors.deleteRestoredApp(packageName)
+        
+        if result {
+            deviceAppList.removeAll(where: { $0.package == packageName })
+            selectManager.removeSelected(packageName)
+            try? await dbService.save(.init(name:packageName, type: .remove,from: "PC"))
         }
         
+        try? await Task.sleep(for: .seconds(0.5))
+        isProceeding = false
     }
     
     func getAppsFromPC() async {
         isLoading = true
         deviceAppList = []
         
-        defer {
-            Task {
-                try? await Task.sleep(for: .seconds(0.5))
-                isLoading = false
-            }
-        }
-        
         await auth.startServer()
         
         guard auth.isAccessed else { return }
         
-        do {
-            guard FileKit.existsBackupDir,
-                  FileKit.existsBackupJson
-            else {  return  }
-            
-            let existingData = try Data(contentsOf: FileKit.backupJson)
-            let decoder = JSONDecoder()
-            let jsonDict = try decoder.decode([String: PackageInfo].self, from: existingData)
-            
-            for (packageName, packageInfo) in jsonDict {
-                if FileKit.existsApkDir(packageName) {
-                    let appType: ListAppType = packageInfo.type == "System" ? .system : .user
-                    deviceAppList.append(.init(package: packageName, type: appType, size: packageInfo.totalSize))
-                }
-            }
-            deviceAppList.sort { app1, app2 in
-                let size1 = Double(app1.size) ?? 0.0
-                let size2 = Double(app2.size) ?? 0.0
-                return size1 > size2
-            }
-            
-        } catch {
-            Log.of(.viewModel(RestoreVM.self)).error("Error during backup process: \(error.localizedDescription)")
-        }
+        let result = await Processors.getRestoredApps()
+        
+        deviceAppList = result
+        
+        try? await Task.sleep(for: .seconds(0.3))
+        isLoading = false
     }
 }
