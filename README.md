@@ -7,78 +7,92 @@
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">A minimalist macOS app built with SwiftUI for file transfers and app management between macOS and Android devices via ADB.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
-
-<p align="center">
+  <a href="#introduction">Introduction</a> •
+  <a href="#purpose">Purpose</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
   <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
+## Introduction
+
+`Debloatfy` streamlines the management of your Android devices directly from your macOS system with an intuitive SwiftUI interface.
+
+With Debloatfy, you can effortlessly transfer files between your macOS and Android devices, manage applications, and create backups—all through a single, elegant interface leveraging ADB connectivity.
+
+Powered by optimized ADB commands, Debloatfy provides comprehensive device information and allows you to quickly remove unwanted bloatware, backup valuable applications, and restore them when needed, giving you complete control over your Android phone.
+
+Experience lightning-fast file transfers for high-volume data between your computer and Android device, while the custom logging system keeps you informed of every operation in real-time, ensuring transparency and confidence in your device management workflow.
+
+## Purpose
+
+I've always been an Android user, appreciating the freedom and flexibility the operating system provides. However, Android has one persistent issue: manufacturers preload devices with numerous bloatware applications that can't be removed through normal means.
+
+Previously, I relied on terminal commands and ADB to remove these unwanted apps and quickly transfer files to my computer before resetting my device. After doing this process manually countless times, I asked myself: why not create a user-friendly GUI to simplify these tasks?
+
+That's how `Debloatfy` was born—a tool designed to bridge the gap between macOS and Android, making device management accessible without requiring terminal expertise.
+
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
+* Remove bloatware
+  - Quickly remove unwanted pre-installed apps from your Android device
+  - Select and remove multiple apps at once
+* Backup & Restore
+  - Backup important apps before removing or resetting your device
+  - Easily restore apps from your backups when needed
+* View detailed device information 
+* File Transfer
+  - High-speed file transfers between macOS and Android
+  - Transfer large files efficiently
+  - Cancel any task during transfer process
 * Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+* Detailed Logging
+  - Custom logging system for all actions
+  - Clear visibility of processes and outcomes
+* macOS Integration
+  - Native macOS application
+  - Optimized for macOS performance
+* Offline App - No Network Connection
+  - Works completely offline with no data sharing
+* ADB management handled automatically
+  - Latest Android Debug Bridge SDK
+* Cancel any action during processing
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To use the "Debloatfy", you need to follow the steps below.:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+# Step 1 - Access Developer Mode
+$ Navigate to Settings > About Phone. Locate the Build Number and tap it 7 times. You'll see a message confirming "Developer options enabled"
 
-# Go into the repository
-$ cd electron-markdownify
+# Step 2 - Enable USB Debugging:
+$ Go back to Settings and find the new Developer options menu. Toggle on "USB debugging". Accept the security prompt when it appears
 
-# Install dependencies
-$ npm install
+# Step 3 - Connect Your Device:
+$ Use a USB cable to connect your Android device to your MacOS device. Ensure your device is unlocked
 
-# Run the app
-$ npm start
+# Step 4 - Grant Permissions:
+$ When prompted on your Android device, check "Always allow from this computer"
+
+# Step 5 - Ready to Use:
+$ Debloatfy will detect your device and you can begin managing it
 ```
 
-> **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> **Note:**
+> Enabling Developer options is completely safe for your device. The setting can be disabled at any time after using Debloatfy with no impact on your device's normal operation or security.
 
 
 ## Download
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
+You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/) the latest installable version of `Debloatfy` for macOS
 
 ## Emailware
 
