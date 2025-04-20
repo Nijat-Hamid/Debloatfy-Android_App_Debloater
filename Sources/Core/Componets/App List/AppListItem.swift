@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppListItem: View {
-    @Environment(\.selectManager) private var selectManager
+    @Environment(SelectManager.self) private var selectManager
    
     private let item:AppListModel
     private let type:AppListType

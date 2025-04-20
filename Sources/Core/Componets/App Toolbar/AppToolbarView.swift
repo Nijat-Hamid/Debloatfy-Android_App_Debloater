@@ -28,7 +28,7 @@ enum AppToolbarType {
 
 struct AppToolbarView: View {
     
-    @Environment(\.selectManager) private var selectManager
+    @Environment(SelectManager.self) private var selectManager
     @Binding private var searchText: String
     @State private var showConfirmationSheet = false
     @State private var sheetType: ConfirmationSheet.SheetType = .backup
