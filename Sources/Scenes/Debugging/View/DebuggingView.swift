@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DebuggingView: View {
         
-    @Environment(\.auth) private var auth
+    @Environment(Auth.self) private var auth
     
     var body: some View {
         VStack(spacing:32) {

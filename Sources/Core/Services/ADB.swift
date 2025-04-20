@@ -14,6 +14,7 @@ struct ADB {
             return .failure(error: .executableNotFound, code: -1, rawOutput: "")
         }
         
+        assert(!Thread.isMainThread, "This function must run not the main thread!")
         return await withCheckedContinuation { continuation in
             let task = Process()
             task.launchPath = path
@@ -73,7 +74,7 @@ extension ADB {
             case .kill: return "kill-server"
             case .start: return "start-server"
             case .devices: return "devices"
-            case .reconnect: return "kill-server && adb start server"
+            case .reconnect: return "reconnect"
             case .reboot: return "reboot"
             case .getBootloader: return "shell getprop ro.bootloader"
             case .getCompany: return "shell getprop ro.product.manufacturer"

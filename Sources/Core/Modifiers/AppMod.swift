@@ -14,8 +14,8 @@ struct AppMod:ViewModifier {
     func body(content: Content) -> some View {
         content
             .environment(\.font, .appBody)
-            .environment(\.router, router)
-            .environment(\.auth,auth)
+            .environment(router)
+            .environment(auth)
             .background(VisualEffect(.background).ignoresSafeArea())
             .foregroundStyle(Color.primary)
             .frame(width: 1000,height: 500)

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LayoutView: View {
-    @Environment(\.router) private var router
-    @Environment(\.auth) private var auth
+    @Environment(Router.self) private var router
+    @Environment(Auth.self) private var auth
     @State private var vm = LayoutVM()
     
     private var currentPage:Route {

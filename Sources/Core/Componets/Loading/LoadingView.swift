@@ -20,14 +20,6 @@ struct LoadingView: View {
     
     private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
-    private func startTextCycle() {
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
-            withAnimation {
-                currentTextIndex = (currentTextIndex + 1) % loadingTexts.count
-            }
-        }
-    }
-    
     var body: some View {
         VStack(spacing: 20) {
             Image(systemName: "waveform")

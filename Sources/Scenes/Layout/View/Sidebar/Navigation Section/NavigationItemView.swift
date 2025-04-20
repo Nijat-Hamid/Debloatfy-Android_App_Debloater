@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NavigationItemView: View {
-    @Environment(\.router) private var router
-    @Environment(\.auth) private var auth
+    @Environment(Router.self) private var router
+    @Environment(Auth.self) private var auth
     @State private var isHovered: Bool = false
     let navigationItem: NavigationItem
     
