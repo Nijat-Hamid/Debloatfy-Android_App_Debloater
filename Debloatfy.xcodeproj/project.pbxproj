@@ -29,6 +29,8 @@
 		1F1C94612D680121008B6E19 /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94602D680121008B6E19 /* ThemeButtonView.swift */; };
 		1F465AEF2DB2C03000F2E7F7 /* ApkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AEE2DB2C02D00F2E7F7 /* ApkModel.swift */; };
 		1F465AF12DB3F82100F2E7F7 /* Processors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF02DB3F80100F2E7F7 /* Processors.swift */; };
+		1F465AF42DB4ECBA00F2E7F7 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */; };
+		1F465AF82DB4F07700F2E7F7 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F465AF72DB4F07200F2E7F7 /* FontTests.swift */; };
 		1F4C5FF32D9D6DF9000831B1 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */; };
 		1F4C5FF72D9DBB89000831B1 /* LogsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */; };
 		1F4C5FFA2D9F0D9D000831B1 /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */; };
@@ -51,7 +53,6 @@
 		1FAD12BC2D98743B004CF8DC /* AppListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD12BB2D987437004CF8DC /* AppListModel.swift */; };
 		1FAD12BE2D9BF735004CF8DC /* SelectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD12BD2D9BF732004CF8DC /* SelectManager.swift */; };
 		1FD384EB2D7B686A007FA48B /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD384EA2D7B6865007FA48B /* VisualEffect.swift */; };
-		1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */; };
 		1FDCD5EA2D5DFE740036B15F /* DebloatfyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */; };
 		1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */; };
 		1FDCD5EC2D5DFE740036B15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDCD5E42D5DFE740036B15F /* Assets.xcassets */; };
@@ -157,6 +158,9 @@
 		1F1C94602D680121008B6E19 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
 		1F465AEE2DB2C02D00F2E7F7 /* ApkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApkModel.swift; sourceTree = "<group>"; };
 		1F465AF02DB3F80100F2E7F7 /* Processors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processors.swift; sourceTree = "<group>"; };
+		1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Debloatfy.xctestplan; sourceTree = "<group>"; };
+		1F465AF72DB4F07200F2E7F7 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 		1F4C5FF22D9D6DF4000831B1 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		1F4C5FF62D9DBB83000831B1 /* LogsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVM.swift; sourceTree = "<group>"; };
 		1F4C5FF92D9F0D9D000831B1 /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
@@ -179,7 +183,6 @@
 		1FAD12BB2D987437004CF8DC /* AppListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListModel.swift; sourceTree = "<group>"; };
 		1FAD12BD2D9BF732004CF8DC /* SelectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectManager.swift; sourceTree = "<group>"; };
 		1FD384EA2D7B6865007FA48B /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
-		1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebloatfyTests.swift; sourceTree = "<group>"; };
 		1FDCD5E22D5DFE740036B15F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FDCD5E42D5DFE740036B15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Debloatfy.entitlements; sourceTree = "<group>"; };
@@ -543,6 +546,22 @@
 			path = "Theme Switch";
 			sourceTree = "<group>";
 		};
+		1F465AF22DB4EC5800F2E7F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1F465AF62DB4F05900F2E7F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F465AF72DB4F07200F2E7F7 /* FontTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1F4C5FF12D9D6DD8000831B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +609,7 @@
 		1FDCD5A82D5CCA920036B15F = {
 			isa = PBXGroup;
 			children = (
+				1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */,
 				1FDCD5F12D5E01730036B15F /* .gitignore */,
 				1FDCD5F22D5E02240036B15F /* Debloatfy.app */,
 				1FDCD5E82D5DFE740036B15F /* Sources */,
@@ -601,7 +621,8 @@
 		1FDCD5E02D5DFDA00036B15F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FDCD5DF2D5DFDA00036B15F /* DebloatfyTests.swift */,
+				1F465AF62DB4F05900F2E7F7 /* Extensions */,
+				1F465AF22DB4EC5800F2E7F7 /* Helpers */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1136,7 +1157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FDCD5E12D5DFDA00036B15F /* DebloatfyTests.swift in Sources */,
+				1F465AF82DB4F07700F2E7F7 /* FontTests.swift in Sources */,
+				1F465AF42DB4ECBA00F2E7F7 /* UtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

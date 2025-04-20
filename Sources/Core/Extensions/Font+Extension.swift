@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Font {
-    static private func font(type: FontType, weight: FontWeight, style: Font.TextStyle) -> Font {
+    static func font(type: FontType, weight: FontWeight, style: Font.TextStyle) -> Font {
         let size:CGFloat
         switch style {
         case .largeTitle:
