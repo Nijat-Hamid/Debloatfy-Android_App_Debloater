@@ -31,7 +31,7 @@ struct TransferView: View {
                                                    sheetType:$sheetType)
                                 }
                             }
-                            .environment(\.transferVM,vm)
+                            .environment(vm)
                         }
                         .padding(.trailing, -16)
                         .modifier(UnavailableMod(type: vm.storageContent.isEmpty ? .empty : .none ))
@@ -67,7 +67,7 @@ struct TransferView: View {
                 )
                 
             }
-            .environment(\.transferVM,vm)
+            .environment(vm)
             .modifier(SectionMod(sectionType: .fullWidth))
         }
         .sheet(isPresented: $vm.showActionSheet) {

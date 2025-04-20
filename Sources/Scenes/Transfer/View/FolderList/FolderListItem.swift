@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FolderListItem: View {
-    @Environment(\.transferVM) private var vm
+    @Environment(TransferVM.self) private var vm
     @State private var isHovered:Bool = false
     @Binding private var fileName:String
     @Binding private var sheetType:ProgressSheetType

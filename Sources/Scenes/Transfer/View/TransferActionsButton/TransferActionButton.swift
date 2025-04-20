@@ -49,7 +49,7 @@ enum TransferActionBtnType {
 }
 
 struct TransferActionButton: View {
-    @Environment(\.transferVM) private var vm
+    @Environment(TransferVM.self) private var vm
     @State private var isImporting: Bool = false
     @Binding private var defaultLocation: URL
     @Binding private var sheetType:ProgressSheetType
