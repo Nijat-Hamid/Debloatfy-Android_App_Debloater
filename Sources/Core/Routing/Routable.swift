@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 protocol Routable {
     
     associatedtype ViewType: View

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 final class Router:Routable {
     
     private(set) var currentPage: Route = .overview

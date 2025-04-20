@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 final class SelectManager {
     var allSelected:Bool = false
     private(set) var selectedItems:Set<String> = []

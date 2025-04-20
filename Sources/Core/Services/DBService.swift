@@ -7,7 +7,7 @@
 import GRDB
 import Foundation
 
-final class DBService {
+final class DBService:Sendable {
     
     private let dbQueue: DatabaseQueue
     
@@ -15,7 +15,7 @@ final class DBService {
     
     private init() {
         do{
-            if !FileKit.manager.fileExists(atPath: FileKit.databaseURL.path()) {
+            if !FileManager.default.fileExists(atPath: FileKit.databaseURL.path()) {
                 try FileKit.createDatabaseDirIfNeeded()
             }
             let databaseUrl = FileKit.databaseURL.appending(component: "db.sqlite")

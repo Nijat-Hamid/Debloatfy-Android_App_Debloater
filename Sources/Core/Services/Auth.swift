@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable
+@MainActor @Observable
 final class Auth {
 
     static let shared = Auth()
@@ -26,9 +26,7 @@ final class Auth {
     func killServer() async {
         isLoading = true
         
-        defer { isLoading = false }
-        
-        let result = await ADB.run(arguments: [.devices])
+        let result = await ADB.run(arguments: [.kill])
         
         switch result {
         case .success(let output, _):
@@ -36,13 +34,13 @@ final class Auth {
         case .failure(let error, _, _):
             Log.of(.services(Auth.self)).error("\(error.message)")
         }
+        
+        isLoading = false
     }
     
     func startServer() async {
         isLoading = true
-        
-        defer { isLoading = false }
-        
+    
         let result = await ADB.run(arguments: [.devices])
         
         switch result {
@@ -81,5 +79,7 @@ final class Auth {
             deviceID = nil
             Log.of(.services(Auth.self)).error("\(error.message)")
         }
+        
+        isLoading = false
     }
 }
