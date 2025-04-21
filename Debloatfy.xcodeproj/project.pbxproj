@@ -45,7 +45,7 @@
 		1F4C601C2DAB24C1000831B1 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C601B2DAB24BE000831B1 /* DBService.swift */; };
 		1F4C60242DAB6C70000831B1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4C60232DAB6C70000831B1 /* GRDB */; };
 		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
-		1F6A4FF82DB6DDD100C47D5E /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A4FF72DB6DDD100C47D5E /* demo.mp4 */; };
+		1F6A4FFB2DB6DF9E00C47D5E /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A4FFA2DB6DF9E00C47D5E /* demo.gif */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
 		1F992E792D6BCCBF00DCC645 /* OpacityTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* OpacityTransitionMod.swift */; };
@@ -179,7 +179,7 @@
 		1F4C60192DA9F4EE000831B1 /* ProgressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSheet.swift; sourceTree = "<group>"; };
 		1F4C601B2DAB24BE000831B1 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
-		1F6A4FF72DB6DDD100C47D5E /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
+		1F6A4FFA2DB6DF9E00C47D5E /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F992E782D6BCCB800DCC645 /* OpacityTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityTransitionMod.swift; sourceTree = "<group>"; };
@@ -572,7 +572,7 @@
 		1F465AFC2DB5073100F2E7F7 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				1F6A4FF62DB6DDB500C47D5E /* video */,
+				1F6A4FF92DB6DF8700C47D5E /* gif */,
 				1F465AFD2DB5078D00F2E7F7 /* image */,
 			);
 			path = Demo;
@@ -613,12 +613,12 @@
 			path = lib64;
 			sourceTree = "<group>";
 		};
-		1F6A4FF62DB6DDB500C47D5E /* video */ = {
+		1F6A4FF92DB6DF8700C47D5E /* gif */ = {
 			isa = PBXGroup;
 			children = (
-				1F6A4FF72DB6DDD100C47D5E /* demo.mp4 */,
+				1F6A4FFA2DB6DF9E00C47D5E /* demo.gif */,
 			);
-			path = video;
+			path = gif;
 			sourceTree = "<group>";
 		};
 		1F992E632D6B92B600DCC645 /* Routing */ = {
@@ -1047,7 +1047,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F6A4FF82DB6DDD100C47D5E /* demo.mp4 in Resources */,
 				1FDCD5EB2D5DFE740036B15F /* Preview Assets.xcassets in Resources */,
 				1FDCD60A2D5E0A6F0036B15F /* Nunito-Variable.ttf in Resources */,
 				1FF10E322D9253A500EBECB5 /* adb in Resources */,
@@ -1055,6 +1054,7 @@
 				1FF10E342D9253A500EBECB5 /* NOTICE.txt in Resources */,
 				1FF10E352D9253A500EBECB5 /* sqlite3 in Resources */,
 				1FF10E362D9253A500EBECB5 /* etc1tool in Resources */,
+				1F6A4FFB2DB6DF9E00C47D5E /* demo.gif in Resources */,
 				1FF10E372D9253A500EBECB5 /* mke2fs in Resources */,
 				1FF10E382D9253A500EBECB5 /* make_f2fs in Resources */,
 				1FF10E392D9253A500EBECB5 /* mke2fs.conf in Resources */,
