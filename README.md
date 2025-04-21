@@ -18,7 +18,7 @@
   <a href="#support-and-roadmap">Support & Roadmap</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/blob/main/Demo/gif/demo.gif)
 
 ## Introduction
 
