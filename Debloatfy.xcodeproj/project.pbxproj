@@ -45,7 +45,7 @@
 		1F4C601C2DAB24C1000831B1 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C601B2DAB24BE000831B1 /* DBService.swift */; };
 		1F4C60242DAB6C70000831B1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4C60232DAB6C70000831B1 /* GRDB */; };
 		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
-		1F6A4FFD2DB6E3FB00C47D5E /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A4FFC2DB6E3FB00C47D5E /* demo.gif */; };
+		1F6A4FFF2DB6E8EB00C47D5E /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A4FFE2DB6E8EB00C47D5E /* demo.gif */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
 		1F992E722D6B986C00DCC645 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E712D6B986A00DCC645 /* Router.swift */; };
 		1F992E792D6BCCBF00DCC645 /* OpacityTransitionMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E782D6BCCB800DCC645 /* OpacityTransitionMod.swift */; };
@@ -179,7 +179,7 @@
 		1F4C60192DA9F4EE000831B1 /* ProgressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSheet.swift; sourceTree = "<group>"; };
 		1F4C601B2DAB24BE000831B1 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
-		1F6A4FFC2DB6E3FB00C47D5E /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		1F6A4FFE2DB6E8EB00C47D5E /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		1F992E712D6B986A00DCC645 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F992E782D6BCCB800DCC645 /* OpacityTransitionMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityTransitionMod.swift; sourceTree = "<group>"; };
@@ -616,7 +616,7 @@
 		1F6A4FF92DB6DF8700C47D5E /* gif */ = {
 			isa = PBXGroup;
 			children = (
-				1F6A4FFC2DB6E3FB00C47D5E /* demo.gif */,
+				1F6A4FFE2DB6E8EB00C47D5E /* demo.gif */,
 			);
 			path = gif;
 			sourceTree = "<group>";
@@ -1052,7 +1052,7 @@
 				1FF10E322D9253A500EBECB5 /* adb in Resources */,
 				1FF10E332D9253A500EBECB5 /* make_f2fs_casefold in Resources */,
 				1FF10E342D9253A500EBECB5 /* NOTICE.txt in Resources */,
-				1F6A4FFD2DB6E3FB00C47D5E /* demo.gif in Resources */,
+				1F6A4FFF2DB6E8EB00C47D5E /* demo.gif in Resources */,
 				1FF10E352D9253A500EBECB5 /* sqlite3 in Resources */,
 				1FF10E362D9253A500EBECB5 /* etc1tool in Resources */,
 				1FF10E372D9253A500EBECB5 /* mke2fs in Resources */,
