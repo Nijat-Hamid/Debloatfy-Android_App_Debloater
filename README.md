@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 <h1 align="center">
-  <br>
   <a href="https://github.com/Nijat-Hamid"><img src="https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/blob/main/Demo/image/logo.png" alt="Debloatfy" width="200"></a>
   <br>
   Debloatfy
@@ -154,6 +153,5 @@ MIT License
 
 Copyright 2025 Nijat Hamid <nicatorium@gmail.com>
 
----
 
 
