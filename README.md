@@ -1,4 +1,4 @@
-
+<a id="readme-top"></a>
 <h1 align="center">
   <br>
   <a href="https://github.com/Nijat-Hamid"><img src="https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/blob/main/Demo/image/logo.png" alt="Debloatfy" width="200"></a>
@@ -39,6 +39,8 @@ Previously, I relied on terminal commands and ADB to remove these unwanted apps 
 
 That's how `Debloatfy` was born—a tool designed to bridge the gap between macOS and Android, making device management accessible without requiring terminal expertise.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Key Features
 
 * Remove bloatware
@@ -65,6 +67,8 @@ That's how `Debloatfy` was born—a tool designed to bridge the gap between macO
   - Latest Android Debug Bridge SDK
 * Cancel any action during processing
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## How To Use
 
 To use the "Debloatfy", you need to follow the steps below.:
@@ -89,6 +93,7 @@ To use the "Debloatfy", you need to follow the steps below.:
 > **Note:**
 > Enabling Developer options is completely safe for your device. The setting can be disabled at any time after using Debloatfy with no impact on your device's normal operation or security.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Download
 
@@ -121,6 +126,8 @@ You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloate
   - AppKit's Visual Effects applied for UI Design
   - Performance optimizations, popover & sheets and etc...
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Support and Roadmap
 
 If you like this project, its underlying philosophy, or appreciate my code as a developer, you can support me by giving it a star. This motivation will help me continue working on the project and deliver even better features in the future.
@@ -138,6 +145,8 @@ Debloatfy is currently under active development. Roadmap for upcoming releases:
   - The next version will bring more performance updates for background processes. It will also add features like pagination for app list.
 * Support for more MacOS versions:
   - The app currently supports macOS 15.2 and later. Support for older macOS versions will be added in future versions.
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
   
 ## License
 
