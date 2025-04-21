@@ -158,6 +158,7 @@
 		1F1C94592D67EE24008B6E19 /* SocialSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSectionView.swift; sourceTree = "<group>"; };
 		1F1C945C2D6800C0008B6E19 /* OthersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersSectionView.swift; sourceTree = "<group>"; };
 		1F1C94602D680121008B6E19 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
+		1F3F03B32DB6B45A0095CA8E /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		1F465AEE2DB2C02D00F2E7F7 /* ApkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApkModel.swift; sourceTree = "<group>"; };
 		1F465AF02DB3F80100F2E7F7 /* Processors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processors.swift; sourceTree = "<group>"; };
 		1F465AF32DB4ECAE00F2E7F7 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
@@ -632,6 +633,7 @@
 				1FDCD5F12D5E01730036B15F /* .gitignore */,
 				1FDCD5F22D5E02240036B15F /* Debloatfy.app */,
 				1F465AFA2DB506C900F2E7F7 /* README.md */,
+				1F3F03B32DB6B45A0095CA8E /* LICENSE.txt */,
 				1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */,
 				1F465AF52DB4EF0E00F2E7F7 /* Debloatfy.xctestplan */,
 				1F465AFC2DB5073100F2E7F7 /* Demo */,

@@ -15,8 +15,8 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#support-and-roadmap">Support & Roadmap</a>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
@@ -94,48 +94,57 @@ To use the "Debloatfy", you need to follow the steps below.:
 
 You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/) the latest installable version of `Debloatfy` for macOS
 
-## Emailware
+## Tech Stack
 
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
+* Target and Language:
+  - Minimum OS: macOS 15.2 
+  - Latest Swift 6.1 with "Strict Concurrency"
+* Design Pattern and UI:
+  - Model-View-ViewModel (MVVM) 
+  - SwiftUI
+* Database:
+  - GRDB - Fully compatible with Swift Concurrency
+* Testing:
+  - Swift Testing Library
+* Frameworks and etc:
+  - Apple's OSLog framework for custom logging feature
+  - Mockable protocol: Creating mock data for use in SwiftUI Previews
+  - Singleton pattern for necessary services which must have only one instance
+  - Nunito custom variable font integration
+  - Nunito custom variable font integration
+  - Snappy transition for navigation
+  - Animated Dark/Light mode change
+  - Animated Loading UI
+  - ContentUnavailableView for different states
+  - "Source of Truth" and "Separation of Concerns" design principles applied
+  - Cancelable tasks for unstructuted concurrency
+  - AppKit's Visual Effects applied for UI Design
+  - Performance optimizations, popover & sheets and etc...
 
-## Credits
+## Support and Roadmap
 
-This software uses the following open source packages:
+If you like this project, its underlying philosophy, or appreciate my code as a developer, you can support me by giving it a star. This motivation will help me continue working on the project and deliver even better features in the future.
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
-
-## Related
-
-[Try Web version of Markdownify](https://notepad.js.org/markdown-editor/)
-
-## Support
-
-<a href="https://buymeacoffee.com/amitmerchant" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
+Debloatfy is currently under active development. Roadmap for upcoming releases:
+* Finder-like Transfer page:
+  - I'm thinking of turning the Transfer feature into something like the macOS file manager Finder, so you can do more things on your Android device's internal memory from macOS. 
+* More cancelable tasks:
+  - Currently, the user can only stop the transfer process. In future versions, there will be the ability to cancel tasks such as deleting apps, backing up, and more.
+* More detailed information about Android device:
+  - You are currently seeing limited information about your Android device in the app. More information will be shown in future versions.
+* More ADB features:
+  - More Android Debug Bridge features will be added in the next versions.
+* More Performance optimizations:
+  - The next version will bring more performance updates for background processes. It will also add features like pagination for app list.
+* Support for more MacOS versions:
+  - The app currently supports macOS 15.2 and later. Support for older macOS versions will be added in future versions.
+  
 ## License
 
-MIT
+MIT License
+
+Copyright 2025 Nijat Hamid <nicatorium@gmail.com>
 
 ---
 
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
 
