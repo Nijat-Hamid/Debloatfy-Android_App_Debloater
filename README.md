@@ -73,16 +73,16 @@ To use the "Debloatfy", you need to follow the steps below.:
 # Step 1 - Access Developer Mode
   Navigate to Settings > About Phone. Locate the Build Number and tap it 7 times. You'll see a message confirming "Developer options enabled"
 
-# Step 2 - Enable USB Debugging:
+# Step 2 - Enable USB Debugging
   Go back to Settings and find the new Developer options menu. Toggle on "USB debugging". Accept the security prompt when it appears
 
-# Step 3 - Connect Your Device:
+# Step 3 - Connect Your Device
   Use a USB cable to connect your Android device to your MacOS device. Ensure your device is unlocked
 
-# Step 4 - Grant Permissions:
+# Step 4 - Grant Permissions
   When prompted on your Android device, check "Always allow from this computer"
 
-# Step 5 - Ready to Use:
+# Step 5 - Ready to Use
   Debloatfy will detect your device and you can begin managing it
 ```
 
