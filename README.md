@@ -125,7 +125,11 @@ You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloate
   - AppKit's Visual Effects applied for UI Design
   - Performance optimizations, popover & sheets and etc...
 
-
+<details>
+<summary>
+  Architecture
+</summary> <br />
+<pre>
 ```
 .Debloatfy
 ├─ App
@@ -176,6 +180,9 @@ You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloate
         ├─ View
         └─ ViewModel
 ```
+</pre>
+</details>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Support and Roadmap
