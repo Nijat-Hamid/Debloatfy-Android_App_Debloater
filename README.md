@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 <h1 align="center">
-  <a href="https://github.com/Nijat-Hamid"><img src="https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/blob/main/Demo/image/logo.png" alt="Debloatfy" width="200"></a>
+  <a href="https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/releases"><img src="https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/blob/main/Demo/image/logo.png" alt="Debloatfy" width="200"></a>
   <br>
   Debloatfy
   <br>
@@ -96,7 +96,7 @@ To use the "Debloatfy", you need to follow the steps below.:
 
 ## Download
 
-You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/) the latest installable version of `Debloatfy` for macOS
+You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloater/releases) the latest installable version of `Debloatfy` for macOS
 
 ## Tech Stack
 
