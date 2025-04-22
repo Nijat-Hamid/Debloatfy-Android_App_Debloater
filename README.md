@@ -132,53 +132,32 @@ You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloate
 <pre>
 ```
 .Debloatfy
-├─ App
-├─ Core
-│  ├─ Componets
-│  ├─ Constans
-│  ├─ Extensions
-│  ├─ Helpers
-│  ├─ Models
-│  ├─ Modifiers
-│  ├─ Package
-│  ├─ Protocols
-│  ├─ Routing
-│  ├─ Services
-│  ├─ Styles
-│  └─ ViewModifiers
-├─ Resources
-│  ├─ Assets.xcassets
-│  ├─ Fonts
-│  └─ Preview Content
+├─ App                        # Main App 
+├─ Core                       
+│  ├─ Componets               # Reusable global components. Sheets, lists and etc
+│  ├─ Constans                # Global constans
+│  ├─ Extensions              # Extensions
+│  ├─ Helpers                 # Helper functions and nonisolated methods
+│  ├─ Models                  # Global data models
+│  ├─ Modifiers               # All View's modifiers
+│  ├─ Package                 # ADB SDK folder
+│  ├─ Protocols               # Global protocols
+│  ├─ Routing                 # Routing system
+│  ├─ Services                # Core services. Logger, Auth and etc
+│  └─ Styles                  # Native components' styles. ToggleStyles, ButtonStyles and etc
+├─ Resources                  
+│  ├─ Assets.xcassets         # Assets
+│  ├─ Fonts                   # Custom Fonts
+│  └─ Preview Content         # Preview Content
 └─ Scenes
-   ├─ About
-   │  └── View
-   ├─ Debloat
-   │  ├─ Model
-   │  ├─ View
-   │  └─ ViewModel
-   ├─ Debugging
-   │  └─ View
-   ├─ Layout
-   │  ├─ Model
-   │  ├─ View
-   │  └─ ViewModel
-   ├─ Logs
-   │  ├─ Model
-   │  ├─ View
-   │  └─ ViewModel
-   ├─ Overview
-   │  ├─ Model
-   │  ├─ View
-   │  └─ ViewModel
-   ├─ Restore
-   │  ├─ Model
-   │  ├─ View
-   │  └─ ViewModel
-   └─ Transfer
-        ├─ Model
-        ├─ View
-        └─ ViewModel
+   ├─ About                   # About Screen
+   ├─ Debloat                 # Debloat Screen
+   ├─ Debugging               # Debugging Screen
+   ├─ Layout                  # Layout 
+   ├─ Logs                    # Logs Screen 
+   ├─ Overview                # Overview Screen
+   ├─ Restore                 # Restore Screen
+   └─ Transfer                # Transfer Screen
 ```
 </pre>
 </details>

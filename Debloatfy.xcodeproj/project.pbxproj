@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1899A32DB820E200952403 /* demo-debloatfy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1F1899A22DB820E200952403 /* demo-debloatfy.mp4 */; };
 		1F1C93FF2D5E54F0008B6E19 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */; };
 		1F1C940A2D5FC848008B6E19 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C94092D5FC848008B6E19 /* SidebarView.swift */; };
 		1F1C940C2D5FC8C6008B6E19 /* LayoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C940B2D5FC8C2008B6E19 /* LayoutModel.swift */; };
@@ -138,6 +139,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F1899A22DB820E200952403 /* demo-debloatfy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "demo-debloatfy.mp4"; sourceTree = "<group>"; };
 		1F1C93FC2D5E0C9A008B6E19 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1C93FE2D5E54E9008B6E19 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		1F1C94092D5FC848008B6E19 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -270,6 +272,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1899A12DB8207500952403 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				1F1899A22DB820E200952403 /* demo-debloatfy.mp4 */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
 		1F1C94012D5FB7E3008B6E19 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +582,7 @@
 		1F465AFC2DB5073100F2E7F7 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				1F1899A12DB8207500952403 /* video */,
 				1F6A4FF92DB6DF8700C47D5E /* gif */,
 				1F465AFD2DB5078D00F2E7F7 /* image */,
 			);
@@ -1056,6 +1067,7 @@
 				1FF10E352D9253A500EBECB5 /* sqlite3 in Resources */,
 				1FF10E362D9253A500EBECB5 /* etc1tool in Resources */,
 				1FF10E372D9253A500EBECB5 /* mke2fs in Resources */,
+				1F1899A32DB820E200952403 /* demo-debloatfy.mp4 in Resources */,
 				1FF10E382D9253A500EBECB5 /* make_f2fs in Resources */,
 				1FF10E392D9253A500EBECB5 /* mke2fs.conf in Resources */,
 				1FF10E3A2D9253A500EBECB5 /* source.properties in Resources */,
