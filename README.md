@@ -129,70 +129,56 @@ You can [download](https://github.com/Nijat-Hamid/Debloatfy-Android_App_Debloate
 <summary>
   Architecture
 </summary> <br />
-``
-.
-├── App
-├── Core
-│   ├── Componets
-│   │   ├── App Actions
-│   │   ├── App List
-│   │   ├── App Toolbar
-│   │   ├── Loading
-│   │   ├── Sheets
-│   │   ├── Theme Switch
-│   │   └── Visual Effect
-│   ├── Constans
-│   ├── Extensions
-│   ├── Helpers
-│   ├── Models
-│   ├── Modifiers
-│   ├── Package
-│   │   └── ADB Sdk
-│   ├── Protocols
-│   ├── Routing
-│   ├── Services
-│   ├── Styles
-│   └── ViewModifiers
-├── Resources
-│   ├── Assets.xcassets
-│   │   ├── AccentColor.colorset
-│   │   ├── AppIcon.appiconset
-│   │   ├── Color Palette
-│   │   ├── Icon Set
-│   │   └── Image Set
-│   ├── Fonts
-│   └── Preview Content
-│       └── Preview Assets.xcassets
-└── Scenes
-    ├── About
-    │   └── View
-    ├── Debloat
-    │   ├── Model
-    │   ├── View
-    │   └── ViewModel
-    ├── Debugging
-    │   └── View
-    ├── Layout
-    │   ├── Model
-    │   ├── View
-    │   └── ViewModel
-    ├── Logs
-    │   ├── Model
-    │   ├── View
-    │   └── ViewModel
-    ├── Overview
-    │   ├── Model
-    │   ├── View
-    │   └── ViewModel
-    ├── Restore
-    │   ├── Model
-    │   ├── View
-    │   └── ViewModel
-    └── Transfer
-        ├── Model
-        ├── View
-        └── ViewModel
-``
+```
+.Debloatfy
+├─ App
+├─ Core
+│  ├─ Componets
+│  ├─ Constans
+│  ├─ Extensions
+│  ├─ Helpers
+│  ├─ Models
+│  ├─ Modifiers
+│  ├─ Package
+│  ├─ Protocols
+│  ├─ Routing
+│  ├─ Services
+│  ├─ Styles
+│  └─ ViewModifiers
+├─ Resources
+│  ├─ Assets.xcassets
+│  ├─ Fonts
+│  └─ Preview Content
+└─ Scenes
+   ├─ About
+   │  └── View
+   ├─ Debloat
+   │  ├─ Model
+   │  ├─ View
+   │  └─ ViewModel
+   ├─ Debugging
+   │  └─ View
+   ├─ Layout
+   │  ├─ Model
+   │  ├─ View
+   │  └─ ViewModel
+   ├─ Logs
+   │  ├─ Model
+   │  ├─ View
+   │  └─ ViewModel
+   ├─ Overview
+   │  ├─ Model
+   │  ├─ View
+   │  └─ ViewModel
+   ├─ Restore
+   │  ├─ Model
+   │  ├─ View
+   │  └─ ViewModel
+   └─ Transfer
+        ├─ Model
+        ├─ View
+        └─ ViewModel
+```
 </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
