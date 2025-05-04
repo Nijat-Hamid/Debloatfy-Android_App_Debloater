@@ -88,7 +88,7 @@ extension ADB {
             case .getListUserApps: return "shell pm list packages -3"
             case .getApksFullPath(let package): return "shell pm path \(package)"
             case .getApkSize(let path): return "shell du -sm \(path)"
-            case .uninstallApk(let package): return "shell pm uninstall \(package)"
+            case .uninstallApk(let package): return "shell pm uninstall --user 0 \(package)"
             case .backupApk(let from, let to): return "pull \(from) \(to)"
             case .restoreApk(let splitApks): return "install-multiple \(splitApks)"
             case .getInternalStorage: return "shell LC_ALL=C.UTF-8 ls /sdcard/"
