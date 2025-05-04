@@ -45,6 +45,7 @@
 		1F4C601A2DA9F4EE000831B1 /* ProgressSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C60192DA9F4EE000831B1 /* ProgressSheet.swift */; };
 		1F4C601C2DAB24C1000831B1 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C601B2DAB24BE000831B1 /* DBService.swift */; };
 		1F4C60242DAB6C70000831B1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 1F4C60232DAB6C70000831B1 /* GRDB */; };
+		1F501B972DC6474000ABAAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F501B962DC6474000ABAAA8 /* AppDelegate.swift */; };
 		1F66D1D72D8070C1008E29E7 /* DebugIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */; };
 		1F6A4FFF2DB6E8EB00C47D5E /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A4FFE2DB6E8EB00C47D5E /* demo.gif */; };
 		1F992E702D6B967800DCC645 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F992E6F2D6B967400DCC645 /* Routable.swift */; };
@@ -180,6 +181,7 @@
 		1F4C60172DA9C068000831B1 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		1F4C60192DA9F4EE000831B1 /* ProgressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSheet.swift; sourceTree = "<group>"; };
 		1F4C601B2DAB24BE000831B1 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		1F501B962DC6474000ABAAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F66D1D62D8070BA008E29E7 /* DebugIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIndicatorView.swift; sourceTree = "<group>"; };
 		1F6A4FFE2DB6E8EB00C47D5E /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		1F992E6F2D6B967400DCC645 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 			children = (
 				1FDCD5E62D5DFE740036B15F /* Debloatfy.entitlements */,
 				1FDCD5E72D5DFE740036B15F /* DebloatfyApp.swift */,
+				1F501B962DC6474000ABAAA8 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1199,6 +1202,7 @@
 				1F1C94572D67ECC0008B6E19 /* NavigationSectionView.swift in Sources */,
 				1FF986C22D731A350008BDA3 /* SectionMod.swift in Sources */,
 				1FF986E62D77459B0008BDA3 /* DevinceInfoImage.swift in Sources */,
+				1F501B972DC6474000ABAAA8 /* AppDelegate.swift in Sources */,
 				1F1C94452D660ACE008B6E19 /* DebuggingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1363,7 +1367,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1380,7 +1384,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.Debloatfy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1399,7 +1403,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1416,7 +1420,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nijathamid.Debloatfy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
