@@ -14,7 +14,6 @@ class AppDelegate: NSObject,NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         Task {
             await ADB.run(arguments: [.kill])
-//            print("adb killed")
         }
     }
 }
